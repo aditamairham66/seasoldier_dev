@@ -11,4 +11,24 @@ class ProgramsController extends Controller
     {
         return view('page.frontend.program.program');
     }
+
+    public function getShop()
+    {
+        return view('page.frontend.program.shop');
+    }
+
+    public function getSoldier()
+    {
+        return view('page.frontend.program.soldier');
+    }
+
+    public function getPlanting()
+    {
+        return view('page.frontend.program.planting');
+    }
+
+    public function getMangrove()
+    {
+        return view('page.frontend.program.mangrove');
+    }
 }
