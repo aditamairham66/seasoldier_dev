@@ -18,19 +18,19 @@
                             <h4 class="title-big mb-5">DONATION</h4>
 
                             <div class="menu-round-center-mid">
-                                <a href="index_drain.html" class="menu-item">
+                                <a href="{{ webPath('donation/fundraising') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_drainsing.png') }}" alt="">
                                     </div>
                                     <span class="title">FUNDRAISING</span>
                                 </a>
-                                <a href="index_partner.html" class="menu-item">
+                                <a href="{{ webPath('donation/partner') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_our_partner.png') }}" alt="">
                                     </div>
                                     <span class="title">OUR PARTNERS</span>
                                 </a>
-                                <a href="index_merchandise.html" class="menu-item">
+                                <a href="{{ webPath('donation/merchandise') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_merchandise.png') }}" alt="">
                                     </div>

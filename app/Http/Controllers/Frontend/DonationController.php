@@ -11,4 +11,19 @@ class DonationController extends Controller
     {
         return view('page.frontend.donation.donation');
     }
+
+    public function getFundraising()
+    {
+        return view('page.frontend.donation.fundraising');
+    }
+
+    public function getPartner()
+    {
+        return view('page.frontend.donation.partner');
+    }
+
+    public function getMerchandise()
+    {
+        return view('page.frontend.donation.merchandise');
+    }
 }
