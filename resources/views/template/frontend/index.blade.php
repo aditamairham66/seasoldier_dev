@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body class="@yield('background')">
 
 @include('template.frontend.header')
 

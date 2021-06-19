@@ -17,3 +17,8 @@
 
 routeController('/', 'Frontend\HomeController');
 routeController('/profiles', 'Frontend\ProfileController');
+routeController('/programs', 'Frontend\ProgramsController');
+routeController('/donation', 'Frontend\DonationController');
+routeController('/gallery', 'Frontend\GalleryController');
+routeController('/regions', 'Frontend\RegionsController');
+routeController('/contact', 'Frontend\ContactController');

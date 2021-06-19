@@ -2,6 +2,7 @@
 @section('title_page', 'Home')
 @section('description', '')
 @section('keywords', '')
+@section('background', '')
 @section('content')
 <main id="main">
 
