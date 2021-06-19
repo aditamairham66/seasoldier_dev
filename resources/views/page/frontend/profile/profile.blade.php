@@ -19,31 +19,31 @@
                             <h4 class="title-big mb-5">#BRANI</h4>
 
                             <div class="menu-round-center">
-                                <a href="index_intro.html" class="menu-item">
+                                <a href="{{ webPath('profiles/introduction') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_introduction.png') }}" alt="">
                                     </div>
                                     <span class="title">INTRODUCTION</span>
                                 </a>
-                                <a href="index_organization.html" class="menu-item">
+                                <a href="{{ webPath('profiles/organization') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_organization.png') }}" alt="">
                                     </div>
                                     <span class="title">OUR ORGANIZATION</span>
                                 </a>
-                                <a href="index_braclate.html" class="menu-item">
+                                <a href="{{ webPath('profiles/braclate') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_bracelet.png') }}" alt="">
                                     </div>
                                     <span class="title">BRACLATE</span>
                                 </a>
-                                <a href="index_team.html" class="menu-item">
+                                <a href="{{ webPath('profiles/team') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_team.png') }}" alt="">
                                     </div>
                                     <span class="title">OUR TEAM</span>
                                 </a>
-                                <a href="index_honor.html" class="menu-item">
+                                <a href="{{ webPath('profiles/honor') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_respect.png') }}" alt="">
                                     </div>
