@@ -53,4 +53,13 @@ class Router
 
         }
     }
+
+    /**
+     * @param string $path
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\UrlGenerator|string
+     */
+    public static function webPath($path = '')
+    {
+        return url($path);
+    }
 }

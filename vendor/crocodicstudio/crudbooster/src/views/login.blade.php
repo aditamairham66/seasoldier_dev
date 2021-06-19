@@ -5,23 +5,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>{{cbLang("page_title_login")}} : {{Session::get('appname')}}</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href=" {{ CRUDBooster::getSetting('favicon')?asset(CRUDBooster::getSetting('favicon')):asset('vendor/indominer/azzara/img/icon.ico') }}" type="image/x-icon"/>
+	<link rel="icon" href=" {{ CRUDBooster::getSetting('favicon')?asset(CRUDBooster::getSetting('favicon')):asset('vendor/backend/azzara/img/icon.ico') }}" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
-	<script src="{{ asset('vendor/indominer/azzara/js') }}/plugin/webfont/webfont.min.js"></script>
+	<script src="{{ asset('vendor/backend/azzara/js') }}/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['{{ asset("vendor/indominer/azzara") }}/css/fonts.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['{{ asset("vendor/backend/azzara") }}/css/fonts.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
 		});
 	</script>
-	
+
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="{{ asset('vendor/indominer/azzara') }}/css/bootstrap.min.css">
-	<link rel="stylesheet" href="{{ asset('vendor/indominer/azzara') }}/css/azzara.min.css">
+	<link rel="stylesheet" href="{{ asset('vendor/backend/azzara') }}/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ asset('vendor/backend/azzara') }}/css/azzara.min.css">
 </head>
 <body class="login">
 	<div class="wrapper wrapper-login">
@@ -67,11 +67,11 @@
             </form>
 		</div>
 	</div>
-	<script src="{{ asset('vendor/indominer/azzara/js') }}/core/jquery.3.2.1.min.js"></script>
-	<script src="{{ asset('vendor/indominer/azzara/js') }}/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="{{ asset('vendor/indominer/azzara/js') }}/core/popper.min.js"></script>
-	<script src="{{ asset('vendor/indominer/azzara/js') }}/core/bootstrap.min.js"></script>
-	<script src="{{ asset('vendor/indominer/azzara/js') }}/ready.js"></script>
+	<script src="{{ asset('vendor/backend/azzara/js') }}/core/jquery.3.2.1.min.js"></script>
+	<script src="{{ asset('vendor/backend/azzara/js') }}/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="{{ asset('vendor/backend/azzara/js') }}/core/popper.min.js"></script>
+	<script src="{{ asset('vendor/backend/azzara/js') }}/core/bootstrap.min.js"></script>
+	<script src="{{ asset('vendor/backend/azzara/js') }}/ready.js"></script>
 	<!-- <script type="text/javascript" src="//themera.net/embed/themera.js?id=71769"></script> -->
 
     <style type="text/css">

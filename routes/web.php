@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
+routeController('/', 'Frontend\HomeController');
+routeController('/profiles', 'Frontend\ProfileController');

@@ -10,14 +10,14 @@
     <meta name='generator' content='CRUDBooster {{ \crocodicstudio\crudbooster\commands\CrudboosterVersionCommand::$version }}'/>
     <meta name='robots' content='noindex,nofollow'/>
     <link rel="shortcut icon"
-            href="{{ CRUDBooster::getSetting('favicon')?asset(CRUDBooster::getSetting('favicon')):asset("vendor/indominer/azzara/img/icon.ico") }}">
+            href="{{ CRUDBooster::getSetting('favicon')?asset(CRUDBooster::getSetting('favicon')):asset("vendor/backend/azzara/img/icon.ico") }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Fonts and icons -->
-    <script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/webfont/webfont.min.js"></script>
+    <script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/webfont/webfont.min.js"></script>
     <script>
         WebFont.load({
             google: {"families":["Open+Sans:300,400,600,700"]},
-            custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['{{ asset("vendor/indominer/azzara")."/" }}css/fonts.css']},
+            custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['{{ asset("vendor/backend/azzara")."/" }}css/fonts.css']},
             active: function() {
                 sessionStorage.fonts = true;
             }
@@ -28,11 +28,11 @@
 <!--    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">-->
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="{{ asset("vendor/indominer/azzara")."/" }}css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset("vendor/indominer/azzara")."/" }}css/azzara.min.css">
+    <link rel="stylesheet" href="{{ asset("vendor/backend/azzara")."/" }}css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset("vendor/backend/azzara")."/" }}css/azzara.min.css">
     <!-- Summernote -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("vendor/indominer/azzara/css/custom.css") }}">
+    <link rel="stylesheet" href="{{ asset("vendor/backend/azzara/css/custom.css") }}">
 
     <!-- load css -->
     <style type="text/css">

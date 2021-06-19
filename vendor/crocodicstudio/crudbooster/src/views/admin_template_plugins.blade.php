@@ -1,53 +1,53 @@
 
 <!--   Core JS Files   -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/core/jquery.3.2.1.min.js"></script>
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/core/popper.min.js"></script>
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/core/bootstrap.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/core/jquery.3.2.1.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/core/popper.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/core/bootstrap.min.js"></script>
 
 <!-- jQuery UI -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
 <!-- jQuery Scrollbar -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 <!-- Moment JS -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/moment/moment.min.js"></script>
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/moment/moment.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 
 <!-- Chart JS -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/chart.js/chart.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/chart.js/chart.min.js"></script>
 
 <!-- jQuery Sparkline -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 <!-- Chart Circle -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/chart-circle/circles.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/chart-circle/circles.min.js"></script>
 
 <!-- Datatables -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/datatables/datatables.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/datatables/datatables.min.js"></script>
 
 <!-- Bootstrap Notify -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
 
 <!-- Bootstrap Toggle -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
 
 <!-- Summernote -->
-<script src="{{ asset("vendor/indominer/azzara") }}/js/plugin/summernote/summernote-bs4.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara") }}/js/plugin/summernote/summernote-bs4.min.js"></script>
 
 <!-- jQuery Vector Maps -->
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/jqvmap/jquery.vmap.min.js"></script>
-<script src="{{ asset("vendor/indominer/azzara")."/" }}js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script src="{{ asset("vendor/backend/azzara")."/" }}js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
 <!-- Google Maps Plugin -->
-<script src="{{ asset('vendor/indominer/azzara')."/" }}js/plugin/gmaps/gmaps.js"></script>
+<script src="{{ asset('vendor/backend/azzara')."/" }}js/plugin/gmaps/gmaps.js"></script>
 
 <!-- Sweet Alert -->
-<script src="{{ asset('vendor/indominer/azzara')."/" }}js/plugin/sweetalert/sweetalert.min.js"></script>
+<script src="{{ asset('vendor/backend/azzara')."/" }}js/plugin/sweetalert/sweetalert.min.js"></script>
 
 <!-- Azzara JS -->
-<script src="{{ asset('vendor/indominer/azzara')."/" }}js/ready.min.js"></script>
+<script src="{{ asset('vendor/backend/azzara')."/" }}js/ready.min.js"></script>
 
 <!--BOOTSTRAP DATEPICKER-->
 <script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
