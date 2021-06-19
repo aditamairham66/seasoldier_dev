@@ -16,13 +16,13 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="gallery-list">
-                                <a href="index_gallery_detail.html" class="gallery-item">
+                                <a href="{{ webPath('gallery/detail') }}" class="gallery-item">
                                     <img src="{{ asset('vendor/front/assets/example/img/gallery/g1.png') }}" alt="image gallery">
                                 </a>
-                                <a href="index_gallery_detail.html" class="gallery-item">
+                                <a href="{{ webPath('gallery/detail') }}" class="gallery-item">
                                     <img src="{{ asset('vendor/front/assets/example/img/gallery/g2.png') }}" alt="image gallery">
                                 </a>
-                                <a href="index_gallery_detail.html" class="gallery-item">
+                                <a href="{{ webPath('gallery/detail') }}" class="gallery-item">
                                     <img src="{{ asset('vendor/front/assets/example/img/gallery/g3.png') }}" alt="image gallery">
                                 </a>
                                 <a href="#" class="gallery-item">

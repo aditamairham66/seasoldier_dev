@@ -16,19 +16,19 @@
                         <div class="col-lg-12">
                             <div class="region-list">
 
-                                <a href="index_region_detail.html" class="region-item">
+                                <a href="{{ webPath('regions/detail') }}" class="region-item">
                                     <img src="{{ asset('vendor/front/assets/example/img/icon/city/ic_medan.png') }}" alt="region">
                                     <div class="content">
                                         <h4 class="title">MEDAN</h4>
                                     </div>
                                 </a>
-                                <a href="index_region_detail.html" class="region-item">
+                                <a href="{{ webPath('regions/detail') }}" class="region-item">
                                     <img src="{{ asset('vendor/front/assets/example/img/icon/city/ic_jakarta.png') }}" alt="region">
                                     <div class="content">
                                         <h4 class="title">JAKARTA</h4>
                                     </div>
                                 </a>
-                                <a href="index_region_detail.html" class="region-item">
+                                <a href="{{ webPath('regions/detail') }}" class="region-item">
                                     <img src="{{ asset('vendor/front/assets/example/img/icon/city/ic_tasik.png') }}" alt="region">
                                     <div class="content">
                                         <h4 class="title">TASIK</h4>

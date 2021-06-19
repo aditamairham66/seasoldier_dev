@@ -11,4 +11,9 @@ class RegionsController extends Controller
     {
         return view('page.frontend.region.region');
     }
+
+    public function getDetail()
+    {
+        return view('page.frontend.region.detail');
+    }
 }
