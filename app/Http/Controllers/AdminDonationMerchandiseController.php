@@ -31,7 +31,9 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Name","name"=>"name"];
-			$this->col[] = ["label"=>"Price","name"=>"price"];
+			$this->col[] = ["label"=>"Price","name"=>"price","callback"=>function($row) {
+			    return number_format($row->price, 0, ',', '.');
+            }];
 			$this->col[] = ["label"=>"Image","name"=>"image","image"=>true];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 

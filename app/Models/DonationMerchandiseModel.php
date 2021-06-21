@@ -12,5 +12,6 @@ class DonationMerchandiseModel extends Model
 	public $name;
 	public $price;
 	public $image;
+	public $link;
 
 }

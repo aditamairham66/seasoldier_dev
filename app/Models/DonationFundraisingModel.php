@@ -12,5 +12,6 @@ class DonationFundraisingModel extends Model
 	public $name;
 	public $image;
 	public $desc;
+	public $link;
 
 }
