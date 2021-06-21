@@ -122,6 +122,16 @@
     color: #FFFFFF;
     font-weight: bold;
 }
+@media(max-width: 920px) {
+    .navbar a:hover,
+    .navbar .active,
+    .navbar .active:focus,
+    .navbar li:hover > a {
+        position: relative;
+        color: #C60000;
+        font-weight: bold;
+    }
+}
 .navbar li a:hover::after,
 .navbar li a.active::after,
 .navbar li:hover a::after {

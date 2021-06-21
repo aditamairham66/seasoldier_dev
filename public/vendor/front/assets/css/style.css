@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
   /* background: #fff; */
   background: rgba(0, 0, 0, 0.8);
   mix-blend-mode: normal;
-  
+
   z-index: 997;
   padding: 15px 0;
   /* border-bottom: 1px solid #e6f2fb; */
@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -280,10 +280,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
-  color: #124265;
+    /*color: #124265;*/
+    color: #FFFFFF;
   font-size: 28px;
   cursor: pointer;
   display: none;
