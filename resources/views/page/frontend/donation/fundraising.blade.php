@@ -22,81 +22,83 @@
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8">
+                        @foreach($data as $x => $row)
+                        <div class="{{ ($row->is_first?'col-lg-8':'col-lg-4') }}">
 
                             <div class="box-black">
                                 <div class="image">
-                                    <img src="{{ asset('vendor/front/assets/example/img/donation/f1.png') }}" alt="image">
+                                    <img src="{{ $row->image }}" alt="image">
                                 </div>
                                 <div class="content">
-                                    <h4 class="title">MANGROVE PLANTING</h4>
-                                    <div class="desc">Mangrove provides important habitat for thousand of species, while stabilizing coastlines, and prevent erosion. Take part in our action by donating to the implantation of mangrove seeds.Budget: 11,000,000 IDR</div>
+                                    <h4 class="title">{{ $row->name }}</h4>
+                                    <div class="desc">{{ $row->desc }}</div>
                                     <a href="#" class="btn-danger-mid">DONATE</a>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="col-lg-4">
+                        @endforeach
+                        {{--<!--                        <div class="col-lg-4">-->
+                        <!---->
+                        <!--                            <div class="box-black">-->
+                        <!--                                <div class="image">-->
+                        <!--                                    <img src="{{ asset('vendor/front/assets/example/img/donation/f2.png') }}" alt="image">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="content">-->
+                        <!--                                    <h4 class="title">CORAL TRANSPLANT</h4>-->
+                        <!--                                    <div class="desc">The coral reef has been extensively damaged, resulting in unbalanced of the marine ecosystem. Be a part of our action, by donating to the conservation of coral reefs.-->
+                        <!--                                        Budget: 15,000,000 IDR</div>-->
+                        <!--                                    <a href="#" class="btn-danger-mid">DONATE</a>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!---->
+                        <!--                        </div>-->--}}
 
-                            <div class="box-black">
-                                <div class="image">
-                                    <img src="{{ asset('vendor/front/assets/example/img/donation/f2.png') }}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">CORAL TRANSPLANT</h4>
-                                    <div class="desc">The coral reef has been extensively damaged, resulting in unbalanced of the marine ecosystem. Be a part of our action, by donating to the conservation of coral reefs.
-                                        Budget: 15,000,000 IDR</div>
-                                    <a href="#" class="btn-danger-mid">DONATE</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-4">
-
-                            <div class="box-black">
-                                <div class="image">
-                                    <img src="{{ asset('vendor/front/assets/example/img/donation/f3.png') }}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">WEBSITE BUILDING</h4>
-                                    <div class="desc">The coral reef has been extensively damaged, resulting in unbalanced of the marine ecosystem. Be a part of our action, by donating to the conservation of coral reefs.
-                                        Budget: 15,000,000 IDR</div>
-                                    <a href="#" class="btn-danger-mid">DONATE</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4">
-
-                            <div class="box-black">
-                                <div class="image">
-                                    <img src="{{ asset('vendor/front/assets/example/img/donation/f4.png') }}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">OFFICE SPACE</h4>
-                                    <div class="desc">The coral reef has been extensively damaged, resulting in unbalanced of the marine ecosystem. Be a part of our action, by donating to the conservation of coral reefs.
-                                        Budget: 15,000,000 IDR</div>
-                                    <a href="#" class="btn-danger-mid">DONATE</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4">
-
-                            <div class="box-black">
-                                <div class="image">
-                                    <img src="{{ asset('vendor/front/assets/example/img/donation/f5.png') }}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title">TEAM HIRING</h4>
-                                    <div class="desc">The coral reef has been extensively damaged, resulting in unbalanced of the marine ecosystem. Be a part of our action, by donating to the conservation of coral reefs.
-                                        Budget: 15,000,000 IDR</div>
-                                    <a href="#" class="btn-danger-mid">DONATE</a>
-                                </div>
-                            </div>
-
-                        </div>
+                        {{--<!--                        <div class="col-lg-4">-->
+                        <!---->
+                        <!--                            <div class="box-black">-->
+                        <!--                                <div class="image">-->
+                        <!--                                    <img src="{{ asset('vendor/front/assets/example/img/donation/f3.png') }}" alt="image">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="content">-->
+                        <!--                                    <h4 class="title">WEBSITE BUILDING</h4>-->
+                        <!--                                    <div class="desc">The coral reef has been extensively damaged, resulting in unbalanced of the marine ecosystem. Be a part of our action, by donating to the conservation of coral reefs.-->
+                        <!--                                        Budget: 15,000,000 IDR</div>-->
+                        <!--                                    <a href="#" class="btn-danger-mid">DONATE</a>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!---->
+                        <!--                        </div>-->
+                        <!--                        <div class="col-lg-4">-->
+                        <!---->
+                        <!--                            <div class="box-black">-->
+                        <!--                                <div class="image">-->
+                        <!--                                    <img src="{{ asset('vendor/front/assets/example/img/donation/f4.png') }}" alt="image">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="content">-->
+                        <!--                                    <h4 class="title">OFFICE SPACE</h4>-->
+                        <!--                                    <div class="desc">The coral reef has been extensively damaged, resulting in unbalanced of the marine ecosystem. Be a part of our action, by donating to the conservation of coral reefs.-->
+                        <!--                                        Budget: 15,000,000 IDR</div>-->
+                        <!--                                    <a href="#" class="btn-danger-mid">DONATE</a>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!---->
+                        <!--                        </div>-->
+                        <!--                        <div class="col-lg-4">-->
+                        <!---->
+                        <!--                            <div class="box-black">-->
+                        <!--                                <div class="image">-->
+                        <!--                                    <img src="{{ asset('vendor/front/assets/example/img/donation/f5.png') }}" alt="image">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="content">-->
+                        <!--                                    <h4 class="title">TEAM HIRING</h4>-->
+                        <!--                                    <div class="desc">The coral reef has been extensively damaged, resulting in unbalanced of the marine ecosystem. Be a part of our action, by donating to the conservation of coral reefs.-->
+                        <!--                                        Budget: 15,000,000 IDR</div>-->
+                        <!--                                    <a href="#" class="btn-danger-mid">DONATE</a>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!---->
+                        <!--                        </div>-->--}}
                     </div>
                 </div>
             </div>
