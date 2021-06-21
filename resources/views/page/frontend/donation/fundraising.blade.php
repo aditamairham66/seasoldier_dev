@@ -22,22 +22,22 @@
 
                 <div class="container">
                     <div class="row">
-                        @foreach($data as $x => $row)
-                        <div class="{{ ($row->is_first?'col-lg-8':'col-lg-4') }}">
+                        <div  v-for="(row, i) in data.list_line.list.data"
+                              v-if="data.list_line.list.data.length > 0"
+                              :class="(row.is_first === true ? 'col-lg-8': 'col-lg-4')">
 
                             <div class="box-black">
                                 <div class="image">
-                                    <img src="{{ $row->image }}" alt="image">
+                                    <img :src="row.image" alt="image">
                                 </div>
                                 <div class="content">
-                                    <h4 class="title">{{ $row->name }}</h4>
-                                    <div class="desc">{{ $row->desc }}</div>
-                                    <a href="#" class="btn-danger-mid">DONATE</a>
+                                    <h4 class="title">@{{ row.name }}</h4>
+                                    <div class="desc">@{{ row.desc }}</div>
+                                    <a :href="row.link" class="btn-danger-mid">DONATE</a>
                                 </div>
                             </div>
 
                         </div>
-                        @endforeach
                         {{--<!--                        <div class="col-lg-4">-->
                         <!---->
                         <!--                            <div class="box-black">-->
@@ -108,7 +108,7 @@
 </main><!-- End #main -->
 @endsection
 @push('bottom')
-
+<script src="{{ asset('js/vendor/donation/fundraising.js') }}"></script>
 @endpush
 @push('head')
 

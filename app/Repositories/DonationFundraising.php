@@ -6,17 +6,18 @@ use Illuminate\Support\Facades\DB;
 
 class DonationFundraising extends DonationFundraisingModel
 {
-    public static function listAll()
+    public static function listScroll()
     {
         return DB::table('donation_fundraising')
             ->select(
                 'donation_fundraising.id',
                 'donation_fundraising.name',
                 'donation_fundraising.image',
+                'donation_fundraising.link',
                 'donation_fundraising.desc'
             )
             ->orderby('donation_fundraising.id', 'asc')
-            ->get();
+            ->simplePaginate(5);
     }
 
 }

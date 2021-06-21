@@ -6,9 +6,9 @@ use App\Repositories\DonationFundraising;
 
 class DonationFundraisingService extends DonationFundraising
 {
-    public static function listAll()
+    public static function listScroll()
     {
-        $data = parent::listAll();
+        $data = parent::listScroll();
         foreach ($data as $x => $row)
         {
             $row->image = (!empty($row->image) ? asset($row->image) : '');

@@ -42,7 +42,8 @@
 			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
 			$this->form[] = ['label'=>'Price','name'=>'price','type'=>'money','validation'=>'required','width'=>'col-sm-10','decimals'=>'0'];
 			$this->form[] = ['label'=>'Image','name'=>'image','type'=>'upload','validation'=>'required|image|max:3000','width'=>'col-sm-10','help'=>'File types support : JPG, JPEG, PNG, GIF, BMP'];
-			# END FORM DO NOT REMOVE THIS LINE
+            $this->form[] = ['label'=>'Link','name'=>'link','type'=>'text','validation'=>'required|url','width'=>'col-sm-10','placeholder'=>'Example : https://google.com'];
+            # END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
