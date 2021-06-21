@@ -26,3 +26,14 @@ if (!function_exists('webPath'))
         return App\Helpers\Router::webPath($path);
     }
 }
+
+if (!function_exists('showMessage'))
+{
+    /**
+     * @return string
+     */
+    function showMessage()
+    {
+        return App\Helpers\Router::showMessage();
+    }
+}

@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use Illuminate\Support\Facades\Session;
 use Route;
 
 class Router
@@ -61,5 +62,48 @@ class Router
     public static function webPath($path = '')
     {
         return url($path);
+    }
+
+    /**
+     * @param $msg
+     * @param string $type
+     */
+    public static function redirectBack($msg, $type = 'info')
+    {
+        $resp = redirect()->back()->with(['msg' => $msg, 'msg_type' => $type]);
+        Session::driver()->save();
+        $resp->send();
+        exit;
+    }
+
+    /**
+     * @param $to
+     * @param $msg
+     * @param string $type
+     */
+    public static function redirectTo($to, $msg, $type = 'info')
+    {
+        $resp = redirect($to)->with(['msg' => $msg, 'msg_type' => $type]);
+        Session::driver()->save();
+        $resp->send();
+        exit;
+    }
+
+    /**
+     * @return string
+     */
+    public static function showMessage()
+    {
+        $msg = Session::get('msg');
+        $msg_type = Session::get('msg_type');
+        $html = '';
+        if (!empty($msg)) {
+            $html .= '
+            <div class="alert-text-'.$msg_type.'">
+                <i class="ri-information-line"></i> '.$msg.'
+            </div>
+        ';
+        }
+        return $html;
     }
 }

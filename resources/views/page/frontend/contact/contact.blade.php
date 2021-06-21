@@ -36,15 +36,30 @@
                                 </a>
                             </div>
 
-                            <form action="" method="post" class="form-contact">
+                            <form action="{{ webPath('contact/save') }}" method="post" class="form-contact" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                {{ method_field('POST') }}
+
+                                {!! showMessage() !!}
                                 <div class="form-group">
-                                    <input type="email" name="email" class="form-control" placeholder="ENTER YOUR EMAIL">
+                                    @if(!empty($errors->first('email')))
+                                    <div class="alert-text-danger">
+                                        <i class="ri-information-line"></i> {{ $errors->first('email') }}
+                                    </div>
+                                    @endif
+                                    <input type="email" name="email" class="form-control" placeholder="ENTER YOUR EMAIL"
+                                           value="{{ (old('email')?:'') }}">
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="message" class="form-control" cols="30" rows="10" placeholder="YOUR MESSAGE"></textarea>
+                                    @if(!empty($errors->first('message')))
+                                    <div class="alert-text-danger">
+                                        <i class="ri-information-line"></i> {{ $errors->first('message') }}
+                                    </div>
+                                    @endif
+                                    <textarea name="message" class="form-control" cols="30" rows="10" placeholder="YOUR MESSAGE">{!! (old('message')?:'') !!}</textarea>
                                 </div>
                                 <div class="form-group mt-5">
-                                    <button class="btn-danger-mid">SEND</button>
+                                    <button type="submit" class="btn-danger-mid">SEND</button>
                                 </div>
                             </form>
 

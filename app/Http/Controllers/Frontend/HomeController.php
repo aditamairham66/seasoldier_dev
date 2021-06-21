@@ -9,6 +9,7 @@ class HomeController extends Controller
 {
     public function getIndex()
     {
+        menuTag('home');
         return view('page.frontend.home.home');
     }
 }

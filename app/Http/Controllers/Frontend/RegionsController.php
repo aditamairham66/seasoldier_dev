@@ -9,11 +9,13 @@ class RegionsController extends Controller
 {
     public function getIndex()
     {
+        menuTag('region');
         return view('page.frontend.region.region');
     }
 
     public function getDetail()
     {
+        menuTag('region');
         return view('page.frontend.region.detail');
     }
 }
