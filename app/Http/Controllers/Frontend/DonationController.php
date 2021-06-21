@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Services\DonationFundraisingService;
+use App\Services\DonationPartnerService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -25,7 +26,9 @@ class DonationController extends Controller
     public function getPartner()
     {
         menuTag('donation');
-        return view('page.frontend.donation.partner');
+        $data = [];
+        $data['data'] = DonationPartnerService::listAll();
+        return view('page.frontend.donation.partner', $data);
     }
 
     public function getMerchandise()

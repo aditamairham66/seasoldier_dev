@@ -6,6 +6,14 @@ use App\Repositories\DonationPartner;
 
 class DonationPartnerService extends DonationPartner
 {
-    // TODO : Make your own service method
+    public static function listAll()
+    {
+        $data = parent::listAll();
+        foreach ($data as $x => $row)
+        {
+            $row->image = (!empty($row->image) ? asset($row->image): '');
+        }
+        return $data;
+    }
 
 }

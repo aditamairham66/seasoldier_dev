@@ -24,54 +24,56 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="partner-list">
+                                @foreach($data as $x => $row)
                                 <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner1.png') }}" alt="partner">
+                                    <img src="{{ $row->image }}" alt="partner : {{ $row->name }}">
                                 </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner2.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner3.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner4.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner5.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner7.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner16.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner9.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner8.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner10.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner6.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner11.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner12.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner13.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner14.png') }}" alt="partner">
-                                </div>
-                                <div class="image-item">
-                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner15.png') }}" alt="partner">
-                                </div>
+                                @endforeach
+                                {{--<!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner2.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner3.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner4.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner5.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner7.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner16.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner9.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner8.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner10.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner6.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner11.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner12.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner13.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner14.png') }}" alt="partner">-->
+                                <!--                                </div>-->
+                                <!--                                <div class="image-item">-->
+                                <!--                                    <img src="{{ asset('vendor/front/assets/example/img/partner/partner15.png') }}" alt="partner">-->
+                                <!--                                </div>-->--}}
 
                             </div>
                             <div class="caption-program text-white">

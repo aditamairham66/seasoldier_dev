@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
-	use Session;
+	use App\Repositories\DonationPartner;
+    use Session;
 	use Request;
 	use DB;
 	use CRUDBooster;
@@ -74,6 +75,8 @@
 	        |
 	        */
 	        $this->addaction = array();
+            $this->addaction[] = ['title' => '', 'url' => CRUDBooster::mainpath('move-up/[id]'), 'icon' => 'fa fa-arrow-up', 'color' => 'info'];
+            $this->addaction[] = ['title' => '', 'url' => CRUDBooster::mainpath('move-down/[id]'), 'icon' => 'fa fa-arrow-down', 'color' => 'info'];
 
 
 	        /*
@@ -232,6 +235,7 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
+            $query->orderby('donation_partner.sort', 'asc');
 
 	    }
 
@@ -254,6 +258,8 @@
 	    */
 	    public function hook_before_add(&$postdata) {
 	        //Your code here
+            $latest_sorting = DB::table('donation_partner')->max('sort');
+            $postdata['sort'] = $latest_sorting + 1;
 
 	    }
 
@@ -321,6 +327,42 @@
 
 
 	    //By the way, you can still create your own method in here... :)
+
+        public function getMoveUp($id)
+        {
+            $find = DonationPartner::firstById($id);
+
+            if ($find->sort == 1) {
+                return CRUDBooster::redirect(CRUDBooster::adminPath('donation-partner'), 'Media Partners adalah Partner Donation dengan urutan teratas', 'danger');
+            } elseif ($find->sort > 1) {
+                $above = DonationPartner::findBy('sort', $find->sort - 1);
+                $above->sort = $find->sort;
+                $above->save();
+
+                $find->sort  = $find->sort - 1;
+                $find->save();
+            }
+
+            return CRUDBooster::redirect(CRUDBooster::adminPath('donation-partner'), 'Berhasil merubah urutan Partner Donation', 'success');
+        }
+
+        public function getMoveDown($id)
+        {
+            $find = DonationPartner::firstById($id);
+
+            $above = DonationPartner::findBy('sort', $find->sort + 1);
+            if ($above->id == '') {
+                return CRUDBooster::redirect(CRUDBooster::adminPath('donation-partner'), 'Media Partners adalah Partner Donation dengan urutan terbawah', 'danger');
+            } elseif ($above->id != '') {
+                $above->sort = $find->sort;
+                $above->save();
+
+                $find->sort  = $find->sort + 1;
+                $find->save();
+            }
+
+            return CRUDBooster::redirect(CRUDBooster::adminPath('donation-partner'), 'Berhasil merubah urutan Partner Donation', 'success');
+        }
 
 
 	}
