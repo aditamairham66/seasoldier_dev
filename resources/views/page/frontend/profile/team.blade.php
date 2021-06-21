@@ -15,7 +15,7 @@
                 </ol>
             </div>
         </div>
-        <div class="row bg-pattern-profile">
+        <div class="row bg-pattern-profile mt-5">
             <div class="col-lg-12 text-center">
                 <h4 class="title-mid text-white">OUR TEAM</h4>
 
