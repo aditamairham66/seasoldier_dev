@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Services\DonationFundraisingService;
+use App\Services\DonationMerchandiseService;
 use App\Services\DonationPartnerService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,6 +35,24 @@ class DonationController extends Controller
     public function getMerchandise()
     {
         menuTag('donation');
-        return view('page.frontend.donation.merchandise');
+        $data = [];
+        return view('page.frontend.donation.merchandise', $data);
+    }
+
+    public function postListMerchandise()
+    {
+        try {
+            $res['status'] = 1;
+            $res['message'] = 'success';
+            $res['item'] = DonationMerchandiseService::listScroll();
+        } catch (\Throwable $msg) {
+            $res['status'] = 0;
+            $res['message'] = $msg->getMessage();
+        } catch (\Exception $msg) {
+            $res['status'] = 0;
+            $res['message'] = $msg->getMessage();
+        }
+
+        return response()->json($res);
     }
 }

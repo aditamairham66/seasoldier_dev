@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 class DonationMerchandise extends DonationMerchandiseModel
 {
-    public static function listAll()
+    public static function listScroll()
     {
         return DB::table('donation_merchandise')
             ->select(
@@ -17,7 +17,7 @@ class DonationMerchandise extends DonationMerchandiseModel
                 'donation_merchandise.image'
             )
             ->orderby('donation_merchandise.id', 'asc')
-            ->get();
+            ->simplePaginate(9);;
     }
 
 }

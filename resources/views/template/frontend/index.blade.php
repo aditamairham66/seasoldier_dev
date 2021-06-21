@@ -8,6 +8,9 @@
     <title>Seasoldier : @yield('title_page')</title>
     <meta content="@yield('description')" name="description">
     <meta content="@yield('keywords')" name="keywords">
+    <meta name="path" content="{{ base64_encode(url('/')) }}">
+    <meta name="asset" content="{{ base64_encode(asset('/')) }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @include('template.frontend.plugin.css')
 
