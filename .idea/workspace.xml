@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18627433-52db-4e83-93e1-6b9659e22abd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/vendor/donation/fundraising.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/DonationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/DonationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/DonationFundraising.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/DonationFundraising.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/DonationFundraisingService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/DonationFundraisingService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/donation/fundraising.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/donation/fundraising.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -153,14 +149,30 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js/vendor/donation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\seadev\public\js\vendor\donation" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -174,7 +186,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1624256704032</updated>
-      <workItem from="1624256714081" duration="1562000" />
+      <workItem from="1624256714081" duration="3632000" />
+      <workItem from="1624352484839" duration="585000" />
+      <workItem from="1624409943809" duration="3476000" />
     </task>
     <servers />
   </component>
