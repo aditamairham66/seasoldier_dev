@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="18627433-52db-4e83-93e1-6b9659e22abd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProgramsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProgramsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProgramShop.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProgramShop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/type_components/checkbox/component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/type_components/checkbox/component.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/type_components/radio/component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/default/type_components/radio/component.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,17 +168,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -188,7 +183,8 @@
       <updated>1624256704032</updated>
       <workItem from="1624256714081" duration="3632000" />
       <workItem from="1624352484839" duration="585000" />
-      <workItem from="1624409943809" duration="3476000" />
+      <workItem from="1624409943809" duration="3834000" />
+      <workItem from="1624419956668" duration="4147000" />
     </task>
     <servers />
   </component>

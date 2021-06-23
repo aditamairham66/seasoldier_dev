@@ -8,11 +8,9 @@ class ProgramShop extends ProgramShopModel
 {
     public static function firstById($id)
     {
-        $find = DB::table('program_shop')
+        return new static(DB::table('program_shop')
             ->where('program_shop.id', $id)
-            ->first();
-
-        return new static($find);
+            ->first());
     }
 
 }

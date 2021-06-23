@@ -28,9 +28,10 @@
 				$checked = ( ($value && in_array($val, $value)) || (CRUDBooster::isCreate() && ($k==0 && $form['validation'])) ) ? "checked" : "";
                 ?>
                 <div class=" {{$disabled}}">
-                    <label class='radio-inline'>
-                        <input type="radio" {{$disabled}} {{$checked}} name="{{$name}}" value="{{$val}}"> {{$label}}
-                    </label>
+                    <div class='custom-control custom-radio'>
+                        <input type="radio" {{$disabled}} {{$checked}} id="{{$name.$k}}" name="{{$name}}" class="custom-control-input" value="{{$val}}">
+                        <label class="custom-control-label" for="{{$name.$k}}">{{$label}}</label>
+                    </div>
                 </div>
             @endforeach
         @endif
@@ -69,31 +70,32 @@
             $selects_data->addselect($select_field.' as '.$select_field_alias);
             $selects_data = $selects_data->orderby(end($tables).'.'.$datatable_field, "asc")->get();
 
-            foreach ($selects_data as $d) {
+            foreach ($selects_data as $dkey => $d) {
                 $val = $d->{$select_field_alias};
                 if ($val == '' || ! $d->id) continue;
 
                 $checked = ($value == $d->id) ? "checked" : "";
 
-                echo "
-											<div data-val='$val' class='input-radio-wrapper $disabled'>
-											  <label class='radio-inline'>
-											    <input type='radio' $disabled $checked name='".$name."' value='".$d->id."'> ".$val." 								    
-											  </label>
-											</div>";
+                echo "<div data-val='$val' class='input-radio-wrapper $disabled'>
+                        <div class='custom-control custom-radio'>
+                            <input type='radio' $disabled $checked id='".$name.$dkey."' name='".$name."' class='custom-control-input' value='".$d->id."'>
+                            <label class='custom-control-label' for='".$name.$dkey."'>".$val."</label>
+                        </div>
+                    </div>";
             }
 
         endif;
         if ($form['dataquery']) {
             $query = DB::select(DB::raw($form['dataquery']));
             if ($query) {
-                foreach ($query as $q) {
+                foreach ($query as $qkey => $q) {
                     $checked = ($value == $q->value) ? "checked" : "";
                     echo "<div data-val='$val' class=' $disabled'>
-																<label class='radio-inline'>
-																	<input type='radio' $disabled $checked name='".$name."' value='$q->value'> ".$q->label."								    
-																</label>
-																</div>";
+                            <div class='custom-control custom-radio'>
+                                <input type='radio' $disabled $checked id='".$name.$qkey."' name='".$name."' class='custom-control-input' value='$q->value'>
+                                <label class='custom-control-label' for='".$name.$qkey."'>".$q->label."</label>
+                            </div>
+                        </div>";
                 }
             }
         }

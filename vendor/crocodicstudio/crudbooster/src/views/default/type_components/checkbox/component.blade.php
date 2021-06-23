@@ -23,10 +23,9 @@
                 }
                 $checked = ($value && in_array($val, $value)) ? "checked" : "";
                 ?>
-                <div class="checkbox {{$disabled}}">
-                    <label>
-                        <input type="checkbox" {{$disabled}} {{$checked}} name="{{$name}}[]" value="{{$val}}"> {{$label}}
-                    </label>
+                <div class="custom-control custom-checkbox {{$disabled}}">
+                    <input type="checkbox" {{$disabled}} {{$checked}} name="{{$name.$k}}[]" value="{{$val}}" class="custom-control-input" id="{{$name}}">
+                    <label class="custom-control-label" for="{{$name.$k}}">{{$label}}</label>
                 </div>
             @endforeach
         @endif
@@ -66,29 +65,25 @@
                 $value = DB::table($form['relationship_table'])->where($form['relationship_table'].'.'.$foreignKey, $id);
                 $value = $value->pluck($foreignKey2)->toArray();
 
-                foreach ($selects_data as $d) {
+                foreach ($selects_data as $dkey => $d) {
                     $checked = (is_array($value) && in_array($d->id, $value)) ? "checked" : "";
-                    echo "
-												<div data-val='$val' class='checkbox $disabled'>
-												  <label>
-												    <input type='checkbox' $disabled $checked name='".$name."[]' value='".$d->id."'> ".$d->{$datatable_field}."								    
-												  </label>
-												</div>";
+                    echo "<div data-val='$val' class='custom-control custom-checkbox disabled'>
+                            <input type='checkbox' $disabled $checked name='".$name."[]' value='".$d->id."' class='custom-control-input' id='".$name.$dkey."'>
+                            <label class='custom-control-label' for='".$name.$dkey."'>".$d->{$datatable_field}."</label>
+                        </div>";
                 }
             } else {
                 @$value = explode(';', $value);
 
-                foreach ($selects_data as $d) {
+                foreach ($selects_data as $dkey => $d) {
                     $val = $d->{$datatable_field};
                     $checked = (is_array($value) && in_array($val, $value)) ? "checked" : "";
                     if ($val == '' || ! $d->id) continue;
 
-                    echo "
-												<div data-val='$val' class='checkbox $disabled'>
-												  <label>
-												    <input type='checkbox' $disabled $checked name='".$name."[]' value='".$d->id."'> ".$val." 								    
-												  </label>
-												</div>";
+                    echo "<div data-val='$val' class='custom-control custom-checkbox $disabled'>
+                            <input type='checkbox' $disabled $checked name='".$name."[]' value='".$d->id."' class='custom-control-input' id='".$name.$dkey."'>
+                            <label class='custom-control-label' for='".$name.$dkey."'>".$val."</label>
+                        </div>";
                 }
             }
 
@@ -98,16 +93,14 @@
             $query = DB::select(DB::raw($form['dataquery']));
             @$value = explode(';', $value);
             if ($query) {
-                foreach ($query as $q) {
+                foreach ($query as $qkey => $q) {
                     $val = $q->value;
                     $checked = (is_array($value) && in_array($val, $value)) ? "checked" : "";
                     //if($val == '' || !$d->id) continue;
-                    echo "
-												<div data-val='$val' class='checkbox $disabled'>
-												  <label>
-												    <input type='checkbox' $disabled $checked name='".$name."[]' value='$q->value'> ".$q->label." 								    
-												  </label>
-												</div>";
+                    echo "<div data-val='$val' class='custom-control custom-checkbox $disabled'>
+                            <input type='checkbox' $disabled $checked name='".$name."[]' value='".$q->value."' class='custom-control-input' id='".$name.$qkey."'>
+                            <label class='custom-control-label' for='".$name.$qkey."'>".$q->label."</label>
+                        </div>";
                 }
             }
         }
