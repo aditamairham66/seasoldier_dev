@@ -49,44 +49,5 @@
 
 @endpush
 @push('head')
-<style>
-    .form-add-city {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        border-radius: 30px;
-        padding: 278px 74px 46px 74px;
-    }
-    .form-add-city .form-left{
-        width: 50%;
-    }
-    .form-add-city .form-right{
-        width: 50%;
-        padding-left: 150px;
-    }
-    .form-add-city .title {
-        font-style: normal;
-        font-weight: 500;
-        font-size: 48px;
-        line-height: 65px;
-        color: #FFFFFF;
-        max-width: 369px;
-        text-overflow: inherit;
-    }
-    @media(max-width: 920px) {
-        .form-add-city {
-            flex-direction: column-reverse;
-            padding-top: 100px;
-        }
-        .form-add-city .form-left,
-        .form-add-city .form-right{
-            width: 100%;
-        }
-        .form-add-city .form-right{
-            padding-left: 0px;
-            margin-bottom: 80px;
-        }
-    }
-</style>
+
 @endpush
