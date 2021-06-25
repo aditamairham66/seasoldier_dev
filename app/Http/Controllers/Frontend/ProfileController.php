@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Services\ProfileTeamService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -34,7 +35,10 @@ class ProfileController extends Controller
     public function getTeam(Request $request)
     {
         menuTag('profile');
-        return view('page.frontend.profile.team');
+        $data = [];
+        $data['highlight'] = ProfileTeamService::listByHighLight('Yes');
+        $data['team'] = ProfileTeamService::listByHighLight('No');
+        return view('page.frontend.profile.team', $data);
     }
 
     public function getHonor(Request $request)
