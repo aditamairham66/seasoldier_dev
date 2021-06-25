@@ -18,4 +18,10 @@ class RegionsController extends Controller
         menuTag('region');
         return view('page.frontend.region.detail');
     }
+
+    public function getAdd()
+    {
+        menuTag('region');
+        return view('page.frontend.region.add');
+    }
 }

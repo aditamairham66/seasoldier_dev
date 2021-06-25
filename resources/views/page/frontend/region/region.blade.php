@@ -100,7 +100,7 @@
                                         <h4 class="title">MALUKU UTARA</h4>
                                     </div>
                                 </a>
-                                <a href="" class="region-item">
+                                <a href="{{ webPath('regions/add') }}" class="region-item">
                                     <div class="circle-empty-city">YOUR CITY</div>
                                     <div class="content">
                                         <h4 class="title">NEXT..</h4>
