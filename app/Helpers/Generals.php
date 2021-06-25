@@ -172,3 +172,15 @@ if (!function_exists('YoutubeTakeID'))
         return App\Helpers\General::YoutubeTakeID($url);
     }
 }
+
+if (!function_exists('reqInstagram'))
+{
+    /**
+     * @param $url
+     * @param null $callback
+     * @return mixed
+     */
+    function reqInstagram($url, $callback = null) {
+        return App\Helpers\General::reqInstagram($url, $callback);
+    }
+}

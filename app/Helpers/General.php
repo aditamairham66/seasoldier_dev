@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use crocodicstudio\crudbooster\helpers\CRUDBooster;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 
@@ -415,5 +416,68 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
         $video_youtube = $video_youtube[0];
 
         return $video_youtube;
+    }
+
+    /**
+     * @param $url
+     * @param null $callback
+     * @return mixed
+     */
+    public static function reqInstagram($url, $callback = null)
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.instagram.com/oembed/?callback=$callback&url=$url&access_token=123%7C456",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 1000,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: csrftoken=fBNZh8Q3dCYvWfTEgXe6AklPoth5JkVW; ig_did=CCAE6ED4-C024-4DCF-9012-DA49847569AC; ig_nrcb=1; mid=YNXRWwAEAAEj8LBlNhWDCdhL3hJi'
+            ),
+        ));
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        return self::resInstagram(json_decode($response, true));
+    }
+
+    public static function resInstagram($res)
+    {
+        $title = '';
+        if (isset($res['title'])) {
+            $title = $res['title'];
+        }
+        $author_name = '';
+        if (isset($res['author_name'])) {
+            $author_name = $res['author_name'];
+        }
+        $author_url = '';
+        if (isset($res['author_url'])) {
+            $author_url = $res['author_url'];
+        }
+        $thumbnail_url = '';
+        if (isset($res['thumbnail_url'])) {
+            $file = $res['thumbnail_url'];
+            if (!file_exists(storage_path('app/uploads'))) { //Verify if the directory exists
+                mkdir(storage_path('app/uploads')); //create it if do not exists
+            }
+            if (!file_exists(storage_path('app/uploads/gallery'))) { //Verify if the directory exists
+                mkdir(storage_path('app/uploads/gallery')); //create it if do not exists
+            }
+            $thumbnail_url = 'uploads/gallery/'.date("Y-m-d")."_".md5(str_random(5))."_instagram.png";
+            file_put_contents(storage_path('app/'.$thumbnail_url), file_get_contents($file));
+        }
+
+        return [
+            "title" => $title,
+            "author_name" => $author_name,
+            "author_url" => $author_url,
+            "thumbnail_url" => $thumbnail_url,
+        ];
     }
 }
