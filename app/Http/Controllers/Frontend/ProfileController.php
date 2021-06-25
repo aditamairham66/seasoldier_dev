@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Services\ProfileHonorService;
 use App\Services\ProfileTeamService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -32,6 +33,10 @@ class ProfileController extends Controller
         return view('page.frontend.profile.braclate');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getTeam(Request $request)
     {
         menuTag('profile');
@@ -41,9 +46,15 @@ class ProfileController extends Controller
         return view('page.frontend.profile.team', $data);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getHonor(Request $request)
     {
         menuTag('profile');
-        return view('page.frontend.profile.honor');
+        $data = [];
+        $data['list'] = ProfileHonorService::listSort();
+        return view('page.frontend.profile.honor', $data);
     }
 }

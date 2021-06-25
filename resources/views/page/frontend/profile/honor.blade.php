@@ -21,71 +21,73 @@
 
                 <div class="team-honor-list">
 
+                    @foreach($list as $x => $row)
                     <div class="team-list">
-                        <img src="{{ asset('vendor/front/assets/example/img/profile/person1.png') }}" alt="honor team" class="image-team">
+                        <img src="{{ $row->image }}" alt="honor team" class="image-team">
                         <div class="content">
-                            <h4 class="title">Mischa Chandrawinata</h4>
-                            <p class="caption">AKTOR</p>
+                            <h4 class="title">{{ $row->name }}</h4>
+                            <p class="caption">{{ $row->position }}</p>
                         </div>
                     </div>
-                    <div class="team-list">
-                        <img src="{{ asset('vendor/front/assets/example/img/profile/person2.png') }}" alt="honor team" class="image-team">
-                        <div class="content">
-                            <h4 class="title">Mischa Chandrawinata</h4>
-                            <p class="caption">AKTOR</p>
-                        </div>
-                    </div>
-                    <div class="team-list">
-                        <img src="{{ asset('vendor/front/assets/example/img/profile/person3.png') }}" alt="honor team" class="image-team">
-                        <div class="content">
-                            <h4 class="title">Mischa Chandrawinata</h4>
-                            <p class="caption">AKTOR</p>
-                        </div>
-                    </div>
-
-                    <div class="team-list">
-                        <img src="{{ asset('vendor/front/assets/example/img/profile/person4.png') }}" alt="honor team" class="image-team">
-                        <div class="content">
-                            <h4 class="title">Mischa Chandrawinata</h4>
-                            <p class="caption">AKTOR</p>
-                        </div>
-                    </div>
-                    <div class="team-list">
-                        <img src="{{ asset('vendor/front/assets/example/img/profile/person5.png') }}" alt="honor team" class="image-team">
-                        <div class="content">
-                            <h4 class="title">Mischa Chandrawinata</h4>
-                            <p class="caption">AKTOR</p>
-                        </div>
-                    </div>
-                    <div class="team-list">
-                        <img src="{{ asset('vendor/front/assets/example/img/profile/person6.png') }}" alt="honor team" class="image-team">
-                        <div class="content">
-                            <h4 class="title">Mischa Chandrawinata</h4>
-                            <p class="caption">AKTOR</p>
-                        </div>
-                    </div>
-
-                    <div class="team-list">
-                        <img src="{{ asset('vendor/front/assets/example/img/profile/person7.png') }}" alt="honor team" class="image-team">
-                        <div class="content">
-                            <h4 class="title">Mischa Chandrawinata</h4>
-                            <p class="caption">AKTOR</p>
-                        </div>
-                    </div>
-                    <div class="team-list">
-                        <img src="{{ asset('vendor/front/assets/example/img/profile/person8.png') }}" alt="honor team" class="image-team">
-                        <div class="content">
-                            <h4 class="title">Mischa Chandrawinata</h4>
-                            <p class="caption">AKTOR</p>
-                        </div>
-                    </div>
-                    <div class="team-list">
-                        <img src="{{ asset('vendor/front/assets/example/img/profile/person9.png') }}" alt="honor team" class="image-team">
-                        <div class="content">
-                            <h4 class="title">Mischa Chandrawinata</h4>
-                            <p class="caption">AKTOR</p>
-                        </div>
-                    </div>
+                    @endforeach
+                    {{--<!--                    <div class="team-list">-->
+                    <!--                        <img src="{{ asset('vendor/front/assets/example/img/profile/person2.png') }}" alt="honor team" class="image-team">-->
+                    <!--                        <div class="content">-->
+                    <!--                            <h4 class="title">Mischa Chandrawinata</h4>-->
+                    <!--                            <p class="caption">AKTOR</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="team-list">-->
+                    <!--                        <img src="{{ asset('vendor/front/assets/example/img/profile/person3.png') }}" alt="honor team" class="image-team">-->
+                    <!--                        <div class="content">-->
+                    <!--                            <h4 class="title">Mischa Chandrawinata</h4>-->
+                    <!--                            <p class="caption">AKTOR</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!---->
+                    <!--                    <div class="team-list">-->
+                    <!--                        <img src="{{ asset('vendor/front/assets/example/img/profile/person4.png') }}" alt="honor team" class="image-team">-->
+                    <!--                        <div class="content">-->
+                    <!--                            <h4 class="title">Mischa Chandrawinata</h4>-->
+                    <!--                            <p class="caption">AKTOR</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="team-list">-->
+                    <!--                        <img src="{{ asset('vendor/front/assets/example/img/profile/person5.png') }}" alt="honor team" class="image-team">-->
+                    <!--                        <div class="content">-->
+                    <!--                            <h4 class="title">Mischa Chandrawinata</h4>-->
+                    <!--                            <p class="caption">AKTOR</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="team-list">-->
+                    <!--                        <img src="{{ asset('vendor/front/assets/example/img/profile/person6.png') }}" alt="honor team" class="image-team">-->
+                    <!--                        <div class="content">-->
+                    <!--                            <h4 class="title">Mischa Chandrawinata</h4>-->
+                    <!--                            <p class="caption">AKTOR</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!---->
+                    <!--                    <div class="team-list">-->
+                    <!--                        <img src="{{ asset('vendor/front/assets/example/img/profile/person7.png') }}" alt="honor team" class="image-team">-->
+                    <!--                        <div class="content">-->
+                    <!--                            <h4 class="title">Mischa Chandrawinata</h4>-->
+                    <!--                            <p class="caption">AKTOR</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="team-list">-->
+                    <!--                        <img src="{{ asset('vendor/front/assets/example/img/profile/person8.png') }}" alt="honor team" class="image-team">-->
+                    <!--                        <div class="content">-->
+                    <!--                            <h4 class="title">Mischa Chandrawinata</h4>-->
+                    <!--                            <p class="caption">AKTOR</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="team-list">-->
+                    <!--                        <img src="{{ asset('vendor/front/assets/example/img/profile/person9.png') }}" alt="honor team" class="image-team">-->
+                    <!--                        <div class="content">-->
+                    <!--                            <h4 class="title">Mischa Chandrawinata</h4>-->
+                    <!--                            <p class="caption">AKTOR</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->--}}
 
                 </div>
 
