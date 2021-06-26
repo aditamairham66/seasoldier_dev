@@ -446,6 +446,10 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
         return self::resInstagram(json_decode($response, true));
     }
 
+    /**
+     * @param $res
+     * @return array
+     */
     public static function resInstagram($res)
     {
         $title = '';
@@ -479,5 +483,14 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
             "author_url" => $author_url,
             "thumbnail_url" => $thumbnail_url,
         ];
+    }
+
+    /**
+     * @return false|string
+     */
+    public static function dateNow()
+    {
+        date_default_timezone_set('Asia/Jakarta');
+        return date('Y-m-d H:i:s');
     }
 }

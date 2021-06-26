@@ -18,25 +18,50 @@
 
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    <div class="form-add-city">
-                        <div class="form-left">
-                            <div class="form-group">
-                                <input type="text" name="city" class="form-control" placeholder="CITY">
+                    <form action="{{ webPath('regions/city-save') }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        {{ method_field('POST') }}
+
+                        <div class="form-add-city">
+                            <div class="form-left">
+                                {!! showMessage() !!}
+
+                                <div class="form-group">
+                                    @if(!empty($errors->first('city')))
+                                    <div class="alert-text-danger">
+                                        <i class="ri-information-line"></i> {{ $errors->first('city') }}
+                                    </div>
+                                    @endif
+                                    <input type="text" name="city" class="form-control" placeholder="CITY"
+                                           value="{{ (old('city')?:'') }}">
+                                </div>
+                                <div class="form-group">
+                                    @if(!empty($errors->first('email')))
+                                    <div class="alert-text-danger">
+                                        <i class="ri-information-line"></i> {{ $errors->first('email') }}
+                                    </div>
+                                    @endif
+                                    <input type="email" name="email" class="form-control" placeholder="ENTER YOUR EMAIL"
+                                           value="{{ (old('email')?:'') }}">
+                                </div>
+                                <div class="form-group">
+                                    @if(!empty($errors->first('phone')))
+                                    <div class="alert-text-danger">
+                                        <i class="ri-information-line"></i> {{ $errors->first('phone') }}
+                                    </div>
+                                    @endif
+                                    <input type="number" name="phone" class="form-control" placeholder="PHONE"
+                                           value="{{ (old('phone')?:'') }}">
+                                </div>
+                                <div class="form-group pt-5">
+                                    <button class="btn-danger-mid mt-5">MORE INFO</button>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="ENTER YOUR EMAIL">
-                            </div>
-                            <div class="form-group">
-                                <input type="number" name="phone" class="form-control" placeholder="PHONE">
-                            </div>
-                            <div class="form-group pt-5">
-                                <button class="btn-danger-mid mt-5">MORE INFO</button>
+                            <div class="form-right">
+                                <h4 class="title">REGISTER YOUR CITY</h4>
                             </div>
                         </div>
-                        <div class="form-right">
-                            <h4 class="title">REGISTER YOUR CITY</h4>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
