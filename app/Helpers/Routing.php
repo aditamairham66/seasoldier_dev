@@ -37,3 +37,14 @@ if (!function_exists('showMessage'))
         return App\Helpers\Router::showMessage();
     }
 }
+
+if (!function_exists('showMessageFooter'))
+{
+    /**
+     * @return string
+     */
+    function showMessageFooter()
+    {
+        return App\Helpers\Router::showMessageFooter();
+    }
+}

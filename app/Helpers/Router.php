@@ -90,20 +90,42 @@ class Router
     }
 
     /**
+     * @param $msg
+     * @param string $type
+     */
+    public static function redirectBackFooter($msg, $type = 'info')
+    {
+        $resp = redirect()->back()->with(['msg_footer' => $msg, 'msg_type_footer' => $type]);
+        Session::driver()->save();
+        $resp->send();
+        exit;
+    }
+
+    /**
      * @return string
      */
     public static function showMessage()
     {
         $msg = Session::get('msg');
         $msg_type = Session::get('msg_type');
-        $html = '';
         if (!empty($msg)) {
-            $html .= '
-            <div class="alert-text-'.$msg_type.'">
-                <i class="ri-information-line"></i> '.$msg.'
-            </div>
-        ';
+            return '<div class="alert-text-'.$msg_type.'">
+                    <i class="ri-information-line"></i> '.$msg.'
+                </div>';
         }
-        return $html;
+    }
+
+    /**
+     * @return string
+     */
+    public static function showMessageFooter()
+    {
+        $msg = Session::get('msg_footer');
+        $msg_type = Session::get('msg_type_footer');
+        if (!empty($msg)) {
+            return '<div class="alert-text-'.$msg_type.'">
+                    <i class="ri-information-line"></i> '.$msg.'
+                </div>';
+        }
     }
 }

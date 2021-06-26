@@ -7,12 +7,23 @@
 
                 <div class="col-lg-12 col-md-12 footer-newsletter text-center text-md-right">
                     <h4>NEWSLETTER</h4>
-                    <div class="input-group-footer">
-                        <input type="text" name="search_footer" id="search_footer">
-                        <div class="btn-group-footer">
-                            <button class="btn-input">SUBSICRIBE</button>
-                        </div>
-                    </div>
+                        <form action="{{ webPath('email-subscribe') }}" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            {{ method_field('POST') }}
+
+                            {!! showMessageFooter() !!}
+                            @if(!empty($errors->first('search_footer')))
+                            <div class="alert-text-danger">
+                                <i class="ri-information-line"></i> {{ $errors->first('search_footer') }}
+                            </div>
+                            @endif
+                            <div class="input-group-footer">
+                                <input type="text" name="search_footer" id="search_footer" value="{{ (old('search_footer')?:'') }}">
+                                <div class="btn-group-footer">
+                                    <button class="btn-input">SUBSICRIBE</button>
+                                </div>
+                            </div>
+                        </form>
                 </div>
 
                 <div class="col-lg-12 col-md-12 footer-newsletter text-center text-md-right">
