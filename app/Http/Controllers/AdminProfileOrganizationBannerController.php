@@ -1,10 +1,12 @@
 <?php namespace App\Http\Controllers;
 
+use App\Repositories\ProfileOrganizationBanner;
 use crocodicstudio\crudbooster\controllers\CBController;
+use crocodicstudio\crudbooster\helpers\CRUDBooster;
+use Illuminate\Support\Facades\DB;
 
 class AdminProfileOrganizationBannerController extends CBController
 {
-
     public function cbInit()
     {
         # START CONFIGURATION DO NOT REMOVE THIS LINE
@@ -31,14 +33,11 @@ class AdminProfileOrganizationBannerController extends CBController
         # START COLUMNS DO NOT REMOVE THIS LINE
         $this->col = [];
         $this->col[] = array("label" => "Image", "name" => "image", "image" => true);
-        $this->col[] = array("label" => "Sort", "name" => "sort");
-
         # END COLUMNS DO NOT REMOVE THIS LINE
+
         # START FORM DO NOT REMOVE THIS LINE
         $this->form = [];
         $this->form[] = ["label" => "Image", "name" => "image", "type" => "upload", "required" => TRUE, "validation" => "required|image|max:3000", "help" => "File types support : JPG, JPEG, PNG, GIF, BMP"];
-        $this->form[] = ["label" => "Sort", "name" => "sort", "type" => "number", "required" => TRUE, "validation" => "required|integer|min:0"];
-
         # END FORM DO NOT REMOVE THIS LINE
 
         /*
@@ -68,6 +67,8 @@ class AdminProfileOrganizationBannerController extends CBController
         |
         */
         $this->addaction = array();
+        $this->addaction[] = ['title' => '', 'url' => CRUDBooster::mainpath('move-up/[id]'), 'icon' => 'fa fa-arrow-up', 'color' => 'info'];
+        $this->addaction[] = ['title' => '', 'url' => CRUDBooster::mainpath('move-down/[id]'), 'icon' => 'fa fa-arrow-down', 'color' => 'info'];
 
 
         /*
@@ -221,7 +222,7 @@ class AdminProfileOrganizationBannerController extends CBController
     public function hook_query_index(&$query)
     {
         //Your code here
-
+        $query->orderby('profile_organization_banner.sort', 'asc');
     }
 
     /*
@@ -242,10 +243,11 @@ class AdminProfileOrganizationBannerController extends CBController
     | @arr
     |
     */
-    public function hook_before_add(&$postdata)
+    public function hook_before_add(&$arr)
     {
-        //Your code here
-
+        $latest_sorting = DB::table('profile_organization_banner')
+            ->max('sort');
+        $arr['sort'] = $latest_sorting + 1;
     }
 
     /*
@@ -265,11 +267,11 @@ class AdminProfileOrganizationBannerController extends CBController
     | ----------------------------------------------------------------------
     | Hook for manipulate data input before update data is execute
     | ----------------------------------------------------------------------
-    | @postdata = input post data
+    | @arr = input post data
     | @id       = current id
     |
     */
-    public function hook_before_edit(&$postdata, $id)
+    public function hook_before_edit(&$arr, $id)
     {
         //Your code here
 
@@ -315,7 +317,41 @@ class AdminProfileOrganizationBannerController extends CBController
     }
 
 
-    //By the way, you can still create your own method in here... :)
+    public function getMoveUp($id): string
+    {
+        $find = ProfileOrganizationBanner::firstById($id);
 
+        if ($find->sort == 1) {
+            CRUDBooster::redirect(CRUDBooster::adminPath('profile-organization-banner'), 'Data sudah pada urutan pertama', 'danger');
+        } elseif ($find->sort > 1) {
+            $above = ProfileOrganizationBanner::findBy('sort', $find->sort - 1);
+            $above->sort = $find->sort;
+            $above->save();
 
+            $find->sort = $find->sort - 1;
+            $find->save();
+            CRUDBooster::redirect(CRUDBooster::adminPath('profile-organization-banner'), 'Urutan berhasil di ubah', 'success');
+        }
+
+        return 'true';
+    }
+
+    public function getMoveDown($id): string
+    {
+        $find = ProfileOrganizationBanner::firstById($id);
+
+        $above = ProfileOrganizationBanner::findBy('sort', $find->sort + 1);
+        if ($above->id == '') {
+            CRUDBooster::redirect(CRUDBooster::adminPath('profile-organization-banner'), 'Data sudah pada urutan terakhir', 'danger');
+        } elseif ($above->id != '') {
+            $above->sort = $find->sort;
+            $above->save();
+
+            $find->sort = $find->sort + 1;
+            $find->save();
+            CRUDBooster::redirect(CRUDBooster::adminPath('profile-organization-banner'), 'Urutan berhasil di ubah', 'success');
+        }
+
+        return 'true';
+    }
 }
