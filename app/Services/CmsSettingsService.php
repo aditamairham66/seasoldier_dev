@@ -38,4 +38,36 @@ class CmsSettingsService extends CmsSettings
 
         return $result;
     }
+
+    /**
+     * @return array
+     */
+    public static function getProfileOrganizationByKey(): array
+    {
+        // make result for data
+        $result = [];
+
+        $data = self::getProfileOrganization();
+        foreach ($data as $row) {
+            $result[$row->name] = $row;
+        }
+
+        return $result;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getProfileBraclateByKey(): array
+    {
+        // make result for data
+        $result = [];
+
+        $data = self::getProfileBraclate();
+        foreach ($data as $row) {
+            $result[$row->name] = $row;
+        }
+
+        return $result;
+    }
 }

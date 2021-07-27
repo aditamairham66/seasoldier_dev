@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18627433-52db-4e83-93e1-6b9659e22abd" name="Default Changelist" comment="#changelog&#10;- add more assets home&#10;- fixing home page and controller&#10;- fixing backend subscribe email">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="18627433-52db-4e83-93e1-6b9659e22abd" name="Default Changelist" comment="#changelog&#10;- fixing profile&#10;- fixing profile organization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/CmsSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CmsSettings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/CmsSettingsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CmsSettingsService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/introduction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/introduction.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/organization.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/organization.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +193,14 @@
       <workItem from="1624622150028" duration="7401000" />
       <workItem from="1624663474780" duration="5806000" />
     </task>
+    <task id="LOCAL-00001" summary="#changelog&#10;- fixing profile&#10;- fixing profile organization">
+      <created>1627380278274</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1627380278274</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +217,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="#changelog&#10;- fixing profile&#10;- fixing profile organization" />
+    <option name="LAST_COMMIT_MESSAGE" value="#changelog&#10;- fixing profile&#10;- fixing profile organization" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

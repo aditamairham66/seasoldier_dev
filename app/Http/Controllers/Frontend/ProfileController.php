@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Repositories\ProfileOrganizationBanner;
 use App\Services\CmsSettingsService;
 use App\Services\ProfileHonorService;
 use App\Services\ProfileTeamService;
@@ -30,13 +31,18 @@ class ProfileController extends Controller
     public function getOrganization(Request $request)
     {
         menuTag('profile');
-        return view('page.frontend.profile.organization');
+        return view('page.frontend.profile.organization',[
+            'data' => CmsSettingsService::getProfileOrganizationByKey(),
+            'image' => ProfileOrganizationBanner::getDataBySortAsc()
+        ]);
     }
 
     public function getBraclate(Request $request)
     {
         menuTag('profile');
-        return view('page.frontend.profile.braclate');
+        return view('page.frontend.profile.braclate',[
+            'data' => CmsSettingsService::getProfileBraclateByKey()
+        ]);
     }
 
     /**

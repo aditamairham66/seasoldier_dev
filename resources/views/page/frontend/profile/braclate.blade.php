@@ -3,48 +3,55 @@
 @section('description', '')
 @section('keywords', '')
 @section('background', '')
-@section('content')
-<main id="main">
 
-    <section class="breadcrumbs mb-5 pb-5">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <ol>
-                    <li><a href="{{ webPath('/profiles') }}">PROFILE</a></li>
-                    <li>BRACLATE</li>
-                </ol>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-12">
-                <div class="image-big-left">
-                    <img src="{{ asset('vendor/front/assets/example/img/profile/img_braclate.png') }}" class="image-left">
+@push('head')
+    <style>
+        .text-bid-right .title {
+            font-weight: bold;
+        }
+
+        .image-big-left .image-left {
+            width: 100%;
+        }
+    </style>
+@endpush
+
+@section('content')
+    <?php
+    $image = $data['profile_braclate_image']->content ?? 'vendor/front/assets/example/img/favicon.png';
+    $description = $data['profile_braclate_description']->content ?? '';
+    ?>
+
+    <main id="main">
+
+        <section class="breadcrumbs mb-5 pb-5">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <ol>
+                        <li><a href="{{ webPath('/profiles') }}">PROFILE</a></li>
+                        <li>BRACLATE</li>
+                    </ol>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12">
-                <div class="text-bid-right">
-                    <h4 class="title">BRACLATE</h4>
-                    <div class="desc">
-                        The primary roles of a #SEASOLDIER include
-                        educating the mass, conservation, and encouraging
-                        this movement towards assisting our earth.
-                        #SEASOLDIER bracelets are used as a reminder
-                        of these responsibilities.
-                        More than 80% of pollution
-                        to the marine environment comes from land.
-                        The #SEASOLDIER’s task is focused on minimalizing
-                        matters that are harmful to earth.
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="image-big-left">
+                        <img src="{{ asset($image) }}" class="image-left" alt="Profile Introduction">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="text-bid-right">
+                        <h4 class="title">BRACLATE</h4>
+                        <div class="desc">
+                            {!! nl2br($description) !!}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-</main><!-- End #main -->
+    </main><!-- End #main -->
 @endsection
+
 @push('bottom')
-
-@endpush
-@push('head')
-
 @endpush

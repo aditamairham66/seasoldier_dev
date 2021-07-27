@@ -34,4 +34,24 @@ class CmsSettings extends CmsSettingsModel
             ->where('group_setting', '=', 'Profile Introduction')
             ->get();
     }
+
+    /**
+     * @return Collection
+     */
+    public static function getProfileBraclate(): Collection
+    {
+        return self::table()
+            ->where('group_setting', '=', 'Profile Braclate')
+            ->get();
+    }
+
+    /**
+     * @return Collection
+     */
+    public static function getProfileOrganization(): Collection
+    {
+        return self::table()
+            ->where('group_setting', '=', 'Profile Organization')
+            ->get();
+    }
 }
