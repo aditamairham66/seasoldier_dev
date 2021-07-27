@@ -22,4 +22,20 @@ class CmsSettingsService extends CmsSettings
 
         return $result;
     }
+
+    /**
+     * @return array
+     */
+    public static function getProfileIntroductionByKey(): array
+    {
+        // make result for data
+        $result = [];
+
+        $data = self::getProfileIntroduction();
+        foreach ($data as $row) {
+            $result[$row->name] = $row;
+        }
+
+        return $result;
+    }
 }

@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18627433-52db-4e83-93e1-6b9659e22abd" name="Default Changelist" comment="">
+    <list default="true" id="18627433-52db-4e83-93e1-6b9659e22abd" name="Default Changelist" comment="#changelog&#10;- add more assets home&#10;- fixing home page and controller&#10;- fixing backend subscribe email">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/seadev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/seadev.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/General.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/General.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/Generals.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/Generals.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/CmsSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CmsSettings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/HomeBanner.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/HomeBanner.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/CmsSettingsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CmsSettingsService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/home/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/home/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/frontend/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template/frontend/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/frontend/plugin/css.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template/frontend/plugin/css.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/crocodic/laravel-model/src/Core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/crocodic/laravel-model/src/Core/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/admin_template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/crocodicstudio/crudbooster/src/views/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/introduction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/introduction.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/profile.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,6 +201,15 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

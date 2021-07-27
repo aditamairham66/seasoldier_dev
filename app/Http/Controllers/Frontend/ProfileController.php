@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Services\CmsSettingsService;
 use App\Services\ProfileHonorService;
 use App\Services\ProfileTeamService;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
@@ -18,7 +22,9 @@ class ProfileController extends Controller
     public function getIntroduction(Request $request)
     {
         menuTag('profile');
-        return view('page.frontend.profile.introduction');
+        return view('page.frontend.profile.introduction',[
+            'data' => CmsSettingsService::getProfileIntroductionByKey()
+        ]);
     }
 
     public function getOrganization(Request $request)
@@ -35,7 +41,7 @@ class ProfileController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function getTeam(Request $request)
     {
@@ -48,7 +54,7 @@ class ProfileController extends Controller
 
     /**
      * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Application|Factory|View
      */
     public function getHonor(Request $request)
     {

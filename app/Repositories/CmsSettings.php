@@ -15,11 +15,23 @@ class CmsSettings extends CmsSettingsModel
         return 'cms_settings';
     }
 
-    // TODO : Make your own query methods
+    /**
+     * @return Collection
+     */
     public static function getFooter(): Collection
     {
         return self::table()
             ->where('group_setting', '=', 'Footer')
+            ->get();
+    }
+
+    /**
+     * @return Collection
+     */
+    public static function getProfileIntroduction(): Collection
+    {
+        return self::table()
+            ->where('group_setting', '=', 'Profile Introduction')
             ->get();
     }
 }
