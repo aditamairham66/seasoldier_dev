@@ -2,20 +2,32 @@
 
 namespace App\Helpers;
 
-use crocodicstudio\crudbooster\helpers\CRUDBooster;
+use App\Services\CmsSettingsService;
+use DateInterval;
+use DatePeriod;
+use DateTime;
+use Exception;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 
 class General
 {
-    public static function screenLoad()
+    /**
+     * @return bool
+     */
+    public static function screenLoad(): bool
     {
         if (!Cookie::get('loadScreen')) {
             Cookie::queue('loadScreen', true, 2628000);
+            return true;
         }
+        return false;
     }
 
-    public  static function checkScreenLoad()
+    /**
+     * @return bool
+     */
+    public static function checkScreenLoad(): bool
     {
         $res = false;
         if (Cookie::get('loadScreen')) {
@@ -32,7 +44,7 @@ class General
      * @param bool $capital
      * @return string
      */
-    public static function RandomCode($not_in = [], $length = 6, $capital = true)
+    public static function RandomCode(array $not_in = [], int $length = 6, bool $capital = true): string
     {
         $code = str_random($length);
         if ($capital) {
@@ -63,7 +75,7 @@ class General
      * @param int $get
      * @return mixed
      */
-    public static function sliptWord($word, $get = 0)
+    public static function splitWord($word, int $get = 0)
     {
         $split = str_split($word);
         return $split[$get];
@@ -75,9 +87,9 @@ class General
      * @param $title
      * @return string
      */
-    public static function makeSlug($title)
+    public static function makeSlug($title): string
     {
-        $replace = str_replace(' ','-', str_replace(',','', str_replace('.','', str_replace('"','', $title))));
+        $replace = str_replace(' ', '-', str_replace(',', '', str_replace('.', '', str_replace('"', '', $title))));
         return strtolower($replace);
     }
 
@@ -86,13 +98,13 @@ class General
      * @param $parts
      * @return array
      */
-    public static function fill_chunck($array, $parts)
+    public static function fill_chunks($array, $parts): array
     {
         $t = 0;
         $result = array_fill(0, $parts - 1, array());
         $max = ceil(count($array) / $parts);
-        foreach($array as $v) {
-            count($result[$t]) >= $max and $t ++;
+        foreach ($array as $v) {
+            count($result[$t]) >= $max and $t++;
             $result[$t][] = $v;
         }
         return $result;
@@ -103,15 +115,16 @@ class General
      * @param $parts
      * @return array
      */
-    public static function alternate_chunck($array, $parts) {
+    public static function alternate_chunks($array, $parts): array
+    {
         $t = 0;
         $result = array();
         $max = ceil(count($array) / $parts);
-        foreach(array_chunk($array, $max) as $v) {
+        foreach (array_chunk($array, $max) as $v) {
             if ($t < $parts) {
                 $result[] = $v;
             } else {
-                foreach($v as $d) {
+                foreach ($v as $d) {
                     $result[] = array($d);
                 }
             }
@@ -125,7 +138,7 @@ class General
      * @param $size
      * @return array
      */
-    public static function multiple_array($array, $size)
+    public static function multiple_array($array, $size): array
     {
         if (!empty($array)) {
             if (count($array) > 0) {
@@ -143,42 +156,42 @@ class General
      * @param $start
      * @param $end
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
-    public static function dateArray($start, $end)
+    public static function dateArray($start, $end): array
     {
         $result = [];
 
-        $period = new \DatePeriod(
-            new \DateTime($start),
-            new \DateInterval('P1D'),
-            new \DateTime($end)
+        $period = new DatePeriod(
+            new DateTime($start),
+            new DateInterval('P1D'),
+            new DateTime($end)
         );
 
-        foreach ($period as $key => $value) {
+        foreach ($period as $value) {
             $result[] = $value->format('Y-m-d');
         }
-        $result[] = date('Y-m-d',strtotime($end));
+        $result[] = date('Y-m-d', strtotime($end));
 
         return $result;
     }
 
     /**
-     * @param $n
+     * @param int $n
      * @return string|void
      */
-    public static function ToOrdinal($n) {
+    public static function ToOrdinal(int $n)
+    {
         /* Convert a cardinal number in the range 0 - 999 to an ordinal in
            words. */
 
         /* The ordinal will be collected in the variable $ordinal.
          Initialize it as an empty string.*/
-        $ordinal = "";
 
         /* Check that the number is in the permitted range. */
         if ($n >= 0 && $n <= 999)
-            null;
-        else{
+            return null;
+        else {
             echo "<br />You have called the function ToOrdinal with this value: $n, but
 it is not in the permitted range, from 0 to 999, inclusive.<br />";
             return;
@@ -203,12 +216,14 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
 
             /* If tens and units are zero, append "th" and quit */
             if ($t == 0 && $u == 0) {
-                $ordinal .=  "th";
+                $ordinal .= "th";
             } else {
                 /* Otherwise put in a blank space to separate the hundreds from
                what follows. */
                 $ordinal .= " ";
             }
+        } else {
+            $ordinal = "";
         }
 
         /* Determine the tens, unless there is just one ten.  If units are 0,
@@ -351,14 +366,14 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
      * @param $n
      * @return string
      */
-    public static function ToCardinalUnits($n) {
+    public static function ToCardinalUnits($n): ?string
+    {
         /* Convert a number in the range 0 to 9 into its word equivalent. */
 
         /* Make sure the number is in the permitted range. */
         if ($n >= 0 && $n <= 9)
-            null;
-        else
-        {
+            return null;
+        else {
             echo "<br />You have called ToCardinal() with an argument $n, but the permitted range is 0 to 9, inclusive.<br />";
         }
 
@@ -383,15 +398,19 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
                 return "eight";
             case 9:
                 return "nine";
+            default:
+                return null;
         }
     }
 
     /**
      * @param $name
+     * @return bool
      */
-    public static function menuTag($name)
+    public static function menuTag($name): bool
     {
-        return Session::put('menu_tag', $name);
+        Session::put('menu_tag', $name);
+        return true;
     }
 
     /**
@@ -413,17 +432,15 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
             $video_youtube = explode("/v/", $url);
 
         $video_youtube = explode("&", $video_youtube[1]);
-        $video_youtube = $video_youtube[0];
-
-        return $video_youtube;
+        return $video_youtube[0];
     }
 
     /**
      * @param $url
      * @param null $callback
-     * @return mixed
+     * @return array
      */
-    public static function reqInstagram($url, $callback = null)
+    public static function reqInstagram($url, $callback = null): array
     {
         $curl = curl_init();
 
@@ -450,7 +467,7 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
      * @param $res
      * @return array
      */
-    public static function resInstagram($res)
+    public static function resInstagram($res): array
     {
         $title = '';
         if (isset($res['title'])) {
@@ -473,8 +490,8 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
             if (!file_exists(storage_path('app/uploads/gallery'))) { //Verify if the directory exists
                 mkdir(storage_path('app/uploads/gallery')); //create it if do not exists
             }
-            $thumbnail_url = 'uploads/gallery/'.date("Y-m-d")."_".md5(str_random(5))."_instagram.png";
-            file_put_contents(storage_path('app/'.$thumbnail_url), file_get_contents($file));
+            $thumbnail_url = 'uploads/gallery/' . date("Y-m-d") . "_" . md5(str_random(5)) . "_instagram.png";
+            file_put_contents(storage_path('app/' . $thumbnail_url), file_get_contents($file));
         }
 
         return [
@@ -492,5 +509,13 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
     {
         date_default_timezone_set('Asia/Jakarta');
         return date('Y-m-d H:i:s');
+    }
+
+    /**
+     * @return array
+     */
+    public static function footerData(): array
+    {
+        return CmsSettingsService::getFooterByKey();
     }
 }

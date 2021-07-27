@@ -67,7 +67,7 @@
                 ?>
                 <div class="page-header">
                     @if($module)
-                    <h4 class="page-title">{!! ucwords(($page_title)?:$module->name) !!}</h4>
+                    <h4 class="page-title"><i class="{{ $module->icon }}"></i> {!! ucwords(($page_title)?:$module->name) !!}</h4>
                     <ul class="breadcrumbs">
                         <li class="nav-home">
                             <a href="{{url(config('crudbooster.ADMIN_PATH'))}}">

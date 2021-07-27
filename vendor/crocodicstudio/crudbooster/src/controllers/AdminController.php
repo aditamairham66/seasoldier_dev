@@ -19,7 +19,7 @@ class AdminController extends CBController
     public function getLockscreen()
     {
 
-        if (! CRUDBooster::myId()) {
+        if (!CRUDBooster::myId()) {
             Session::flush();
 
             return redirect()->route('getLogin')->with('message', cbLang('alert_session_expired'));
@@ -41,7 +41,7 @@ class AdminController extends CBController
 
             return redirect(CRUDBooster::adminPath());
         } else {
-            echo "<script>alert('".cbLang('alert_password_wrong')."');history.go(-1);</script>";
+            echo "<script>alert('" . cbLang('alert_password_wrong') . "');history.go(-1);</script>";
         }
     }
 
@@ -59,7 +59,7 @@ class AdminController extends CBController
     {
 
         $validator = Validator::make(Request::all(), [
-            'email' => 'required|email|exists:'.config('crudbooster.USER_TABLE'),
+            'email' => 'required|email|exists:' . config('crudbooster.USER_TABLE'),
             'password' => 'required',
         ]);
 
@@ -113,7 +113,7 @@ class AdminController extends CBController
     public function postForgot()
     {
         $validator = Validator::make(Request::all(), [
-            'email' => 'required|email|exists:'.config('crudbooster.USER_TABLE'),
+            'email' => 'required|email|exists:' . config('crudbooster.USER_TABLE'),
         ]);
 
         if ($validator->fails()) {

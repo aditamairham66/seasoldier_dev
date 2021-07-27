@@ -5,7 +5,8 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="{{ CRUDBooster::myPhoto() }}" alt="{{ cbLang('user_image') }}" class="avatar-img rounded-circle">
+                    <img src="{{ CRUDBooster::myPhoto() }}" alt="{{ cbLang('user_image') }}"
+                         class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -27,8 +28,10 @@
 
                 <?php $dashboard = CRUDBooster::sidebarDashboard();?>
                 @if($dashboard)
-                    <li data-id='{{$dashboard->id}}' class="nav-item {{ (Request::is(config('crudbooster.ADMIN_PATH'))) ? 'active' : '' }}">
-                        <a href="{{CRUDBooster::adminPath()}}" class='{{($dashboard->color)?"text-".$dashboard->color:""}}'>
+                    <li data-id='{{$dashboard->id}}'
+                        class="nav-item {{ (Request::is(config('crudbooster.ADMIN_PATH'))) ? 'active' : '' }}">
+                        <a href="{{CRUDBooster::adminPath()}}"
+                           class='{{($dashboard->color)?"text-".$dashboard->color:""}}'>
                             <i class="fas fa-home"></i>
                             <p>{{cbLang("text_dashboard")}}</p>
                         </a>
@@ -38,37 +41,39 @@
                 @foreach(CRUDBooster::sidebarMenu() as $menu)
 
                     @if(!empty($menu->children))
-                    <?php
+                        <?php
                         $activeMenu = "";
                         foreach ($menu->children as $menuChild) {
-                            $activeMenu .= (Request::is($menuChild->url_path .= !Str::endsWith(Request::decodedPath(), $menuChild->url_path) ? "/*" : ""))?"active":"";
+                            $activeMenu .= (Request::is($menuChild->url_path .= !Str::endsWith(Request::decodedPath(), $menuChild->url_path) ? "/*" : "")) ? "active" : "";
                         }
-                    ?>
-                    <li data-id='{{$menu->id}}' class="nav-item {{$activeMenu}}">
-                        <a data-toggle="collapse" href='#menu{{$menu->id}}'>
-                            <i class='{{$menu->icon}}'></i>
-                            <p>{{$menu->name}}</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="menu{{$menu->id}}">
-                            <ul class="nav nav-collapse">
-                                @foreach($menu->children as $child)
-                                <li data-id='{{$child->id}}' class='{{(Request::is($child->url_path .= !Str::endsWith(Request::decodedPath(), $child->url_path) ? "/*" : ""))?"active":""}}'>
-                                    <a href='{{ ($child->is_broken)?"javascript:alert('".cbLang('controller_route_404')."')":$child->url}}'>
-                                        <span class="sub-item">{{$child->name}}</span>
-                                    </a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </li>
+                        ?>
+                        <li data-id='{{$menu->id}}' class="nav-item {{$activeMenu}}">
+                            <a data-toggle="collapse" href='#menu{{$menu->id}}'>
+                                <i class='{{$menu->icon}}'></i>
+                                <p>{{$menu->name}}</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="menu{{$menu->id}}">
+                                <ul class="nav nav-collapse">
+                                    @foreach($menu->children as $child)
+                                        <li data-id='{{$child->id}}'
+                                            class='{{(Request::is($child->url_path .= !Str::endsWith(Request::decodedPath(), $child->url_path) ? "/*" : ""))?"active":""}}'>
+                                            <a href='{{ ($child->is_broken)?"javascript:alert('".cbLang('controller_route_404')."')":$child->url}}'>
+                                                <span class="sub-item">{{$child->name}}</span>
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </li>
                     @else
-                    <li data-id='{{$menu->id}}' class="nav-item {{ (Request::is($menu->url_path."*"))?"active":""}}">
-                        <a href='{{ ($menu->is_broken)?"javascript:alert('".cbLang('controller_route_404')."')":$menu->url }}'>
-                            <i class='{{$menu->icon}}'></i>
-                            <p>{{$menu->name}}</p>
-                        </a>
-                    </li>
+                        <li data-id='{{$menu->id}}'
+                            class="nav-item {{ (Request::is($menu->url_path."*"))?"active":""}}">
+                            <a href='{{ ($menu->is_broken)?"javascript:alert('".cbLang('controller_route_404')."')":$menu->url }}'>
+                                <i class='{{$menu->icon}}'></i>
+                                <p>{{$menu->name}}</p>
+                            </a>
+                        </li>
                     @endif
 
                 @endforeach
@@ -90,7 +95,8 @@
                             <ul class="nav nav-collapse">
                                 <li>
                                     <a href='{{Route("PrivilegesControllerGetAdd")}}'>
-                                        {{ $current_path }} <span class="sub-item">{{ cbLang('Add_New_Privilege') }}</span>
+                                        {{ $current_path }} <span
+                                            class="sub-item">{{ cbLang('Add_New_Privilege') }}</span>
                                     </a>
                                 </li>
                                 <li>

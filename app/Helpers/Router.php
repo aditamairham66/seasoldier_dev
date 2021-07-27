@@ -93,7 +93,7 @@ class Router
      * @param $msg
      * @param string $type
      */
-    public static function redirectBackFooter($msg, $type = 'info')
+    public static function redirectBackFooter($msg, string $type = 'info')
     {
         $resp = redirect()->back()->with(['msg_footer' => $msg, 'msg_type_footer' => $type]);
         Session::driver()->save();

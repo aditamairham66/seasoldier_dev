@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Frontend;
 use App\Helpers\General;
 use App\Helpers\Router;
 use App\Repositories\EmailSubscribe;
+use App\Repositories\HomeBanner;
 use Illuminate\Support\Facades\Validator;
-use Request;
+use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -14,7 +15,9 @@ class HomeController extends Controller
     public function getIndex()
     {
         menuTag('home');
-        return view('page.frontend.home.home');
+        return view('page.frontend.home.home',[
+            'banner' => HomeBanner::getAll()
+        ]);
     }
 
     public function postEmailSubscribe(Request $request)
@@ -37,10 +40,12 @@ class HomeController extends Controller
             $save->save();
 
             if (!empty($save->id)) {
-                return Router::redirectBackFooter('Your request will be forwarded to our team.', 'info', true);
+                Router::redirectBackFooter('Your request will be forwarded to our team.', 'info');
             } else {
-                return Router::redirectBackFooter('Oops, something went wrong', 'danger', true);
+                Router::redirectBackFooter('Oops, something went wrong', 'danger');
             }
+
+            return 'true';
         }
     }
 }

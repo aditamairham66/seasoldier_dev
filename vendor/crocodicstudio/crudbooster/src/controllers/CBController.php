@@ -358,7 +358,7 @@ class CBController extends Controller
                 }
             } else {
 
-                if(isset($field_array[1])) {                    
+                if(isset($field_array[1])) {
                     $result->addselect($table.'.'.$field.' as '.$table.'_'.$field);
                     $columns_table[$index]['type_data'] = CRUDBooster::getFieldType($table, $field);
                     $columns_table[$index]['field'] = $table.'_'.$field;
@@ -369,7 +369,7 @@ class CBController extends Controller
                     $columns_table[$index]['field'] = $field;
                     $columns_table[$index]['field_raw'] = $field;
                 }
-                
+
                 $columns_table[$index]['field_with'] = $table.'.'.$field;
             }
         }
@@ -554,7 +554,7 @@ class CBController extends Controller
                         $value = "<a  data-lightbox='roadtrip' rel='group_{{$table}}' title='$label: $title' href='".asset('vendor/crudbooster/avatar.jpg')."'><img width='40px' height='40px' src='".asset('vendor/crudbooster/avatar.jpg')."'/></a>";
                     } else {
                         $pic = (strpos($value, 'http://') !== false) ? $value : asset($value);
-                        $value = "<a data-lightbox='roadtrip'  rel='group_{{$table}}' title='$label: $title' href='".$pic."'><img width='40px' height='40px' src='".$pic."'/></a>";
+                        $value = "<a data-lightbox='roadtrip'  rel='group_{{$table}}' title='$label: $title' href='".$pic."'><img width='auto' height='40px' src='".$pic."'/></a>";
                     }
                 }
 
@@ -1143,7 +1143,7 @@ class CBController extends Controller
         $this->hook_before_add($this->arr);
 
         $lastInsertId = $id = DB::table($this->table)->insertGetId($this->arr);
-        
+
         //fix bug if primary key is uuid
         if(isset($this->arr[$this->primary_key]) && $this->arr[$this->primary_key]!=$id) {
             $id = $this->arr[$this->primary_key];
@@ -1467,9 +1467,9 @@ class CBController extends Controller
             $file = storage_path('app/'.$file);
             $rows = Excel::load($file, function ($reader) {
             })->get();
-            
+
             $countRows = ($rows)?count($rows):0;
-            
+
             Session::put('total_data_import', $countRows);
 
             $data_import_column = [];
