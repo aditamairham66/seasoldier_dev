@@ -65,6 +65,14 @@
         .swiper-pagination-bullet-active {
             background-color: #C60000;
         }
+
+        @media (max-width: 768px) {
+            .swiper-slide img {
+                width: 100%;
+                height: calc(100vh - 40px);
+                object-fit: contain;
+            }
+        }
     </style>
 @endpush
 

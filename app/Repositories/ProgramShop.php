@@ -12,5 +12,4 @@ class ProgramShop extends ProgramShopModel
             ->where('program_shop.id', $id)
             ->first());
     }
-
 }
