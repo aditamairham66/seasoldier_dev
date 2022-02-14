@@ -3,9 +3,19 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+:root {
+    --nav_bg: rgba(17, 64, 103, 0.8);
+    --white: #ffffff;
+    --blue: #1886C4;
+    --red: #C60000;
+    --dark_red: #962927;
+}
+
 body {
     font-family: 'Titillium Web', sans-serif;
     color: #444444;
+    background-color: var(--blue);
 }
 
 a {
@@ -21,14 +31,6 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Titillium Web', sans-serif;
     font-weight: normal;
-}
-
-:root {
-    --nav_bg: rgba(17, 64, 103, 0.8);
-    --white: #ffffff;
-    --blue: #1886C4;
-    --red: #C60000;
-    --dark_red: #962927;
 }
 
 /*--------------------------------------------------------------

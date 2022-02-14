@@ -37,7 +37,7 @@
 }
 
 .swiper-button-next, .swiper-button-prev {
-    color: #C60000;
+    color: var(--red);
 }
 
 .swiper-pagination-bullet {
@@ -46,13 +46,25 @@
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #C60000;
+    background-color: var(--red);
 }
 
 @media (max-width: 768px) {
     .swiper-slide img {
         width: 100%;
-        height: calc(100vh - 40px);
-        object-fit: contain;
+        /*height: calc(100vh - 40px);*/
+        /*object-fit: contain;*/
+    }
+
+    .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after, .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after {
+        font-size: 25px;
+    }
+
+    .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after{
+        margin-right: 20px;
+    }
+
+    .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after {
+        margin-left: 20px;
     }
 }
