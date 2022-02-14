@@ -17,3 +17,4 @@ yarn-error.log
 /public/.DS_Store
 /storage/.DS_Store
 note.txt
+database/sql/*
