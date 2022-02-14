@@ -1,4 +1,3 @@
-
 .input-group-footer {
     position: relative;
     display: flex;
@@ -35,7 +34,7 @@
     font-size: 12px;
     line-height: 18px;
     color: #FFFFFF;
-    background: #C60000;
+    background: var(--dark_red);
     border-radius: 50px;
     padding: 7px 29px;
     border: none;
@@ -121,7 +120,7 @@
 
 .btn-danger-t:hover, .btn-danger-t:focus {
     color: #FFFFFF;
-    box-shadow: 0px 0px 12px #C60000;
+    box-shadow: 0 0 12px #C60000;
     transition: 0.3s;
 }
 
@@ -131,7 +130,6 @@
 .navbar li:hover > a {
     position: relative;
     color: #FFFFFF;
-    font-weight: bold;
 }
 
 @media (max-width: 920px) {
@@ -153,8 +151,8 @@
     position: absolute;
     width: 78%;
     height: 62px;
-    background: #C60000;
-    border-radius: 0px 0px 5px 5px;
+    background: var(--dark_red);
+    border-radius: 0 0 5px 5px;
     z-index: -1;
     top: -15px;
     left: 25.2px;
@@ -243,13 +241,13 @@
 
 .menu-round-center .menu-item:hover,
 .menu-round-center .menu-item:focus {
-    box-shadow: 0px 0px 12px #d42e2e;
+    box-shadow: 0 0 12px #d42e2e;
     transition: 0.4s all;
 }
 
 .menu-round-center .menu-item:last-child {
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin-right: 0;
+    margin-bottom: 0;
 }
 
 .menu-round-center .menu-item .image {
@@ -302,13 +300,13 @@
 
 .menu-round-center-mid .menu-item:hover,
 .menu-round-center-mid .menu-item:focus {
-    box-shadow: 0px 0px 12px #d42e2e;
+    box-shadow: 0 0 12px #d42e2e;
     transition: 0.4s all;
 }
 
 .menu-round-center-mid .menu-item:last-child {
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin-right: 0;
+    margin-bottom: 0;
 }
 
 .menu-round-center-mid .menu-item .image {
@@ -343,8 +341,8 @@
     }
 
     .menu-round-center-mid .menu-item:last-child {
-        margin-right: 0px;
-        margin-bottom: 0px;
+        margin-right: 0;
+        margin-bottom: 0;
     }
 }
 
@@ -368,7 +366,7 @@
     width: 792px;
     height: 435px;
     object-fit: cover;
-    border-radius: 0px 25px 25px 0px;
+    border-radius: 0 25px 25px 0;
 }
 
 @media (max-width: 920px) {
@@ -379,7 +377,7 @@
     .image-big-left .image-left {
         width: 100%;
         margin: 0 auto;
-        border-radius: 0px;
+        border-radius: 0;
     }
 }
 
@@ -472,7 +470,7 @@
 }
 
 .team-list-second .team-list:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .team-list-second .team-list .image {
@@ -640,8 +638,8 @@
 }
 
 .team-honor-list .team-list:last-child {
-    margin-right: 0px;
-    /* margin-left: 0px; */
+    margin-right: 0;
+    /* margin-left: 0; */
 }
 
 .team-honor-list .team-list .image-team {
@@ -686,8 +684,8 @@
 
 @media (max-width: 580px) {
     .team-honor-list .team-list {
-        margin-right: 0px;
-        margin-left: 0px;
+        margin-right: 0;
+        margin-left: 0;
     }
 }
 
@@ -912,7 +910,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 27px 27px 0px 0px;
+    border-radius: 27px 27px 0 0;
 }
 
 .box-black .content .title {
@@ -949,7 +947,7 @@
 
 .btn-danger-mid:hover, .btn-danger-mid:focus {
     color: #FFFFFF;
-    box-shadow: 0px 0px 6px #C60000;
+    box-shadow: 0 0 6px #C60000;
     transition: 0.3s;
 }
 
@@ -1015,7 +1013,7 @@
 }
 
 .partner-list .image-item:last-child {
-    margin-right: 0px;
+    margin-right: 0;
 }
 
 .partner-list .image-item img {
@@ -1182,13 +1180,13 @@
 
 .menu-round-center-midsmall .menu-item:hover,
 .menu-round-center-midsmall .menu-item:focus {
-    box-shadow: 0px 0px 12px #d42e2e;
+    box-shadow: 0 0 12px #d42e2e;
     transition: 0.4s all;
 }
 
 .menu-round-center-midsmall .menu-item:last-child {
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin-right: 0;
+    margin-bottom: 0;
 }
 
 .menu-round-center-midsmall .menu-item .image {
@@ -1223,8 +1221,8 @@
     }
 
     .menu-round-center-midsmall .menu-item:last-child {
-        margin-right: 0px;
-        margin-bottom: 0px;
+        margin-right: 0;
+        margin-bottom: 0;
     }
 }
 
@@ -1573,7 +1571,7 @@
     }
 
     .form-add-city .form-right {
-        padding-left: 0px;
+        padding-left: 0;
         margin-bottom: 80px;
     }
 }

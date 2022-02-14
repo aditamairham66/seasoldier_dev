@@ -5,75 +5,7 @@
 @section('background', '')
 
 @push('head')
-    <style>
-        html,
-        body {
-            position: relative;
-            height: 100%;
-        }
-
-        body {
-            background: #eee;
-            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
-
-        .swiper-container {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-
-            /* Center slide text vertically */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-        }
-
-        .swiper-button-next, .swiper-button-prev {
-            color: #C60000;
-        }
-
-        .swiper-pagination-bullet {
-            background-color: #FFFFFF;
-            opacity: 1;
-        }
-
-        .swiper-pagination-bullet-active {
-            background-color: #C60000;
-        }
-
-        @media (max-width: 768px) {
-            .swiper-slide img {
-                width: 100%;
-                height: calc(100vh - 40px);
-                object-fit: contain;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('vendor/front/assets/css/home.css') }}">
 @endpush
 
 @section('content')
@@ -82,8 +14,7 @@
             <div class="swiper-wrapper">
                 @foreach($banner as $row)
                     <div class="swiper-slide">
-                        <img src="{{ asset($row->image) }}" alt="{{ $row->title.' : '.$row->caption }}"
-                             class="swiper-lazy">
+                        <img src="{{ asset($row->image) }}" alt="{{ $row->title.' : '.$row->caption }}" class="swiper-lazy">
                     </div>
                 @endforeach
             </div>
@@ -97,6 +28,7 @@
     <script>
         new Swiper(".mySwiper", {
             lazy: true,
+            autoHeight: true,
             spaceBetween: 30,
             centeredSlides: true,
             mousewheel: false,

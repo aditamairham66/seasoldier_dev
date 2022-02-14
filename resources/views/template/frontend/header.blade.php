@@ -1,5 +1,5 @@
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top">
+<header id="header" class="fixed-top" data-aos="fade-down">
     <div class="container d-flex align-items-center justify-content-between">
 
         <h1 class="logo">

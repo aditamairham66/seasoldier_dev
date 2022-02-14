@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Http\Controllers\Frontend;
+<?php namespace App\Http\Controllers\Frontend;
 
 use App\Helpers\General;
 use App\Helpers\Router;
