@@ -1,16 +1,11 @@
-<?php
-
-namespace App\Http\Controllers\Frontend;
+<?php namespace App\Http\Controllers\Frontend;
 
 use App\Repositories\ProfileOrganizationBanner;
 use App\Services\CmsSettingsService;
 use App\Services\ProfileHonorService;
 use App\Services\ProfileTeamService;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
@@ -37,11 +32,11 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function getBraclate(Request $request)
+    public function getBracelet(Request $request)
     {
         menuTag('profile');
-        return view('page.frontend.profile.braclate', [
-            'data' => CmsSettingsService::getProfileBraclateByKey()
+        return view('page.frontend.profile.bracelet', [
+            'data' => CmsSettingsService::getProfileBraceletByKey()
         ]);
     }
 

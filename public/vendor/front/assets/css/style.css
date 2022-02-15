@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,700&display=swap');
 
 /*--------------------------------------------------------------
 # General
@@ -9,7 +9,20 @@
     --white: #ffffff;
     --blue: #1886C4;
     --red: #C60000;
-    --dark_red: #962927;
+    --dark_red: #A0110F;
+    --soft_red: #962927;
+}
+
+@font-face {
+    font-family: 'Lemon/Milk';
+    src: url(../font/lemon_milk/LEMONMILK-Regular.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Lemon/Milk';
+    src: url(../font/lemon_milk/LEMONMILK-RegularItalic.otf);
+    font-style: italic;
 }
 
 body {
@@ -144,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header .logo {
     font-size: 28px;
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 0;
     line-height: 1;
     font-weight: 300;
@@ -196,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     padding: 10px 0 10px 30px;
     font-style: normal;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 21px;
     text-align: center;
     color: #FFFFFF;
@@ -1714,23 +1727,18 @@ section {
     list-style: none;
     padding: 0;
     margin: 0;
-
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 21px;
     text-transform: uppercase;
 }
 
-.breadcrumbs ol li a,
-.breadcrumbs ol li a:hover,
-.breadcrumbs ol li a:focus {
+.breadcrumbs ol li a, .breadcrumbs ol li a:hover, .breadcrumbs ol li a:focus {
     color: #000000;
 }
 
-.breadcrumbs ol.white li a,
-.breadcrumbs ol.white li a:hover,
-.breadcrumbs ol.white li a:focus {
+.breadcrumbs ol.white li a, .breadcrumbs ol.white li a:hover, .breadcrumbs ol.white li a:focus {
     color: #FFFFFF;
 }
 
@@ -1858,7 +1866,7 @@ section {
 
 #footer .footer-newsletter h4 {
     font-style: normal;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
     font-weight: 700;

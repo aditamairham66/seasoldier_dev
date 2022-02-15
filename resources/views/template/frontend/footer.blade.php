@@ -4,7 +4,7 @@ $footer_data = footerData();
 <!-- ======= Footer ======= -->
 <footer id="footer">
 
-    <div class="footer-top" data-aos="fade-up">
+    <div class="footer-top" data-aos="fade-down">
         <div class="container">
             <div class="row">
 
@@ -21,7 +21,7 @@ $footer_data = footerData();
                             </div>
                         @endif
                         <div class="input-group-footer">
-                            <input type="email" required name="search_footer" id="search_footer" value="{{ (old('search_footer')?:'') }}">
+                            <input type="email" required name="search_footer" id="search_footer" value="{{ (old('search_footer')?:'') }}" placeholder="ENTER YOUR EMAIL">
                             <div class="btn-group-footer">
                                 <button class="btn-input">SUBSCRIBE</button>
                             </div>
@@ -43,7 +43,7 @@ $footer_data = footerData();
                         <a href="{{ ($footer_data['footer_social_youtube']->content ?? '') }}" target="_blank" class="twitter">
                             <i class="bx bxl-youtube"></i>
                         </a>
-                        <a href="{{ ($footer_data['footer_social_email']->content ?? '') }}" target="_blank" class="facebook">
+                        <a href="{{ ($footer_data['footer_social_email']->content ? 'mailto:'.$footer_data['footer_social_email']->content : '') }}" target="_blank" class="facebook">
                             <i class="bx bxs-envelope"></i>
                         </a>
                         <a href="{{ ($footer_data['footer_social_wa']->content ?? '') }}" target="_blank" class="google-plus">

@@ -4,15 +4,8 @@
 @section('keywords', '')
 @section('background', '')
 
-
 @push('head')
-    <style>
-        .image-section > img {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('vendor/front/assets/css/profile.css') }}">
 @endpush
 
 @section('content')
@@ -21,7 +14,7 @@
         <section class="nopadding-section">
             <div class="profile-section">
                 <div class="image-section">
-                    <img src="{{ asset('vendor/front/assets/example/img/bg/bg_profile.png') }}" alt="Image">
+                    <img src="{{ asset(\crocodicstudio\crudbooster\helpers\CRUDBooster::getSetting('profile_main_bg')) }}" alt="Image">
                 </div>
                 <div class="content">
                     <div class="container">
@@ -31,42 +24,33 @@
                                 <h4 class="title-big mb-5">#BRANI</h4>
 
                                 <div class="menu-round-center">
-                                    <a href="{{ webPath('profiles/introduction') }}" class="menu-item">
+                                    <a href="{{ webPath('profiles/introduction') }}" class="menu-item" data-aos="fade-up">
                                         <div class="image">
-                                            <img
-                                                src="{{ asset('vendor/front/assets/example/img/icon/ic_introduction.png') }}"
-                                                alt="INTRODUCTION">
+                                            <img src="{{ asset('vendor/front/assets/example/img/icon/ic_introduction.png') }}" alt="INTRODUCTION">
                                         </div>
                                         <span class="title">INTRODUCTION</span>
                                     </a>
-                                    <a href="{{ webPath('profiles/organization') }}" class="menu-item">
+                                    <a href="{{ webPath('profiles/organization') }}" class="menu-item" data-aos="fade-up">
                                         <div class="image">
-                                            <img
-                                                src="{{ asset('vendor/front/assets/example/img/icon/ic_organization.png') }}"
-                                                alt="OUR ORGANIZATION">
+                                            <img src="{{ asset('vendor/front/assets/example/img/icon/ic_organization.png') }}" alt="OUR ORGANIZATION">
                                         </div>
                                         <span class="title">OUR ORGANIZATION</span>
                                     </a>
-                                    <a href="{{ webPath('profiles/braclate') }}" class="menu-item">
+                                    <a href="{{ webPath('profiles/bracelet') }}" class="menu-item" data-aos="fade-up">
                                         <div class="image">
-                                            <img
-                                                src="{{ asset('vendor/front/assets/example/img/icon/ic_bracelet.png') }}"
-                                                alt="BRACLATE">
+                                            <img src="{{ asset('vendor/front/assets/example/img/icon/ic_bracelet.png') }}" alt="BRACLATE">
                                         </div>
-                                        <span class="title">BRACLATE</span>
+                                        <span class="title">BRACELET</span>
                                     </a>
-                                    <a href="{{ webPath('profiles/team') }}" class="menu-item">
+                                    <a href="{{ webPath('profiles/team') }}" class="menu-item" data-aos="fade-up">
                                         <div class="image">
-                                            <img src="{{ asset('vendor/front/assets/example/img/icon/ic_team.png') }}"
-                                                 alt="OUR TEAM">
+                                            <img src="{{ asset('vendor/front/assets/example/img/icon/ic_team.png') }}" alt="OUR TEAM">
                                         </div>
                                         <span class="title">OUR TEAM</span>
                                     </a>
-                                    <a href="{{ webPath('profiles/honor') }}" class="menu-item">
+                                    <a href="{{ webPath('profiles/honor') }}" class="menu-item" data-aos="fade-up">
                                         <div class="image">
-                                            <img
-                                                src="{{ asset('vendor/front/assets/example/img/icon/ic_respect.png') }}"
-                                                alt="SEASOLDIER KEHORMATAN">
+                                            <img src="{{ asset('vendor/front/assets/example/img/icon/ic_respect.png') }}" alt="SEASOLDIER KEHORMATAN">
                                         </div>
                                         <span class="title">SEASOLDIER KEHORMATAN</span>
                                     </a>

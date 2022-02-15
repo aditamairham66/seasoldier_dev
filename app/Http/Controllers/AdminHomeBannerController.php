@@ -3,6 +3,7 @@
 use App\Repositories\HomeBanner;
 use crocodicstudio\crudbooster\controllers\CBController;
 use crocodicstudio\crudbooster\helpers\CRUDBooster;
+use function foo\func;
 
 class AdminHomeBannerController extends CBController
 {
@@ -30,11 +31,15 @@ class AdminHomeBannerController extends CBController
         # START COLUMNS DO NOT REMOVE THIS LINE
         $this->col = [];
         $this->col[] = ["label" => "Image", "name" => "image", "image" => true];
+        $this->col[] = ["label" => "URL", "name" => "url", "callback" => function ($row) {
+            return '<a href="' . $row->url . '" target="_blank">' . $row->url . '</a>';
+        }];
         # END COLUMNS DO NOT REMOVE THIS LINE
 
         # START FORM DO NOT REMOVE THIS LINE
         $this->form = [];
         $this->form[] = ['label' => 'Image', 'name' => 'image', 'type' => 'upload', 'validation' => 'required|image|max:3000', 'width' => 'col-sm-10', 'help' => 'File types support : JPG, JPEG, PNG, GIF, BMP'];
+        $this->form[] = ['label' => 'URL', 'name' => 'url', 'type' => 'text', 'width' => 'col-sm-10'];
         # END FORM DO NOT REMOVE THIS LINE
 
         $this->addaction = [];

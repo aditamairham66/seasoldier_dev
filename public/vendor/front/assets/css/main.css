@@ -34,7 +34,7 @@
     font-size: 12px;
     line-height: 18px;
     color: #FFFFFF;
-    background: var(--dark_red);
+    background: var(--soft_red);
     border-radius: 50px;
     padding: 7px 29px;
     border: none;
@@ -224,14 +224,13 @@
 }
 
 .menu-round-center .menu-item {
-    width: 151px;
-    height: 151px;
+    width: 175px;
+    height: 175px;
     float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     margin-right: 20px;
     margin-bottom: 20px;
     background: #C60000;

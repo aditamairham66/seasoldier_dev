@@ -1,5 +1,5 @@
 @extends('template.frontend.index')
-@section('title_page', 'Introduction')
+@section('title_page', 'Braclate')
 @section('description', '')
 @section('keywords', '')
 @section('background', '')
@@ -10,17 +10,18 @@
 
 @section('content')
     <?php
-    $image = $data['profile_introduction_image']->content ?? 'vendor/front/assets/example/img/favicon.png';
-    $description = $data['profile_introduction_description']->content ?? '';
+    $image = $data['profile_bracelet_image']->content ?? 'vendor/front/assets/example/img/favicon.png';
+    $description = $data['profile_bracelet_description']->content ?? '';
     ?>
 
     <main id="main">
+
         <section class="breadcrumbs">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center">
                     <ol data-aos="fade-down">
                         <li><a href="{{ webPath('/profiles') }}">PROFILE</a></li>
-                        <li><b><i>INTRODUCTION</i></b></li>
+                        <li><b><i>BRACELET</i></b></li>
                     </ol>
                 </div>
             </div>
@@ -32,23 +33,16 @@
                     <img src="{{ asset($image) }}" class="image-left" alt="Profile Introduction">
                 </div>
             </div>
-            <div class="col-lg-5 col-md-12" style="padding: 0;">
+            <div class="col-lg-5 col-md-12">
                 <div class="text-bid-right">
-                    <h4 class="title" data-aos="fade-left">INTRODUCTION</h4>
+                    <h4 class="title" data-aos="fade-left">BRACELET</h4>
                     <div class="desc" data-aos="fade-left">{!! nl2br($description) !!}</div>
                 </div>
             </div>
         </div>
+
     </main><!-- End #main -->
 @endsection
 
 @push('bottom')
-    <script>
-        function setHeight() {
-            let h = $('.desc').height() - 20;
-            $('.image-left').height(h);
-        }
-
-        setHeight();
-    </script>
 @endpush

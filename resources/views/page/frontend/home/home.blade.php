@@ -15,6 +15,9 @@
                 @foreach($banner as $row)
                     <div class="swiper-slide">
                         <img src="{{ asset($row->image) }}" alt="{{ $row->title.' : '.$row->caption }}" class="swiper-lazy">
+                        <a href="{{ $row->url ?? 'javascript:void(0)' }}" @if($row->url != '') target="_blank" @endif>
+                            <div class="link-banner"></div>
+                        </a>
                     </div>
                 @endforeach
             </div>

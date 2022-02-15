@@ -38,10 +38,10 @@ class CmsSettings extends CmsSettingsModel
     /**
      * @return Collection
      */
-    public static function getProfileBraclate(): Collection
+    public static function getProfileBracelet(): Collection
     {
         return self::table()
-            ->where('group_setting', '=', 'Profile Braclate')
+            ->where('group_setting', '=', 'Profile Bracelet')
             ->get();
     }
 
