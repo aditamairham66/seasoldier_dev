@@ -445,7 +445,8 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.instagram.com/oembed/?callback=$callback&url=$url&access_token=123%7C456",
+//            CURLOPT_URL => "https://api.instagram.com/oembed/?callback=$callback&url=$url&access_token=123%7C456",
+            CURLOPT_URL => "https://api.instagram.com/oembed/?url=$url",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

@@ -1,0 +1,92 @@
+.title-big {
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+}
+
+.img-gallery {
+    width: 100%;
+    height: auto;
+}
+
+.title, .title a {
+    text-align: left;
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 22px;
+    align-items: center;
+    color: #001521 !important;
+    margin-bottom: 20px
+}
+
+.title a:hover {
+    opacity: 0.8;
+}
+
+.desc {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.desc, .desc * {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    color: #001521;
+}
+
+.desc a {
+    color: rgba(17, 64, 103, 1);
+}
+
+.box-gallery-detail {
+    background: rgba(255, 254, 254, 0.6);
+    border-radius: 30px;
+    padding: 50px 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.gallery-detail-list .detail-item {
+    height: auto;
+}
+
+.gallery-detail-list .detail-item .content {
+    padding: 0 50px;
+}
+
+.btn-danger-mid {
+    margin-top: 30px;
+    background: var(--dark_red);
+}
+
+.gallery-arrow {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 40px;
+    color: var(--dark_red);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.gallery-arrow.disabled, .gallery-arrow:hover {
+    color: var(--dark_red);
+    opacity: 0.6;
+}
+
+.gallery-arrow.disabled:hover{
+    cursor: not-allowed;
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 20px;
+}
