@@ -1,12 +1,13 @@
 <?php namespace App\Http\Controllers;
 
-
 use crocodicstudio\crudbooster\controllers\CBController;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
-class AdminProfilePreferenceController extends CBController
+class AdminProgramPreferenceController extends CBController
 {
+    var $list_image =  ['Program Main Background', 'Program Warungku Background', 'Program Dolphin Soldier Background', 'Program Trees Conservation Background', 'Program Mangrove Conservation Background'];
+
     public function cbInit()
     {
         # START CONFIGURATION DO NOT REMOVE THIS LINE
@@ -34,7 +35,7 @@ class AdminProfilePreferenceController extends CBController
         $this->col = [];
         $this->col[] = array("label" => "Name", "name" => "label");
         $this->col[] = array("label" => "Content", "name" => "content", "callback" => function ($row) {
-            if (in_array($row->label, ['Profile Bracelet Image', 'Profile Introduction Image', 'Profile Main Background'])) {
+            if (in_array($row->label, $this->list_image)) {
                 return "<a data-lightbox='roadtrip'  rel='profile_preference' title='" . $row->name . "' href='" . asset($row->content) . "'>
                 <img width='auto' height='40px' src='" . asset($row->content) . "'/></a>";
             } else {
@@ -50,7 +51,7 @@ class AdminProfilePreferenceController extends CBController
             ->first();
         $this->form = [];
         $this->form[] = ["label" => "Name", "name" => "label", "type" => "text", "disabled" => TRUE];
-        if (in_array($data->label, ['Profile Bracelet Image', 'Profile Introduction Image', 'Profile Main Background'])) {
+        if (in_array($data->label, $this->list_image)) {
             $this->form[] = ["label" => "Content", "name" => "content", "type" => "upload", "required" => TRUE, "validation" => "required|image|max:3000", "help" => "File types support : JPG, JPEG, PNG"];
         } else {
             $this->form[] = ['label' => 'Content', 'name' => 'content', 'type' => 'textarea'];
@@ -61,18 +62,21 @@ class AdminProfilePreferenceController extends CBController
     public function hook_query_index(&$query)
     {
         $query->whereIn('name', [
-            'profile_introduction_description',
-            'profile_introduction_image',
-            'profile_organization_description',
-            'profile_bracelet_description',
-            'profile_bracelet_image',
-            'profile_main_bg',
+            'program_main_bg',
+            'program_warungku_description',
+            'program_warungku_background',
+            'program_dolphin_description',
+            'program_dolphin_background',
+            'program_trees_conservation_description',
+            'program_trees_conservation_background',
+            'program_mangrove_description',
+            'program_mangrove_background',
         ]);
     }
 
     public function hook_after_edit($id)
     {
         $query = DB::table('cms_settings')->where('id', $id)->first();
-        Cache::forever('setting_'.$query->name, $query->content);
+        Cache::forever('setting_' . $query->name, $query->content);
     }
 }

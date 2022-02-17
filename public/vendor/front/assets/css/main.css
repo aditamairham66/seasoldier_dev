@@ -143,13 +143,11 @@
     }
 }
 
-.navbar li a:hover::after,
-.navbar li a.active::after,
-.navbar li:hover a::after {
+.navbar li a:hover::after, .navbar li a.active::after, .navbar li:hover a::after {
     content: "";
     display: block;
     position: absolute;
-    width: 78%;
+    width: 81%;
     height: 62px;
     background: var(--dark_red);
     border-radius: 0 0 5px 5px;
@@ -164,7 +162,7 @@
 
 .profile-section .image-section {
     width: 100%;
-    height: 903px;
+    height: 100vh;
     position: relative;
 }
 

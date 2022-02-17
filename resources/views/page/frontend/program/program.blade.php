@@ -3,46 +3,50 @@
 @section('description', '')
 @section('keywords', '')
 @section('background', '')
+
+@push('head')
+    <link rel="stylesheet" href="{{ asset('vendor/front/assets/css/program.css') }}">
+@endpush
+
 @section('content')
 <main id="main">
 
     <section class="nopadding-section">
         <div class="profile-section">
             <div class="image-section">
-                <img src="{{ asset('vendor/front/assets/example/img/bg/bg_program.png') }}" alt="Image">
+                <img src="{{ asset(\crocodicstudio\crudbooster\helpers\CRUDBooster::getSetting('program_main_bg')) }}" alt="Image">
             </div>
             <div class="content">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 text-center mt-200">
 
-                            <h4 class="title-big">OUR MAIN PROGRAM</h4>
-                            <h4 class="caption-big mb-5 pb-2">IN 2020</h4>
+                            <h4 class="title-big mb-5 pb-2">OUR MAIN PROGRAM</h4>
 
                             <div class="menu-round-center">
                                 <a href="{{ webPath('programs/shop') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_shop.png') }}" alt="">
                                     </div>
-                                    <span class="title">BERSIHKAN WARUNGKU</span>
+                                    <span class="title">BERSIHKAN <br> WARUNGKU</span>
                                 </a>
                                 <a href="{{ webPath('programs/soldier') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_dolpin.png') }}" alt="">
                                     </div>
-                                    <span class="title">DOLPHIN SOLDIER</span>
+                                    <span class="title">DOLPHIN <br> SOLDIER</span>
                                 </a>
                                 <a href="{{ webPath('programs/planting') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_planting.png') }}" alt="">
                                     </div>
-                                    <span class="title">TREES PLANTING</span>
+                                    <span class="title">TREES <br> CONSERVATION</span>
                                 </a>
                                 <a href="{{ webPath('programs/mangrove') }}" class="menu-item">
                                     <div class="image">
                                         <img src="{{ asset('vendor/front/assets/example/img/icon/ic_manggrove.png') }}" alt="">
                                     </div>
-                                    <span class="title">MANGROVE PLANTING</span>
+                                    <span class="title">MANGROVE <br> CONSERVATION</span>
                                 </a>
                             </div>
 
@@ -56,8 +60,5 @@
 </main><!-- End #main -->
 @endsection
 @push('bottom')
-
-@endpush
-@push('head')
 
 @endpush

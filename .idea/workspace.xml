@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18627433-52db-4e83-93e1-6b9659e22abd" name="Default Changelist" comment="#changelog&#10;- fixing responsive banner">
-      <change afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/bracelet.blade.php" afterDir="false" />
+    <list default="true" id="18627433-52db-4e83-93e1-6b9659e22abd" name="Default Changelist" comment="#changelog&#10;- fixing profile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminHomeBannerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminHomeBannerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/CmsSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/CmsSettings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/CmsSettingsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CmsSettingsService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/front/assets/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/front/assets/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminProfilePreferenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminProfilePreferenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminProgramShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminProgramShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProgramsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProgramsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/vendor/front/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/front/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/front/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/front/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/home/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/home/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/braclate.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/honor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/honor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/introduction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/introduction.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/organization.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/organization.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/profile/team.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/profile/team.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/frontend/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template/frontend/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/program/planting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/program/planting.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/program/program.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/program/program.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/program/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/program/shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/page/frontend/program/soldier.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/frontend/program/soldier.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +213,8 @@
       <workItem from="1627498194560" duration="442000" />
       <workItem from="1627575148080" duration="918000" />
       <workItem from="1644667964079" duration="3151000" />
-      <workItem from="1644849957486" duration="23220000" />
+      <workItem from="1644849957486" duration="28114000" />
+      <workItem from="1645033047576" duration="13205000" />
     </task>
     <task id="LOCAL-00001" summary="#changelog&#10;- fixing profile&#10;- fixing profile organization">
       <created>1627380278274</created>
@@ -271,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644858458524</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="#changelog&#10;- fixing profile">
+      <created>1644944520262</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1644944520262</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +298,8 @@
     <MESSAGE value="#changelog&#10;- fixing module home&#10;[x] Layout ganti biru&#10;[x] Alamat hilangkan&#10;[x] Link Instagram&#10;[x] Link Youtube &#10;[x] Link WA" />
     <MESSAGE value="#changelog&#10;- add ignoring sql db" />
     <MESSAGE value="#changelog&#10;- fixing responsive banner" />
-    <option name="LAST_COMMIT_MESSAGE" value="#changelog&#10;- fixing responsive banner" />
+    <MESSAGE value="#changelog&#10;- fixing profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="#changelog&#10;- fixing profile" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

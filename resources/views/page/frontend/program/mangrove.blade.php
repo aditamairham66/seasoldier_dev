@@ -2,40 +2,82 @@
 @section('title_page', 'Mangrove Planting')
 @section('description', '')
 @section('keywords', '')
-@section('background', 'bg-program-mangrove')
+{{--@section('background', 'bg-program-mangrove')--}}
+
+@push('head')
+    <link rel="stylesheet" href="{{ asset('vendor/front/assets/css/program.css') }}">
+    <style>
+        #main{
+            background-image: url("{{ asset(\crocodicstudio\crudbooster\helpers\CRUDBooster::getSetting('program_mangrove_background')) }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+    </style>
+@endpush
 @section('content')
 <main id="main">
-
     <section class="breadcrumbs mb-5 pb-5">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <ol class="white">
                     <li><a href="{{ webPath('programs') }}">PROGRAM</a></li>
-                    <li>MANGROVE PLANTING</li>
+                    <li><b><i>MANGROVE CONSERVATION</i></b></li>
                 </ol>
             </div>
         </div>
         <div class="row bg-pattern-profile mt-5">
             <div class="col-lg-12 text-center">
-                <h4 class="title-program text-white">MANGROVE PLANTING</h4>
-                <div class="caption-program text-white">
-                    Managed by Seasoldier
-                    Pontianak. Conservation area
-                    located in Mempawah,
-                    Pontianak. One of the largest
-                    mangrove conservation area in
-                    Indonesia.
-                </div>
+                <h4 class="title-program text-white">MANGROVE CONSERVATION</h4>
+                <div class="caption-program text-white">{!! nl2br($description) !!}</div>
+                <div class="row">
+                    <div class="col-lg-3 ms-auto">
+                        <div class="swiper-container mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="{{ asset($image[count($image) - 1]->image) }}" alt="image">
+                                </div>
+                                @foreach($image as $key => $row)
+                                    @if($key < count($image) - 1)
+                                        <div class="swiper-slide">
+                                            <img src="{{ asset($row->image) }}" alt="image">
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
 
-                <div class="image-list">
-                    <div class="image-small">
-                        <img src="{{ asset('vendor/front/assets/example/img/program/m1.png') }}" alt="image small">
                     </div>
-                    <div class="image-mid">
-                        <img src="{{ asset('vendor/front/assets/example/img/program/m3.png') }}" alt="image medium">
+                    <div class="col-lg-4">
+                        <div class="swiper-container mySwiper">
+                            <div class="swiper-wrapper">
+                                @foreach($image as $row)
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset($row->image) }}" alt="image">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
-                    <div class="image-small">
-                        <img src="{{ asset('vendor/front/assets/example/img/program/m2.png') }}" alt="image small">
+                    <div class="col-lg-3 me-auto">
+                        <div class="swiper-container mySwiper">
+                            <div class="swiper-wrapper">
+                                @foreach($image as $key => $row)
+                                    @if($key > 0)
+                                        <div class="swiper-slide">
+                                            <img src="{{ asset($row->image) }}" alt="image">
+                                        </div>
+                                    @endif
+                                @endforeach
+                                @for($i = 0; $i < 1; $i++)
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset($image[$i]->image) }}" alt="image">
+                                    </div>
+                                @endfor
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,8 +87,27 @@
 </main><!-- End #main -->
 @endsection
 @push('bottom')
-
-@endpush
-@push('head')
-
+    <script>
+        new Swiper(".mySwiper", {
+            lazy: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            mousewheel: false,
+            effect: "cube", //slide, fade, cube, coverflow, flip,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            allowTouchMove: false,
+            keyboard: {
+                enabled: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 @endpush

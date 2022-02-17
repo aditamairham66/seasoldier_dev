@@ -115,6 +115,7 @@
             effect: "cube", //slide, fade, cube, coverflow, flip,
             loop: true,
             loopFillGroupWithBlank: true,
+            allowTouchMove: false,
             keyboard: {
                 enabled: true,
             },
