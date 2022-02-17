@@ -23,7 +23,7 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function getOrganization(Request $request)
+    public function getOurOrganization(Request $request)
     {
         menuTag('profile');
         return view('page.frontend.profile.organization', [
@@ -40,7 +40,7 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function getTeam(Request $request)
+    public function getOurTeam(Request $request)
     {
         menuTag('profile');
         return view('page.frontend.profile.team', [
@@ -49,7 +49,7 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function getHonor(Request $request)
+    public function getSeasoldierKehormatan(Request $request)
     {
         menuTag('profile');
         return view('page.frontend.profile.honor', [

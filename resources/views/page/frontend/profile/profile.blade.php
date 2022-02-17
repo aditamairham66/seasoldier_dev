@@ -30,7 +30,7 @@
                                         </div>
                                         <span class="title">INTRODUCTION</span>
                                     </a>
-                                    <a href="{{ webPath('profiles/organization') }}" class="menu-item" data-aos="fade-up">
+                                    <a href="{{ webPath('profiles/our-organization') }}" class="menu-item" data-aos="fade-up">
                                         <div class="image">
                                             <img src="{{ asset('vendor/front/assets/example/img/icon/ic_organization.png') }}" alt="OUR ORGANIZATION">
                                         </div>
@@ -42,13 +42,13 @@
                                         </div>
                                         <span class="title">BRACELET</span>
                                     </a>
-                                    <a href="{{ webPath('profiles/team') }}" class="menu-item" data-aos="fade-up">
+                                    <a href="{{ webPath('profiles/our-team') }}" class="menu-item" data-aos="fade-up">
                                         <div class="image">
                                             <img src="{{ asset('vendor/front/assets/example/img/icon/ic_team.png') }}" alt="OUR TEAM">
                                         </div>
                                         <span class="title">OUR TEAM</span>
                                     </a>
-                                    <a href="{{ webPath('profiles/honor') }}" class="menu-item" data-aos="fade-up">
+                                    <a href="{{ webPath('profiles/seasoldier-kehormatan') }}" class="menu-item" data-aos="fade-up">
                                         <div class="image">
                                             <img src="{{ asset('vendor/front/assets/example/img/icon/ic_respect.png') }}" alt="SEASOLDIER KEHORMATAN">
                                         </div>

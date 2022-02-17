@@ -15,7 +15,7 @@ class ProgramsController extends Controller
         return view('page.frontend.program.program');
     }
 
-    public function getShop()
+    public function getBersihkanWarungku()
     {
         menuTag('program');
         return view('page.frontend.program.shop', [
@@ -24,7 +24,7 @@ class ProgramsController extends Controller
         ]);
     }
 
-    public function getSoldier()
+    public function getDolphinSoldier()
     {
         menuTag('program');
         return view('page.frontend.program.soldier', [
@@ -33,7 +33,7 @@ class ProgramsController extends Controller
         ]);
     }
 
-    public function getPlanting()
+    public function getTreesConservation()
     {
         menuTag('program');
         return view('page.frontend.program.planting', [
@@ -42,7 +42,7 @@ class ProgramsController extends Controller
         ]);
     }
 
-    public function getMangrove()
+    public function getMangroveConservation()
     {
         menuTag('program');
         return view('page.frontend.program.mangrove', [

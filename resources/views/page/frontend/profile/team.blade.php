@@ -60,7 +60,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <ol class="white" data-aos="fade-down">
                         <li><a href="{{ webPath('profiles') }}">PROFILE</a></li>
-                        <li>OUR TEAM</li>
+                        <li><b><i>OUR TEAM</i></b></li>
                     </ol>
                 </div>
             </div>

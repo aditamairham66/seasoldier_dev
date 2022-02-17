@@ -14,9 +14,9 @@
             <ul>
                 <li><a class="nav-link scrollto @if(getMenuTag() == 'profile') active @endif" href="{{ webPath('/profiles') }}">PROFILE</a></li>
                 <li><a class="nav-link scrollto @if(getMenuTag() == 'program') active @endif" href="{{ webPath('/programs') }}">PROGRAM</a></li>
-                <li><a class="nav-link scrollto @if(getMenuTag() == 'donation') active @endif" href="{{ webPath('/donation') }}">DONATION</a></li>
                 <li><a class="nav-link scrollto @if(getMenuTag() == 'gallery') active @endif" href="{{ webPath('/gallery') }}">GALLERY</a></li>
                 <li><a class="nav-link scrollto @if(getMenuTag() == 'region') active @endif" href="{{ webPath('/regions') }}">REGIONAL</a></li>
+                <li><a class="nav-link scrollto @if(getMenuTag() == 'donation') active @endif" href="{{ webPath('/support-us') }}">SUPPORT US</a></li>
                 <li><a class="nav-link scrollto @if(getMenuTag() == 'contact') active @endif" href="{{ webPath('/contact') }}">CONTACT</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>

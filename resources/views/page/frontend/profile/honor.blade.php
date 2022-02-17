@@ -47,7 +47,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <ol data-aos="fade-down">
                         <li><a href="{{ webPath('/profiles') }}">PROFILE</a></li>
-                        <li>SEASOLDIER KEHORMATAN</li>
+                        <li><b><i>SEASOLDIER KEHORMATAN</i></b></li>
                     </ol>
                 </div>
             </div>
