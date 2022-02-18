@@ -1,0 +1,96 @@
+.title-big {
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+}
+
+.region-list {
+    margin-bottom: 60px;
+}
+
+.region-list .region-item img {
+    width: 125px;
+}
+
+.form-add-city {
+    padding: 100px 75px 75px;
+}
+
+.btn-danger-mid {
+    background: var(--dark_red);
+}
+
+.form-control {
+    font-size: 16px;
+}
+
+.title {
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 48px;
+    align-items: center;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.caption-text {
+    font-size: 18px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.caption-text a {
+    color: #ffffff;
+}
+
+.caption-text a:hover {
+    opacity: 0.8;
+}
+
+.region-detail-list {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
+    padding: 80px 100px;
+    margin-top: 60px;
+}
+
+.image-detail {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+.swiper-slide img, .image-instagram {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.form-add-city .title {
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 48px;
+    color: #FFFFFF;
+}
+
+.mySwiper {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--red);
+}
+
+.swiper-pagination-bullet {
+    background-color: #FFFFFF;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--red);
+}

@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-lg-12 text-center mt-200">
 
-                                <h4 class="title-big mb-5">#BRANI</h4>
+                                <h4 class="title-big mb-5" data-aos="fade-down">#BRANI</h4>
 
                                 <div class="menu-round-center">
                                     <a href="{{ webPath('profiles/introduction') }}" class="menu-item" data-aos="fade-up">

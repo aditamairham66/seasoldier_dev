@@ -23,7 +23,7 @@
     <section class="breadcrumbs mb-5 pb-5">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <ol class="white">
+                <ol class="white" data-aos="fade-down">
                     <li><a href="{{ webPath('programs') }}">PROGRAM</a></li>
                     <li><b><i>DOLPHIN SOLDIER</i></b></li>
                 </ol>
@@ -31,10 +31,10 @@
         </div>
         <div class="row bg-pattern-profile mt-5">
             <div class="col-lg-12 text-center">
-                <h4 class="title-program text-white">DOLPHIN SOLDIER</h4>
-                <div class="caption-program text-white">{!! nl2br($description) !!}</div>
+                <h4 class="title-program text-white" data-aos="fade-down">DOLPHIN SOLDIER</h4>
+                <div class="caption-program text-white" data-aos="fade-down">{!! nl2br($description) !!}</div>
 
-                <div class="row">
+                <div class="row" data-aos="fade-up">
                     <div class="col-lg-3 ms-auto">
                         <div class="swiper-container mySwiper">
                             <div class="swiper-wrapper">
@@ -50,7 +50,6 @@
                                 @endforeach
                             </div>
                         </div>
-
                     </div>
                     <div class="col-lg-4">
                         <div class="swiper-container mySwiper">

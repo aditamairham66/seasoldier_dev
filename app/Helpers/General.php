@@ -488,10 +488,10 @@ it is not in the permitted range, from 0 to 999, inclusive.<br />";
             if (!file_exists(storage_path('app/uploads'))) { //Verify if the directory exists
                 mkdir(storage_path('app/uploads')); //create it if do not exists
             }
-            if (!file_exists(storage_path('app/uploads/gallery'))) { //Verify if the directory exists
-                mkdir(storage_path('app/uploads/gallery')); //create it if do not exists
+            if (!file_exists(storage_path('app/uploads/instagram'))) { //Verify if the directory exists
+                mkdir(storage_path('app/uploads/instagram')); //create it if do not exists
             }
-            $thumbnail_url = 'uploads/gallery/' . date("Y-m-d") . "_" . md5(str_random(5)) . "_instagram.png";
+            $thumbnail_url = 'uploads/instagram/' . date("Y-m-d") . "_" . md5(str_random(5)) . "_instagram.png";
             file_put_contents(storage_path('app/' . $thumbnail_url), file_get_contents($file));
         }
 

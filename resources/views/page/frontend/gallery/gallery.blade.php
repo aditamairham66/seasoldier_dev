@@ -25,17 +25,19 @@
             <div class="row mt-3">
                 <div class="col-lg-12 text-center">
 
-                    <h4 class="title-big text-white pt-5">GALLERY</h4>
+                    <h4 class="title-big text-white pt-5" data-aos="fade-down">GALLERY</h4>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="gallery-list">
                                     <template v-for="(item, index) in items">
-                                        <a :href="`{{ webPath('gallery/detail/') }}/${item.code}`" class="gallery-item" target="_blank">
+                                        <a :href="`{{ webPath('gallery/detail/') }}/${item.code}`" class="gallery-item" target="_blank" data-aos="fade-up">
                                             <img :src="`${item.image}`" alt="image gallery">
                                         </a>
                                     </template>
                                 </div>
+                            </div>
+                            <div class="col-lg-12">
                                 <a v-if="current_page < last_page" href="javascript:void(0)" class="btn-danger-mid" @click="getData">SEE MORE</a>
                             </div>
                         </div>
@@ -48,7 +50,7 @@
 @endsection
 @push('bottom')
     <script>
-        appBooth = new Vue({
+        new Vue({
             el: '#main',
             data: {
                 current_page: 0,

@@ -18,7 +18,7 @@ class ProgramsController extends Controller
     public function getBersihkanWarungku()
     {
         menuTag('program');
-        return view('page.frontend.program.shop', [
+        return view('page.frontend.program.warungku', [
             'description' => CRUDBooster::getSetting('program_warungku_description'),
             'image' => DB::table('program_shop')->orderBy('sort', 'ASC')->get()
         ]);

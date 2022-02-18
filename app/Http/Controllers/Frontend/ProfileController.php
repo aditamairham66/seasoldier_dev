@@ -52,7 +52,7 @@ class ProfileController extends Controller
     public function getSeasoldierKehormatan(Request $request)
     {
         menuTag('profile');
-        return view('page.frontend.profile.honor', [
+        return view('page.frontend.profile.kehrmatan', [
             'list' => ProfileHonorService::listSort()
         ]);
     }

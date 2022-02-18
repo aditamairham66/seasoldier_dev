@@ -21,30 +21,30 @@
                     <div class="row">
                         <div class="col-lg-12 text-center mt-200">
 
-                            <h4 class="title-big mb-5 pb-2">OUR MAIN PROGRAM</h4>
+                            <h4 class="title-big mb-5 pb-2" data-aos="fade-down">OUR MAIN PROGRAM</h4>
 
                             <div class="menu-round-center">
-                                <a href="{{ webPath('programs/bersihkan-warungku') }}" class="menu-item">
+                                <a href="{{ webPath('programs/bersihkan-warungku') }}" class="menu-item" data-aos="fade-up">
                                     <div class="image">
-                                        <img src="{{ asset('vendor/front/assets/example/img/icon/ic_shop.png') }}" alt="">
+                                        <img src="{{ asset('vendor/front/assets/example/img/icon/ic_shop.png') }}">
                                     </div>
                                     <span class="title">BERSIHKAN <br> WARUNGKU</span>
                                 </a>
-                                <a href="{{ webPath('programs/dolphin-soldier') }}" class="menu-item">
+                                <a href="{{ webPath('programs/dolphin-soldier') }}" class="menu-item" data-aos="fade-up">
                                     <div class="image">
-                                        <img src="{{ asset('vendor/front/assets/example/img/icon/ic_dolpin.png') }}" alt="">
+                                        <img src="{{ asset('vendor/front/assets/example/img/icon/ic_dolpin.png') }}">
                                     </div>
                                     <span class="title">DOLPHIN <br> SOLDIER</span>
                                 </a>
-                                <a href="{{ webPath('programs/trees-conservation') }}" class="menu-item">
+                                <a href="{{ webPath('programs/trees-conservation') }}" class="menu-item" data-aos="fade-up">
                                     <div class="image">
-                                        <img src="{{ asset('vendor/front/assets/example/img/icon/ic_planting.png') }}" alt="">
+                                        <img src="{{ asset('vendor/front/assets/example/img/icon/ic_planting.png') }}">
                                     </div>
                                     <span class="title">TREES <br> CONSERVATION</span>
                                 </a>
-                                <a href="{{ webPath('programs/mangrove-conservation') }}" class="menu-item">
+                                <a href="{{ webPath('programs/mangrove-conservation') }}" class="menu-item" data-aos="fade-up">
                                     <div class="image">
-                                        <img src="{{ asset('vendor/front/assets/example/img/icon/ic_manggrove.png') }}" alt="">
+                                        <img src="{{ asset('vendor/front/assets/example/img/icon/ic_manggrove.png') }}">
                                     </div>
                                     <span class="title">MANGROVE <br> CONSERVATION</span>
                                 </a>

@@ -21,7 +21,7 @@
     <section class="breadcrumbs mb-5 pb-5">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <ol class="white">
+                <ol class="white" data-aos="fade-down">
                     <li><a href="{{ webPath('programs') }}">PROGRAM</a></li>
                     <li><b><i>MANGROVE CONSERVATION</i></b></li>
                 </ol>
@@ -29,9 +29,9 @@
         </div>
         <div class="row bg-pattern-profile mt-5">
             <div class="col-lg-12 text-center">
-                <h4 class="title-program text-white">MANGROVE CONSERVATION</h4>
-                <div class="caption-program text-white">{!! nl2br($description) !!}</div>
-                <div class="row">
+                <h4 class="title-program text-white" data-aos="fade-down">MANGROVE CONSERVATION</h4>
+                <div class="caption-program text-white" data-aos="fade-down">{!! nl2br($description) !!}</div>
+                <div class="row" data-aos="fade-up">
                     <div class="col-lg-3 ms-auto">
                         <div class="swiper-container mySwiper">
                             <div class="swiper-wrapper">

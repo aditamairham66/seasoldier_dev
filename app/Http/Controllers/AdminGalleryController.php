@@ -63,7 +63,6 @@ class AdminGalleryController extends CBController
                 $label = substr($value, 1);
                 $value = "<a href='https://www.instagram.com/".$label."/' target='_blank'>" . $value . "</a>";
             }
-
             $description .= $value." ";
         }
 
