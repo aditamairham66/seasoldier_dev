@@ -1,0 +1,16 @@
+.title-big {
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+}
+
+.menu-round-center-midsmall .menu-item, .btn-danger-mid {
+    background-color: var(--dark_red);
+}
+
+.form-control {
+    font-size: 16px;
+}
+
+textarea.form-control {
+    border-radius: 25px;
+}

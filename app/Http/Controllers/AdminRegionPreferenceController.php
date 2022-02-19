@@ -1,13 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-
 use crocodicstudio\crudbooster\controllers\CBController;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
-class AdminProfilePreferenceController extends CBController
+class AdminRegionPreferenceController extends CBController
 {
-    var $list_image = ['Profile Bracelet Image', 'Profile Introduction Image', 'Profile Main Background'];
+    var $list_image =  ['Regional Background'];
 
     public function cbInit()
     {
@@ -63,12 +62,7 @@ class AdminProfilePreferenceController extends CBController
     public function hook_query_index(&$query)
     {
         $query->whereIn('name', [
-            'profile_introduction_description',
-            'profile_introduction_image',
-            'profile_organization_description',
-            'profile_bracelet_description',
-            'profile_bracelet_image',
-            'profile_main_bg',
+            'regional_background',
         ]);
     }
 

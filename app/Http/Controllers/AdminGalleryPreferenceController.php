@@ -8,7 +8,6 @@ class AdminGalleryPreferenceController extends CBController
 {
     var $list_image =  ['Gallery Background'];
 
-
     public function cbInit()
     {
         # START CONFIGURATION DO NOT REMOVE THIS LINE

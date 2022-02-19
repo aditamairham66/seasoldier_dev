@@ -101,12 +101,12 @@ class RegionsController extends Controller
             if (!empty($save->id)) {
                 $msg = 'Your request will be forwarded to our team.';
                 $type = 'info';
+                return redirect()->back()->with(['msg' => $msg, 'msg_type' => $type]);
             } else {
                 $msg = 'Oops, something went wrong';
                 $type = 'danger';
+                return redirect()->back()->with(['msg' => $msg, 'msg_type' => $type])->withInput();
             }
-
-            return redirect()->back()->with(['msg' => $msg, 'msg_type' => $type])->withInput();
         }
     }
 }

@@ -25,7 +25,7 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <ol class="white">
+                    <ol class="white" data-aos="fade-down">
                         <li><a href="{{ webPath('regions') }}">REGIONAL</a></li>
                         <li><b><i>{{$name}}</i></b></li>
                     </ol>
@@ -33,10 +33,10 @@
 
                 <div class="region-detail-list">
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-3" data-aos="fade-right">
                             <img src="{{ asset($image) }}" alt="image item" class="image-detail">
                         </div>
-                        <div class="col-lg-8 ms-auto box-information">
+                        <div class="col-lg-8 ms-auto box-information" data-aos="fade-left">
                             <h4 class="title">REGIONAL<br>{{ $name }}</h4>
                             <p class="caption-text">
                                 <i class="ic_instagram"></i> <a href="{{ $instagram }}" target="_blank">{{ '@'.$code }}</a>
@@ -84,7 +84,7 @@
                     let index = this.swiper.activeIndex + 3;
                     let total = this.items.length;
 
-                    if (index === total && this.current_page < this.last_page){
+                    if (index === total && this.current_page < this.last_page) {
                         this.getData()
                     }
 
