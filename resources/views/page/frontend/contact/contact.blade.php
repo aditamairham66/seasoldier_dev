@@ -24,22 +24,22 @@
         <section class="breadcrumbs">
             <div class="row mt-3">
                 <div class="col-lg-12 text-center">
-                    <h4 class="title-big text-white">CONTACT</h4>
+                    <h4 class="title-big text-white" data-aos="fade-down">CONTACT</h4>
 
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
 
                                 <div class="menu-round-center-midsmall pt-5">
-                                    <a href="mailto:{{ $email }}" class="menu-item">
+                                    <a href="mailto:{{ $email }}" class="menu-item" data-aos="fade-down">
                                         <div class="image"><img src="{{ asset('vendor/front/assets/example/img/icon/ic_email.png') }}"></div>
                                         <span class="title">EMAIL</span>
                                     </a>
-                                    <a href="{{ $instagram }}" class="menu-item" target="_blank">
+                                    <a href="{{ $instagram }}" class="menu-item" target="_blank" data-aos="fade-down">
                                         <div class="image"><img src="{{ asset('vendor/front/assets/example/img/icon/ic_instagram.png') }}"></div>
                                         <span class="title">INSTAGRAM</span>
                                     </a>
-                                    <a href="{{ $wa }}" class="menu-item" target="_blank">
+                                    <a href="{{ $wa }}" class="menu-item" target="_blank" data-aos="fade-down">
                                         <div class="image"><img src="{{ asset('vendor/front/assets/example/img/icon/ic_whatsapp.png') }}"></div>
                                         <span class="title">WHATSAPP</span>
                                     </a>
@@ -50,7 +50,7 @@
                                     {{ method_field('POST') }}
 
                                     {!! showMessage() !!}
-                                    <div class="form-group">
+                                    <div class="form-group" data-aos="fade-up">
                                         @if(!empty($errors->first('email')))
                                             <div class="alert-text-danger">
                                                 <i class="ri-information-line"></i> {{ $errors->first('email') }}
@@ -59,7 +59,7 @@
                                         <input type="email" name="email" class="form-control" placeholder="ENTER YOUR EMAIL"
                                                value="{{ (old('email')?:'') }}">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" data-aos="fade-up">
                                         @if(!empty($errors->first('message')))
                                             <div class="alert-text-danger">
                                                 <i class="ri-information-line"></i> {{ $errors->first('message') }}
@@ -67,7 +67,7 @@
                                         @endif
                                         <textarea name="message" class="form-control" cols="30" rows="10" placeholder="YOUR MESSAGE">{!! (old('message')?:'') !!}</textarea>
                                     </div>
-                                    <div class="form-group mt-5">
+                                    <div class="form-group mt-5" data-aos="fade-up">
                                         <button type="submit" class="btn-danger-mid">SEND</button>
                                     </div>
                                 </form>

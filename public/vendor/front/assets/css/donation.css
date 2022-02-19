@@ -1,0 +1,76 @@
+.navbar li a:hover::after, .navbar li a.active::after, .navbar li:hover a::after {
+    width: 84%;
+}
+
+.title-big, .title-program {
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+}
+
+.menu-round-center-midsmall .menu-item, .btn-danger-mid {
+    background-color: var(--dark_red);
+}
+
+.menu-round-center-mid .menu-item {
+    background: var(--dark_red);
+}
+
+.box-black .content {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.box-black .content .title {
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.box-black .content .desc {
+    margin-bottom: 30px;
+    height: auto;
+}
+
+.btn-donate {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 150px;
+}
+
+.caption-program {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 18px;
+}
+
+.box-black-small {
+    position: relative;
+}
+
+.box-black-small .image img.img-merchandise {
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn-buy {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 150px;
+}
+
+.merchandise-title {
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 24px;
+    color: #FFFFFF;
+}
