@@ -54,10 +54,8 @@ class AdminHomeBannerController extends CBController
 
     public function hook_before_add(&$arr)
     {
-        //Your code here
         $latest_sorting = HomeBanner::table()->max('sort');
         $arr['sort'] = $latest_sorting + 1;
-
     }
 
     public function getMoveUp($id): bool

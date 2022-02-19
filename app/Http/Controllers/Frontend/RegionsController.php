@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Helpers\General;
 use App\Helpers\Router;
 use App\Repositories\RegionRequest;
+use crocodicstudio\crudbooster\helpers\CRUDBooster;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
@@ -99,6 +100,12 @@ class RegionsController extends Controller
             $save->save();
 
             if (!empty($save->id)) {
+                CRUDBooster::sendNotification([
+                    'content' => 'New Request Region',
+                    'to' => CRUDBooster::adminPath('region-request'),
+                    'id_cms_users' => [1, 2]
+                ]);
+
                 $msg = 'Your request will be forwarded to our team.';
                 $type = 'info';
                 return redirect()->back()->with(['msg' => $msg, 'msg_type' => $type]);

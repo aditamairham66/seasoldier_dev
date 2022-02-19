@@ -39,6 +39,12 @@ class ContactController extends Controller
             $save->save();
 
             if (!empty($save->id)) {
+                CRUDBooster::sendNotification([
+                    'content' => 'New Contact Us',
+                    'to' => CRUDBooster::adminPath('contact-us'),
+                    'id_cms_users' => [1, 2]
+                ]);
+
                 $msg = 'Thank you for the advice you have given us, our team will process it soon.';
                 $type = 'info';
                 return redirect()->back()->with(['msg' => $msg, 'msg_type' => $type]);

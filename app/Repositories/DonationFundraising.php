@@ -6,6 +6,13 @@ use Illuminate\Support\Facades\DB;
 
 class DonationFundraising extends DonationFundraisingModel
 {
+    public static function firstById($id)
+    {
+        return new static(DB::table('program_shop')
+            ->where('program_shop.id', $id)
+            ->first());
+    }
+
     public static function listScroll()
     {
         return DB::table('donation_fundraising')

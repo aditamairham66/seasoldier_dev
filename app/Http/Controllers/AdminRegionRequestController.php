@@ -21,7 +21,7 @@ class AdminRegionRequestController extends CBController
         $this->button_show = false;
         $this->button_filter = false;
         $this->button_import = false;
-        $this->button_export = true;
+        $this->button_export = false;
         $this->table = "region_request";
         # END CONFIGURATION DO NOT REMOVE THIS LINE
 

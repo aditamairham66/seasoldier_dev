@@ -46,7 +46,6 @@ class AdminProgramShopController extends CBController
     public function hook_query_index(&$query)
     {
         $query->orderby('program_shop.sort', 'asc');
-
     }
 
     public function hook_before_add(&$arr)
@@ -101,5 +100,4 @@ class AdminProgramShopController extends CBController
 
         return true;
     }
-
 }

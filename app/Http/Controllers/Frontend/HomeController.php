@@ -4,6 +4,7 @@ use App\Helpers\General;
 use App\Helpers\Router;
 use App\Repositories\EmailSubscribe;
 use App\Repositories\HomeBanner;
+use crocodicstudio\crudbooster\helpers\CRUDBooster;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
@@ -38,12 +39,18 @@ class HomeController extends Controller
             $save->save();
 
             if (!empty($save->id)) {
+                CRUDBooster::sendNotification([
+                    'content' => 'New Subscribe',
+                    'to' => CRUDBooster::adminPath('email-subscribe'),
+                    'id_cms_users' => [1, 2]
+                ]);
+
                 Router::redirectBackFooter('Your request will be forwarded to our team.', 'info');
             } else {
                 Router::redirectBackFooter('Oops, something went wrong', 'danger');
             }
 
-            return 'true';
+            return true;
         }
     }
 }

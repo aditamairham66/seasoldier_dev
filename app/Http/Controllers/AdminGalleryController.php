@@ -6,7 +6,6 @@ class AdminGalleryController extends CBController
 {
     public function cbInit()
     {
-
         # START CONFIGURATION DO NOT REMOVE THIS LINE
         $this->title_field = "instagram_name";
         $this->limit = "20";
