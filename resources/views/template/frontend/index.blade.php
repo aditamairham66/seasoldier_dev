@@ -20,17 +20,17 @@
 
 <body class="@yield('background')">
 
-@include('template.frontend.header')
+    @include('template.frontend.header')
 
-@yield('content')
+    @yield('content')
 
-@include('template.frontend.footer')
+    @include('template.frontend.footer')
 
-@include('template.frontend.loader')
+    @include('template.frontend.loader')
 
-@include('template.frontend.plugin.js')
+    @include('template.frontend.plugin.js')
 
-@stack('bottom')
+    @stack('bottom')
 
 </body>
 

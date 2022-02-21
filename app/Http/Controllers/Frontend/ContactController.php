@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers\Frontend;
+<?php
+
+namespace App\Http\Controllers\Frontend;
 
 use App\Repositories\ContactUs;
 use crocodicstudio\crudbooster\helpers\CRUDBooster;
@@ -11,7 +13,8 @@ class ContactController extends Controller
     public function getIndex()
     {
         menuTag('contact');
-        return view('page.frontend.contact.contact',[
+        return view('page.frontend.contact.contact', [
+            'is_mobile' => isMobile(),
             'email' => CRUDBooster::getSetting('contact_us_email'),
             'instagram' => CRUDBooster::getSetting('contact_us_instagram'),
             'wa' => CRUDBooster::getSetting('contact_us_wa'),

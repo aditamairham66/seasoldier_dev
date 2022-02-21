@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers\Frontend;
+<?php
+
+namespace App\Http\Controllers\Frontend;
 
 use App\Helpers\General;
 use App\Helpers\Router;
@@ -14,7 +16,8 @@ class HomeController extends Controller
     public function getIndex()
     {
         menuTag('home');
-        return view('page.frontend.home.home',[
+        return view('page.frontend.home.home', [
+            'is_mobile' => isMobile(),
             'banner' => HomeBanner::getAll()
         ]);
     }
@@ -42,7 +45,7 @@ class HomeController extends Controller
                 CRUDBooster::sendNotification([
                     'content' => 'New Subscribe',
                     'to' => CRUDBooster::adminPath('email-subscribe'),
-                    'id_cms_users' => [1, 2]
+                    'id_cms_users' => [1]
                 ]);
 
                 Router::redirectBackFooter('Your request will be forwarded to our team.', 'info');

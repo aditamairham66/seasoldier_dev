@@ -12,6 +12,7 @@ class GalleryController extends Controller
     {
         menuTag('gallery');
         return view('page.frontend.gallery.gallery', [
+            'is_mobile' => isMobile(),
             'image' => DB::table('gallery')->orderBy('id', 'DESC')->get()
         ]);
     }
@@ -58,6 +59,7 @@ class GalleryController extends Controller
 
         menuTag('gallery');
         return view('page.frontend.gallery.detail', [
+            'is_mobile' => isMobile(),
             'url' => $data->instagram_url,
             'name' => $data->instagram_name,
             'image' => $data->instagram_image,

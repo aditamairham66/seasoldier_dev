@@ -1,61 +1,54 @@
 @extends('template.frontend.index')
-@section('title_page', 'Our Partners')
-@section('description', '')
-@section('keywords', '')
-{{--@section('background', 'bg-tree')--}}
+@section('title_page', 'Support Us / Our Partners')
+@section('description', 'Seasoldier, An environmental care movement that starts from self-action')
+@section('keywords', '#Seasoldier,#Brani')
 
 @push('head')
     <link rel="stylesheet" href="{{ asset('vendor/front/assets/css/donation.css') }}">
     <style>
         #main {
             background-image: url("{{ asset(\crocodicstudio\crudbooster\helpers\CRUDBooster::getSetting('support_partners_background')) }}");
-            background-size: cover;
-            background-position: top;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            min-height: auto;
         }
+
     </style>
 @endpush
 
 @section('content')
-    <main id="main">
+    <main id="main" class="d-flex flex-column align-items-center">
+        <div class="container-fluid position-relative">
+            <nav aria-label="breadcrumb" data-aos="fade-down">
+                <ol class="breadcrumb text-white">
+                    <li class="breadcrumb-item"><a href="{{ webPath('/support-us') }}">SUPPORT US</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><b><i>OUR PARTNERS</i></b></li>
+                </ol>
+            </nav>
+        </div>
 
-        <section class="breadcrumbs mb-5 pb-5">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <ol class="white" data-aos="fade-down">
-                        <li><a href="{{ webPath('support-us') }}">SUPPORT US</a></li>
-                        <li>OUR PARTNERS</li>
-                    </ol>
+        <div class="container-fluid detail-title-center">
+            <!-- Title -->
+            <div class="row">
+                <div class="col-12 col-lg-12" data-aos="fade-down">
+                    <p class="detail-title">OUR PARTNERS</p>
                 </div>
-            </div>
+            </div><!-- End Title -->
 
-            <div class="row mt-3">
-                <div class="col-lg-12 text-center">
-                    <h4 class="title-program text-white mt-5" data-aos="fade-down">OUR PARTNERS</h4>
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 pb-5">
-                                <div class="partner-list">
-                                    @foreach($data as $x => $row)
-                                        <div class="image-item" data-aos="fade-up">
-                                            <img src="{{ $row->image }}" alt="partner : {{ $row->name }}">
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <div class="caption-program text-white" data-aos="fade-up">{!! nl2br($description) !!}</div>
-                                <a href="{{ $link }}" class="btn-danger-mid" target="_blank" data-aos="fade-up">JOIN PARTNERSHIP</a>
-                            </div>
+            <!-- Content -->
+            <div class="row">
+                <div class="col-12 d-flex flex-row flex-wrap justify-content-center align-items-center">
+                    @foreach ($data as $x => $row)
+                        <div class="image-item" data-aos="fade-up">
+                            <img src="{{ $row->image }}" alt="partner : {{ $row->name }}">
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            </div>
-        </section>
 
-    </main><!-- End #main -->
+                <div class="col-12">
+                    <div class="caption-program text-white" data-aos="fade-up">{!! nl2br($description) !!}</div>
+                </div>
+            </div><!-- End Content -->
+        </div>
+    </main>
 @endsection
-@push('bottom')
 
+@push('bottom')
 @endpush

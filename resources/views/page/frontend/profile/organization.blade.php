@@ -1,108 +1,119 @@
 @extends('template.frontend.index')
-@section('title_page', 'Our Organization')
-@section('description', '')
-@section('keywords', '')
-@section('background', 'bg-dark')
+@section('title_page', 'Profile / Our Organization')
+@section('description', 'Seasoldier, An environmental care movement that starts from self-action')
+@section('keywords', '#Seasoldier,#Brani')
 
 @push('head')
     <link rel="stylesheet" href="{{ asset('vendor/front/assets/css/profile.css') }}">
     <style>
-        #main{
-            background-color: black;
+        #main {
+            background-color: #000000;
             padding-bottom: 60px;
+            min-height: auto;
         }
+
+        .img-separator {
+            margin-top: 20px;
+        }
+
+        .breadcrumb-item a,
+        .detail-title,
+        .detail-content {
+            color: #ffffff;
+        }
+
     </style>
 @endpush
 
 @section('content')
-    <?php
-    $description = $data['profile_organization_description']->content ?? '';
-    ?>
+    <main id="main" class="d-flex flex-column align-items-center">
+        <div class="container-fluid position-relative">
+            <nav aria-label="breadcrumb" data-aos="fade-down">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ webPath('/profiles') }}">PROFILE</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><b><i>INTRODUCTION</i></b></li>
+                </ol>
+            </nav>
+        </div>
 
-    <main id="main">
-
-        <section class="breadcrumbs">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <ol class="white" data-aos="fade-down">
-                        <li><a href="{{ webPath('/profiles') }}">PROFILE</a></li>
-                        <li><b><i>OUR ORGANIZATION</i></b></li>
-                    </ol>
+        <div class="container-fluid">
+            <!-- Title -->
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <p class="detail-title" data-aos="fade-down">OUR<br>ORGANIZATION</p>
                 </div>
-            </div>
-            <div class="row bg-pattern-profile mt-5">
-                <div class="col-lg-12">
-                    <div class="container">
-                        <div class="row flex-reverse">
-                            <div class="col-lg-6 pl-0">
-                                <div class="text-bid-left">
-                                    <h4 class="title text-white" data-aos="fade-right">OUR ORGANIZATION</h4>
-                                    <div class="desc text-white" data-aos="fade-right">{!! nl2br($description) !!}</div>
+                <div class="col-12 col-lg-6 content-no-padding-right separator-right">
+                    <img src="{{ asset('vendor/front/assets/example/img/profile/intro_pattern_right.png') }}"
+                        alt="Separator" class="img-separator">
+                </div>
+            </div><!-- End Title -->
+
+            <!-- Content -->
+            <div class="row">
+                <div class="col-12 col-lg-6 order-lg-2 text-center"
+                    @if ($is_mobile) data-aos="fade-up" @else data-aos="fade-left" @endif>
+                    <div class="row">
+                        <div class="col-lg-8 content-no-padding">
+                            <div class="swiper-container mySwiper">
+                                <div class="swiper-wrapper">
+                                    @foreach ($image as $row)
+                                        <div class="swiper-slide">
+                                            <img class="img-slide-big" src="{{ asset($row->image) }}" alt="image">
+                                        </div>
+                                    @endforeach
+                                </div>
+                                @if ($is_mobile)
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                @endif
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="swiper-container mySwiper swiper-detail-mini">
+                                <div class="swiper-wrapper">
+                                    @foreach ($image as $key => $row)
+                                        @if ($key > 0)
+                                            <div class="swiper-slide">
+                                                <img class="img-slide-big" src="{{ asset($row->image) }}" alt="image">
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                    @for ($i = 0; $i < 1; $i++)
+                                        <div class="swiper-slide">
+                                            <img class="img-slide-big" src="{{ asset($image[$i]->image) }}" alt="image">
+                                        </div>
+                                    @endfor
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 pr-0 text-center" data-aos="fade-left">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="swiper-container mySwiper">
-                                            <div class="swiper-wrapper">
-                                                @foreach($image as $row)
-                                                    <div class="swiper-slide">
-                                                        <img class="img-slide-big" src="{{ asset($row->image) }}" alt="image">
-                                                    </div>
-                                                @endforeach
+                            <div class="swiper-container mySwiper swiper-detail-mini">
+                                <div class="swiper-wrapper">
+                                    @foreach ($image as $key => $row)
+                                        @if ($key > 1)
+                                            <div class="swiper-slide">
+                                                <img class="img-slide-big" src="{{ asset($row->image) }}" alt="image">
                                             </div>
-                                            <div class="swiper-pagination"></div>
+                                        @endif
+                                    @endforeach
+                                    @for ($i = 0; $i < 2; $i++)
+                                        <div class="swiper-slide">
+                                            <img class="img-slide-big" src="{{ asset($image[$i]->image) }}" alt="image">
                                         </div>
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <div class="box-img-last">
-                                            <div class="swiper-container mySwiper">
-                                                <div class="swiper-wrapper">
-                                                    @foreach($image as $key => $row)
-                                                        @if($key > 0)
-                                                            <div class="swiper-slide">
-                                                                <img class="img-slide-big" src="{{ asset($row->image) }}" alt="image">
-                                                            </div>
-                                                        @endif
-                                                    @endforeach
-                                                    @for($i = 0; $i < 1; $i++)
-                                                        <div class="swiper-slide">
-                                                            <img class="img-slide-big" src="{{ asset($image[$i]->image) }}" alt="image">
-                                                        </div>
-                                                    @endfor
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="box-img-last mt-4">
-                                            <div class="swiper-container mySwiper">
-                                                <div class="swiper-wrapper">
-                                                    @foreach($image as $key => $row)
-                                                        @if($key > 1)
-                                                            <div class="swiper-slide">
-                                                                <img class="img-slide-big" src="{{ asset($row->image) }}" alt="image">
-                                                            </div>
-                                                        @endif
-                                                    @endforeach
-                                                    @for($i = 0; $i < 2; $i++)
-                                                        <div class="swiper-slide">
-                                                            <img class="img-slide-big" src="{{ asset($image[$i]->image) }}" alt="image">
-                                                        </div>
-                                                    @endfor
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endfor
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-    </main><!-- End #main -->
+                <div class="col-12 col-lg-6 order-lg-1"
+                    @if ($is_mobile) data-aos="fade-up" @else data-aos="fade-right" @endif>
+                    <p class="detail-content">{!! nl2br($description) !!}</p>
+                </div>
+            </div><!-- End Content -->
+        </div>
+    </main>
 @endsection
 
 @push('bottom')
@@ -127,6 +138,24 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
+
+        function sameHeightSwiper() {
+            let h = 0;
+
+            $('.mySwiper').each(function() {
+                let divHeight = $(this).height();
+                if (h < divHeight) {
+                    h = divHeight;
+                }
+            });
+
+            $('.swiper-detail-mini').height((h / 2) - 10 + 'px');
+        }
+        sameHeightSwiper();
     </script>
 @endpush

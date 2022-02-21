@@ -1,79 +1,76 @@
 @extends('template.frontend.index')
-@section('title_page', 'Merchandise')
-@section('description', '')
-@section('keywords', '')
-{{--@section('background', 'bg-tree')--}}
+@section('title_page', 'Support Us / Merchandise')
+@section('description', 'Seasoldier, An environmental care movement that starts from self-action')
+@section('keywords', '#Seasoldier,#Brani')
 
 @push('head')
     <link rel="stylesheet" href="{{ asset('vendor/front/assets/css/donation.css') }}">
     <style>
         #main {
             background-image: url("{{ asset(\crocodicstudio\crudbooster\helpers\CRUDBooster::getSetting('support_merchandise_background')) }}");
-            background-size: cover;
-            background-position: top;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            min-height: auto;
         }
+
     </style>
 @endpush
 
 @section('content')
-    <main id="main">
+    <main id="main" class="d-flex flex-column align-items-center">
+        <div class="container-fluid position-relative">
+            <nav aria-label="breadcrumb" data-aos="fade-down">
+                <ol class="breadcrumb text-white">
+                    <li class="breadcrumb-item"><a href="{{ webPath('/support-us') }}">SUPPORT US</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><b><i>MERCHANDISE</i></b></li>
+                </ol>
+            </nav>
+        </div>
 
-        <section class="breadcrumbs">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <ol class="white" data-aos="fade-down">
-                        <li><a href="{{ webPath('support-us') }}">SUPPORT US</a></li>
-                        <li><b><i>MERCHANDISE</i></b></li>
-                    </ol>
+        <div class="container-fluid detail-title-center">
+            <!-- Title -->
+            <div class="row">
+                <div class="col-12 col-lg-12" data-aos="fade-down">
+                    <p class="detail-title">MERCHANDISE</p>
                 </div>
-            </div>
+            </div><!-- End Title -->
 
-            <div class="row mt-3">
-                <div class="col-lg-12 text-center">
-                    <h4 class="title-program text-white mt-5" data-aos="fade-down">MERCHANDISE</h4>
-
-                    <div class="container">
-                        <div class="row">
-                            @foreach($data as $row)
-                                <div class="col-lg-4" data-aos="fade-up">
-                                    <div class="box-black-small">
-                                        <div class="image">
-                                            <img src="{{ asset($row->image) }}" alt="image" class="img-merchandise">
-                                        </div>
-                                        <div class="content">
-                                            <h4 class="title merchandise-title"><i>{{ $row->name }}</i></h4>
-                                            <div class="caption">RP {{ number_format($row->price,0,'.','.') }}</div>
-                                            <a href="{{ $row->link }}" class="btn-danger-mid btn-buy" target="_blank">BUY NOW</a>
-                                        </div>
-                                    </div>
+            <!-- Content -->
+            <div class="row mt-5 mb-5" data-aos="fade-up">
+                @foreach ($data as $row)
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up">
+                        <div class="box-black-small">
+                            <div class="image">
+                                <img src="{{ asset($row->image) }}" alt="image" class="img-merchandise">
+                            </div>
+                            <div class="content">
+                                <h4 class="title merchandise-title"><i>{{ $row->name }}</i></h4>
+                                <div class="caption">RP {{ number_format($row->price, 0, '.', '.') }}
                                 </div>
-                            @endforeach
+                                <a href="{{ $row->link }}" class="btn-danger-mid btn-buy" target="_blank">BUY
+                                    NOW</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-    </main><!-- End #main -->
+                @endforeach
+            </div><!-- End Content -->
+        </div>
+    </main>
 @endsection
 
 @push('bottom')
     <script>
-        function sameHeight(){
-            let maxHeight = 0;
-            let content = $('.box-black-small');
+        function sameHeight() {
+            let outerWidth = $('body').outerWidth();
 
-            content.each(function(){
-                let h = $(this).height();
-                if(h > maxHeight){
-                    maxHeight = h;
-                }
-            });
+            if (outerWidth >= 768) {
+                let maxHeight = 0;
+                let content = $('.box-black-small');
 
-            content.height(maxHeight);
+                content.each(function() {
+                    let h = $(this).height();
+                    if (h > maxHeight) {
+                        maxHeight = h;
+                    }
+                });
+            }
         }
         sameHeight();
     </script>

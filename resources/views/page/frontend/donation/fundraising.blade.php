@@ -1,73 +1,68 @@
 @extends('template.frontend.index')
-@section('title_page', 'Fundraising')
-@section('description', '')
-@section('keywords', '')
-{{--@section('background', 'bg-tree')--}}
+@section('title_page', 'Support Us / Fundraising')
+@section('description', 'Seasoldier, An environmental care movement that starts from self-action')
+@section('keywords', '#Seasoldier,#Brani')
 
 @push('head')
     <link rel="stylesheet" href="{{ asset('vendor/front/assets/css/donation.css') }}">
     <style>
         #main {
             background-image: url("{{ asset(\crocodicstudio\crudbooster\helpers\CRUDBooster::getSetting('support_fundraising_background')) }}");
-            background-size: cover;
-            background-position: top;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            min-height: auto;
         }
+
     </style>
 @endpush
 
 @section('content')
-    <main id="main">
+    <main id="main" class="d-flex flex-column align-items-center">
+        <div class="container-fluid position-relative">
+            <nav aria-label="breadcrumb" data-aos="fade-down">
+                <ol class="breadcrumb text-white">
+                    <li class="breadcrumb-item"><a href="{{ webPath('/support-us') }}">SUPPORT US</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><b><i>FUNDRAISING</i></b></li>
+                </ol>
+            </nav>
+        </div>
 
-        <section class="breadcrumbs mb-5 pb-5">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <ol class="white" data-aos="fade-down">
-                        <li><a href="{{ webPath('support-us') }}">SUPPORT US</a></li>
-                        <li><b><i>FUNDRISING</i></b></li>
-                    </ol>
+        <div class="container-fluid detail-title-center">
+            <!-- Title -->
+            <div class="row">
+                <div class="col-12 col-lg-12" data-aos="fade-down">
+                    <p class="detail-title">FUNDRAISING</p>
                 </div>
-            </div>
+            </div><!-- End Title -->
 
-            <div class="row mt-3">
-                <div class="col-lg-12 text-center">
-                    <h4 class="title-program text-white pt-5 pb-5" data-aos="fade-down">FUNDRAISING</h4>
-
-                    <div class="container">
-                        <div class="row">
-                            @foreach($data as $i => $row)
-                                <div @if($i === 0) class="col-lg-8" @else class="col-lg-4" @endif data-aos="fade-up">
-                                    <div class="box-black">
-                                        <div class="image">
-                                            <img src="{{ asset($row->image) }}" alt="image">
-                                        </div>
-                                        <div class="content">
-                                            <h4 class="title">{{ $row->name }}</h4>
-                                            <div class="desc">{{ nl2br($row->desc) }}</div>
-                                            <a href="{{ $row->link }}" target="_blank" class="btn-danger-mid btn-donate">DONATE</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+            <!-- Content -->
+            <div class="row mt-5 mb-5" data-aos="fade-up">
+                @foreach ($data as $i => $row)
+                    <div @if ($i === 0) class="col-lg-8 box-large" @else class="col-lg-4" @endif
+                        data-aos="fade-up">
+                        <div class="box-black">
+                            <div class="image">
+                                <img src="{{ asset($row->image) }}" alt="image">
+                            </div>
+                            <div class="content">
+                                <h4 class="title">{{ $row->name }}</h4>
+                                <div class="desc">{{ nl2br($row->desc) }}</div>
+                                <a href="{{ $row->link }}" target="_blank" class="btn-danger-mid btn-donate">DONATE</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
+                @endforeach
+            </div><!-- End Content -->
+        </div>
     </main>
 @endsection
+
 @push('bottom')
     <script>
-        function sameHeight(){
+        function sameHeight() {
             let maxHeight = 0;
             let content = $('.content');
 
-            content.each(function(){
+            content.each(function() {
                 let h = $(this).height();
-                if(h > maxHeight){
+                if (h > maxHeight) {
                     maxHeight = h;
                 }
             });

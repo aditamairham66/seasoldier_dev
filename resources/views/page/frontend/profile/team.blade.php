@@ -1,8 +1,7 @@
 @extends('template.frontend.index')
-@section('title_page', 'Our Team')
-@section('description', '')
-@section('keywords', '')
-@section('background', 'bg-dark')
+@section('title_page', 'Profile / Our Team')
+@section('description', 'Seasoldier, An environmental care movement that starts from self-action')
+@section('keywords', '#Seasoldier,#Brani')
 
 @push('head')
     <link rel="stylesheet" href="{{ asset('vendor/front/assets/css/profile.css') }}">
@@ -12,99 +11,80 @@
             padding-bottom: 0;
         }
 
-        .breadcrumbs{
-            padding-bottom: 0 !important;
-            margin-bottom: 0 !important;
+        .breadcrumb-item a,
+        .detail-title,
+        .detail-content {
+            color: #ffffff;
         }
 
-        .title-mid {
-            font-family: 'Lemon/Milk', sans-serif;
-            font-style: italic;
+        .detail-title {
+            margin-bottom: 60px;
         }
 
-        .team-list-primary .team-list.right .content {
-            padding-right: 80px;
-            align-items: start;
+        .separator-right {
+            position: absolute;
+            right: 0;
+            top: 0;
         }
 
-        .team-list-primary .team-list.left .content {
-            padding-left: 80px;
-            align-items: end;
-        }
-
-        .team-list-primary .team-list .content .title {
-            font-family: 'Lemon/Milk', sans-serif;
-            font-style: italic;
-            font-size: 24px;
-        }
-
-        .team-list-primary .team-list .content .caption {
-            font-family: 'Titillium Web', sans-serif;
-            font-size: 16px;
-            text-align: left;
-        }
-
-        .team-list-second .team-list .content .title {
-            font-family: 'Lemon/Milk', sans-serif;
-            font-style: italic;
-            font-size: 24px;
-        }
     </style>
 @endpush
 
 @section('content')
-    <main id="main">
+    <main id="main" class="d-flex flex-column align-items-center">
+        <div class="container-fluid position-relative">
+            <nav aria-label="breadcrumb" data-aos="fade-down">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ webPath('/profiles') }}">PROFILE</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><b><i>OUR TEAM</i></b></li>
+                </ol>
+            </nav>
+        </div>
 
-        <section class="breadcrumbs mb-5 pb-5">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <ol class="white" data-aos="fade-down">
-                        <li><a href="{{ webPath('profiles') }}">PROFILE</a></li>
-                        <li><b><i>OUR TEAM</i></b></li>
-                    </ol>
+        <div class="container-fluid detail-title-center">
+            <div class="row">
+                <div class="col-12 col-lg-12" data-aos="fade-down">
+                    <p class="detail-title">OUR TEAM</p>
+                </div>
+                <div class="separator-right">
+                    <img src="{{ asset('vendor/front/assets/example/img/profile/intro_pattern_right.png') }}"
+                        alt="Separator" class="img-separator">
                 </div>
             </div>
+        </div>
 
-            <div class="row bg-pattern-profile mt-5">
-                <div class="col-lg-12 text-center">
-                    <h4 class="title-mid text-white" data-aos="fade-down">OUR TEAM</h4>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 ms-auto me-auto">
+                    @foreach ($highlight as $x => $row)
+                        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center @if ($x % 2 !== 0) flex-lg-row-reverse @endif"
+                            @if ($is_mobile) data-aos="fade-up" @else @if ($x % 2 === 0) data-aos="fade-right" @else data-aos="fade-left" @endif
+                            @endif>
+                            <img src="{{ asset($row->image) }}" alt="{{ $row->name }}" class="profile-team-image">
+                            <div class="profile-team-info @if ($x % 2 !== 0) info-right @endif">
+                                <p class="profile-team-name">{{ $row->name }}</p>
+                                <p class="profile-team-position">{{ $row->position }}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
 
-                    <div class="team-list-primary">
-                        @foreach($highlight as $x => $row)
-                            <div class="team-list @if($x%2 === 0) left @else right @endif">
-                                @if($x%2 === 0)
-                                    <img src="{{ $row->image }}" alt="team" class="image-team" data-aos="fade-right">
-                                @endif
-                                <div class="content" @if($x%2 === 0) data-aos="fade-left" @else  data-aos="fade-right" @endif>
-                                    <h4 class="title">{{ $row->name }}</h4>
-                                    <p class="caption">{{ $row->position }}</p>
-                                </div>
-                                @if($x%2 !== 0)
-                                    <img src="{{ $row->image }}" alt="team" class="image-team" data-aos="fade-left">
-                                @endif
+                <div class="col-12 col-lg-8 ms-auto me-auto">
+                    <div class="row mt-5">
+                        @foreach ($team as $row)
+                            <div class="col-md-6 profile-team-member" data-aos="fade-up">
+                                <img src="{{ asset($row->image) }}" alt="{{ $row->name }}"
+                                    class="profile-team-member-image">
+                                <p class="profile-team-name">{{ $row->name }}</p>
+                                <p class="profile-team-position">{{ $row->position }}</p>
                             </div>
                         @endforeach
                     </div>
-
-                    <div class="team-list-second">
-                        @foreach($team as $t => $trow)
-                            <div class="team-list">
-                                <div class="image">
-                                    <img src="{{ $trow->image }}" alt="Image Team" data-aos="fade-up">
-                                </div>
-                                <div class="content">
-                                    <h4 class="title" data-aos="fade-up">{{ $trow->name }}</h4>
-                                    <div class="caption" data-aos="fade-up">{{ $trow->position }}</div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
                 </div>
             </div>
-        </section>
-
-    </main><!-- End #main -->
+        </div>
+    </main>
 @endsection
-@push('bottom')
 
+@push('bottom')
 @endpush

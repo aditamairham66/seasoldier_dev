@@ -1,7 +1,18 @@
 <?php
 
-if (!function_exists('screenLoad'))
-{
+if (!function_exists('screenLoad')) {
+    /**
+     * screen loading
+     *
+     * @return bool
+     */
+    function isMobile(): bool
+    {
+        return App\Helpers\General::isMobile();
+    }
+}
+
+if (!function_exists('screenLoad')) {
     /**
      * screen loading
      *
@@ -13,8 +24,7 @@ if (!function_exists('screenLoad'))
     }
 }
 
-if (!function_exists('checkScreenLoad'))
-{
+if (!function_exists('checkScreenLoad')) {
     /**
      * check screen loading
      *
@@ -26,8 +36,7 @@ if (!function_exists('checkScreenLoad'))
     }
 }
 
-if (!function_exists('RandomCode'))
-{
+if (!function_exists('RandomCode')) {
     /**
      * return random code string
      *
@@ -42,21 +51,20 @@ if (!function_exists('RandomCode'))
     }
 }
 
-if (!function_exists('getSessionDelegate'))
-{
+if (!function_exists('getSessionDelegate')) {
     /**
      * return session delegate
      *
      * @param $value
      * @return mixed
      */
-    function getSessionDelegate($value) {
+    function getSessionDelegate($value)
+    {
         return App\Helpers\General::getSessionDelegate()->$value;
     }
 }
 
-if (!function_exists('splitWord'))
-{
+if (!function_exists('splitWord')) {
     /**
      * split word
      *
@@ -64,13 +72,13 @@ if (!function_exists('splitWord'))
      * @param int $get
      * @return mixed
      */
-    function splitWord($word, int $get = 0) {
+    function splitWord($word, int $get = 0)
+    {
         return App\Helpers\General::splitWord($word, $get);
     }
 }
 
-if (!function_exists('makeSlug'))
-{
+if (!function_exists('makeSlug')) {
     /**
      * make slug
      *
@@ -83,8 +91,7 @@ if (!function_exists('makeSlug'))
     }
 }
 
-if (!function_exists('fill_chunks'))
-{
+if (!function_exists('fill_chunks')) {
     /**
      * @param $array
      * @param $parts
@@ -96,8 +103,7 @@ if (!function_exists('fill_chunks'))
     }
 }
 
-if (!function_exists('alternate_chunks'))
-{
+if (!function_exists('alternate_chunks')) {
     /**
      * @param $array
      * @param $parts
@@ -109,8 +115,7 @@ if (!function_exists('alternate_chunks'))
     }
 }
 
-if (!function_exists('multiple_array'))
-{
+if (!function_exists('multiple_array')) {
     /**
      * @param $array
      * @param $size
@@ -122,8 +127,7 @@ if (!function_exists('multiple_array'))
     }
 }
 
-if (!function_exists('dateArray'))
-{
+if (!function_exists('dateArray')) {
     /**
      * @param $start
      * @param $end
@@ -136,19 +140,18 @@ if (!function_exists('dateArray'))
     }
 }
 
-if (!function_exists('ToOrdinal'))
-{
+if (!function_exists('ToOrdinal')) {
     /**
      * @param $n
      * @return string|void
      */
-    function ToOrdinal($n) {
+    function ToOrdinal($n)
+    {
         return App\Helpers\General::ToOrdinal($n);
     }
 }
 
-if (!function_exists('menuTag'))
-{
+if (!function_exists('menuTag')) {
     /**
      * @param $name
      * @return bool
@@ -159,29 +162,28 @@ if (!function_exists('menuTag'))
     }
 }
 
-if (!function_exists('getMenuTag'))
-{
+if (!function_exists('getMenuTag')) {
     /**
      * @return mixed
      */
-    function getMenuTag() {
+    function getMenuTag()
+    {
         return App\Helpers\General::getMenuTag();
     }
 }
 
-if (!function_exists('YoutubeTakeID'))
-{
+if (!function_exists('YoutubeTakeID')) {
     /**
      * @param $url
      * @return mixed|string
      */
-    function YoutubeTakeID($url) {
+    function YoutubeTakeID($url)
+    {
         return App\Helpers\General::YoutubeTakeID($url);
     }
 }
 
-if (!function_exists('reqInstagram'))
-{
+if (!function_exists('reqInstagram')) {
     /**
      * @param $url
      * @param null $callback
@@ -193,8 +195,7 @@ if (!function_exists('reqInstagram'))
     }
 }
 
-if (!function_exists('footerData'))
-{
+if (!function_exists('footerData')) {
     /**
      * @return array
      */

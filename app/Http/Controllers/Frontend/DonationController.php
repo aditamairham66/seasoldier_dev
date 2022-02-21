@@ -1,6 +1,7 @@
-<?php namespace App\Http\Controllers\Frontend;
+<?php
 
-use App\Services\DonationFundraisingService;
+namespace App\Http\Controllers\Frontend;
+
 use App\Services\DonationMerchandiseService;
 use App\Services\DonationPartnerService;
 use App\Http\Controllers\Controller;
@@ -13,13 +14,16 @@ class DonationController extends Controller
     public function getIndex()
     {
         menuTag('donation');
-        return view('page.frontend.donation.donation');
+        return view('page.frontend.donation.donation', [
+            'is_mobile' => isMobile(),
+        ]);
     }
 
     public function getFundraising()
     {
         menuTag('donation');
         return view('page.frontend.donation.fundraising', [
+            'is_mobile' => isMobile(),
             'data' => DB::table('donation_fundraising')
                 ->orderBy('sort', 'ASC')
                 ->get()
@@ -30,6 +34,7 @@ class DonationController extends Controller
     {
         menuTag('donation');
         return view('page.frontend.donation.partner', [
+            'is_mobile' => isMobile(),
             'data' => DonationPartnerService::listAll(),
             'description' => CRUDBooster::getSetting('support_partners_description'),
             'link' => CRUDBooster::getSetting('support_partners_join_link')
@@ -40,6 +45,7 @@ class DonationController extends Controller
     {
         menuTag('donation');
         return view('page.frontend.donation.merchandise', [
+            'is_mobile' => isMobile(),
             'data' => DB::table('donation_merchandise')
                 ->orderBy('id', 'DESC')
                 ->get()

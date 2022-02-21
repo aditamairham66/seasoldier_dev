@@ -11,6 +11,7 @@
 }
 
 .input-group-footer input {
+    position: relative;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -29,6 +30,7 @@
 }
 
 .input-group-footer .btn-group-footer .btn-input {
+    position: absolute;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -38,19 +40,14 @@
     border-radius: 50px;
     padding: 7px 29px;
     border: none;
+    right: 8px;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 768px) {
     .input-group-footer {
         width: 100%;
     }
-
-    .input-group-footer .btn-group-footer .btn-input {
-        font-size: 10px;
-        padding: 7px 20px;
-    }
 }
-
 
 .nopadding-section {
     padding: 0;
@@ -118,7 +115,8 @@
     transition: 0.4s;
 }
 
-.btn-danger-t:hover, .btn-danger-t:focus {
+.btn-danger-t:hover,
+.btn-danger-t:focus {
     color: #FFFFFF;
     box-shadow: 0 0 12px #C60000;
     transition: 0.3s;
@@ -127,23 +125,31 @@
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover > a {
+.navbar li:hover>a {
     position: relative;
     color: #FFFFFF;
 }
 
+.navbar-mobile {
+    min-height: 100vh;
+    background-color: transparent;
+}
+
 @media (max-width: 920px) {
+
     .navbar a:hover,
     .navbar .active,
     .navbar .active:focus,
-    .navbar li:hover > a {
+    .navbar li:hover>a {
         position: relative;
         color: #C60000;
         font-weight: bold;
     }
 }
 
-.navbar li a:hover::after, .navbar li a.active::after, .navbar li:hover a::after {
+.navbar li a:hover::after,
+.navbar li a.active::after,
+.navbar li:hover a::after {
     content: "";
     display: block;
     position: absolute;
@@ -200,7 +206,7 @@
     font-weight: bold;
     font-size: 36px;
     line-height: 55px;
-    font-feature-settings: 'kern' off;
+    font-feature-settings: 'kern'off;
     color: #FFFFFF;
 }
 
@@ -801,6 +807,7 @@
 }
 
 @media (max-width: 920px) {
+
     .image-list .image-small,
     .image-list .image-mid {
         margin-bottom: 40px;
@@ -818,6 +825,7 @@
 }
 
 @media (max-width: 700px) {
+
     .image-list .image-small,
     .image-list .image-mid {
         width: 228px;
@@ -942,7 +950,8 @@
     transition: 0.3s;
 }
 
-.btn-danger-mid:hover, .btn-danger-mid:focus {
+.btn-danger-mid:hover,
+.btn-danger-mid:focus {
     color: #FFFFFF;
     box-shadow: 0 0 6px #C60000;
     transition: 0.3s;
@@ -1481,7 +1490,7 @@
     border-radius: 10px;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 1rem;
     line-height: 18px;
     display: flex;
     align-items: center;

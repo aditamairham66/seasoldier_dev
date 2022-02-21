@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Helpers\General;
-use App\Helpers\Router;
 use App\Repositories\RegionRequest;
 use crocodicstudio\crudbooster\helpers\CRUDBooster;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +16,7 @@ class RegionsController extends Controller
     {
         menuTag('region');
         return view('page.frontend.region.region', [
+            'is_mobile' => isMobile(),
             'data' => DB::table('region')->get(),
         ]);
     }
@@ -31,6 +31,7 @@ class RegionsController extends Controller
         }
         menuTag('region');
         return view('page.frontend.region.detail', [
+            'is_mobile' => isMobile(),
             'slug' => $slug,
             'name' => $data->name,
             'code' => str_replace(['/', 'https:www.instagram.com'], "", $data->instagram),
@@ -71,7 +72,9 @@ class RegionsController extends Controller
     public function getRegister()
     {
         menuTag('region');
-        return view('page.frontend.region.add');
+        return view('page.frontend.region.add', [
+            'is_mobile' => isMobile(),
+        ]);
     }
 
     public function postCitySave(Request $request)
@@ -103,7 +106,7 @@ class RegionsController extends Controller
                 CRUDBooster::sendNotification([
                     'content' => 'New Request Region',
                     'to' => CRUDBooster::adminPath('region-request'),
-                    'id_cms_users' => [1, 2]
+                    'id_cms_users' => [1]
                 ]);
 
                 $msg = 'Your request will be forwarded to our team.';
