@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use crocodicstudio\crudbooster\helpers\CRUDBooster;
 use Illuminate\Support\Facades\DB;
 
 class AdminDashboardController extends \crocodicstudio\crudbooster\controllers\CBController

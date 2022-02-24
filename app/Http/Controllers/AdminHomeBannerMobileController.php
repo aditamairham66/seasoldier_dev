@@ -12,7 +12,6 @@ class AdminHomeBannerMobileController extends CBController
 
     public function cbInit()
     {
-        # START CONFIGURATION DO NOT REMOVE THIS LINE
         $this->title_field = "title";
         $this->limit = "20";
         $this->orderby = "id,desc";
