@@ -25,7 +25,7 @@ class FrontMiddleware
         // save list
         DB::table('visitor_list')->insert([
             'created_at' => $date_time,
-            'path' => request()->url(),
+            'path' => request()->path(),
             'ip' => request()->ip(),
             'user_agent' => substr(request()->userAgent(), 0, 255),
             'date' => $date,
