@@ -6,9 +6,9 @@ use App\Repositories\HomeBanner;
 use crocodicstudio\crudbooster\controllers\CBController;
 use crocodicstudio\crudbooster\helpers\CRUDBooster;
 
-class AdminHomeBannerController extends CBController
+class AdminHomeBannerMobileController extends CBController
 {
-    var $type = 'Desktop';
+    var $type = 'Mobile';
 
     public function cbInit()
     {

@@ -8,7 +8,7 @@
 @endpush
 
 @section('content')
-    <main id="main">
+    <main id="main" onresize="showHideBanner()">
         <div class="swiper-container mySwiper">
             <div class="swiper-wrapper">
                 @foreach ($banner as $row)
@@ -31,7 +31,7 @@
 
 @push('bottom')
     <script>
-        new Swiper(".mySwiper", {
+        let mySwiper = new Swiper(".mySwiper", {
             lazy: true,
             autoHeight: true,
             spaceBetween: 30,

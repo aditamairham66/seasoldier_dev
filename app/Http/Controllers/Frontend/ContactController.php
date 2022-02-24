@@ -6,6 +6,7 @@ use App\Repositories\ContactUs;
 use crocodicstudio\crudbooster\helpers\CRUDBooster;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
@@ -47,6 +48,13 @@ class ContactController extends Controller
                     'to' => CRUDBooster::adminPath('contact-us'),
                     'id_cms_users' => [1, 2]
                 ]);
+
+                Mail::send('email/mail-contact', [
+                    'email' => $email
+                ], function ($message) use ($email) {
+                    $message->to('info@seasoldier.org')->subject('New Contact Us');
+                    $message->from('info@seasoldier.org', 'SEASOLDIER');
+                });
 
                 $msg = 'Thank you for the advice you have given us, our team will process it soon.';
                 $type = 'info';

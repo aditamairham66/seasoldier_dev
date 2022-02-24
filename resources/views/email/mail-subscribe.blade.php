@@ -1,0 +1,1 @@
+Example Email Subscribe {{ $email }}

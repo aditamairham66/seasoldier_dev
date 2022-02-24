@@ -10,15 +10,21 @@ use crocodicstudio\crudbooster\helpers\CRUDBooster;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
     public function getIndex()
     {
         menuTag('home');
+        $is_mobile = isMobile();
+
         return view('page.frontend.home.home', [
-            'is_mobile' => isMobile(),
-            'banner' => HomeBanner::getAll()
+            'is_mobile' => $is_mobile,
+            'banner' => ($is_mobile ? HomeBanner::getAllMobile() : HomeBanner::getAllDesktop()),
+            // 'banner_desktop' => HomeBanner::getAllDesktop(),
+            // 'banner_mobile' => HomeBanner::getAllMobile(),
+            // 'banner' => HomeBanner::getAll()
         ]);
     }
 
@@ -45,8 +51,15 @@ class HomeController extends Controller
                 CRUDBooster::sendNotification([
                     'content' => 'New Subscribe',
                     'to' => CRUDBooster::adminPath('email-subscribe'),
-                    'id_cms_users' => [1]
+                    'id_cms_users' => [1, 2]
                 ]);
+
+                Mail::send('email/mail-subscribe', [
+                    'email' => $email
+                ], function ($message) use ($email) {
+                    $message->to('info@seasoldier.org')->subject('New Subscribe');
+                    $message->from('info@seasoldier.org', 'SEASOLDIER');
+                });
 
                 Router::redirectBackFooter('Your request will be forwarded to our team.', 'info');
             } else {

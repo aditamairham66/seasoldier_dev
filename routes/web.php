@@ -11,14 +11,18 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+use Illuminate\Support\Facades\Route;
 
-routeController('/', 'Frontend\HomeController');
-routeController('/profiles', 'Frontend\ProfileController');
-routeController('/programs', 'Frontend\ProgramsController');
-routeController('/gallery', 'Frontend\GalleryController');
-routeController('/regions', 'Frontend\RegionsController');
-routeController('/support-us', 'Frontend\DonationController');
-routeController('/contact', 'Frontend\ContactController');
+// Route::get('/', function () {
+//    return view('welcome');
+// })->middleware('front_middleware');
+
+Route::middleware(['front_middleware'])->group(function () {
+    routeController('/', 'Frontend\HomeController');
+    routeController('/profiles', 'Frontend\ProfileController');
+    routeController('/programs', 'Frontend\ProgramsController');
+    routeController('/gallery', 'Frontend\GalleryController');
+    routeController('/regions', 'Frontend\RegionsController');
+    routeController('/support-us', 'Frontend\DonationController');
+    routeController('/contact', 'Frontend\ContactController');
+});
