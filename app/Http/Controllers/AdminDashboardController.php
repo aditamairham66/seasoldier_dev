@@ -10,8 +10,6 @@ class AdminDashboardController extends \crocodicstudio\crudbooster\controllers\C
 
     public function getIndex()
     {
-        if (!CRUDBooster::isView()) CRUDBooster::redirect(CRUDBooster::adminPath(), trans('crudbooster.denied_access'));
-
         // main variable
         $year = (request('year') ?? date('Y'));
         $month = (request('month') ?? date('m'));
