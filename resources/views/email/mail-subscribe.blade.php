@@ -1,1 +1,2 @@
-Example Email Subscribe {{ $email }}
+<!-- Deprecated -->
+New Email Subscribe {{ $email }}

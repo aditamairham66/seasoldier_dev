@@ -217,8 +217,7 @@ h6 {
     justify-content: space-between;
     padding: 10px 0 10px 30px;
     font-style: normal;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 0.9rem;
     text-align: center;
     color: #FFFFFF;
     white-space: nowrap;
@@ -1899,16 +1898,16 @@ section {
 
 #footer .footer-newsletter {
     font-size: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 #footer .footer-newsletter h4 {
     font-style: normal;
-    font-size: 18px;
+    font-size: 0.9rem;
     line-height: 21px;
     color: #FFFFFF;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 #footer .footer-newsletter p {
@@ -1967,7 +1966,7 @@ section {
     background: transparent;
     color: #fff;
     line-height: 1;
-    padding: 8px 0;
+    padding: 0 0 8px;
     margin-right: 4px;
     border-radius: 5px;
     text-align: center;

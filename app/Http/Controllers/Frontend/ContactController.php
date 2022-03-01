@@ -49,10 +49,10 @@ class ContactController extends Controller
                     'id_cms_users' => [1, 2]
                 ]);
 
-                Mail::send('email/mail-contact', [
+                Mail::send('email.mail-main', [
                     'email' => $email
                 ], function ($message) use ($email) {
-                    $message->to('info@seasoldier.org')->subject('New Contact Us');
+                    $message->to($email)->subject('Thanks for Subscribe');
                     $message->from('info@seasoldier.org', 'SEASOLDIER');
                 });
 

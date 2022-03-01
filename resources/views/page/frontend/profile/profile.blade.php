@@ -42,13 +42,13 @@
                 </div>
                 <span class="title">OUR TEAM</span>
             </a>
-            <a href="{{ webPath('profiles/seasoldier-kehormatan') }}" class="menu-item" data-aos="fade-up">
+            {{-- <a href="{{ webPath('profiles/seasoldier-kehormatan') }}" class="menu-item" data-aos="fade-up">
                 <div class="image">
                     <img src="{{ asset('vendor/front/assets/example/img/icon/ic_respect.png') }}"
                         alt="SEASOLDIER KEHORMATAN">
                 </div>
                 <span class="title">SEASOLDIER<br>KEHORMATAN</span>
-            </a>
+            </a> --}}
         </div>
     </main>
 @endsection

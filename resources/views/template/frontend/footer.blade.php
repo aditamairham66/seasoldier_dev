@@ -31,7 +31,7 @@ $footer_data = footerData();
                 </div>
 
                 <div class="col-lg-12 col-md-12 footer-newsletter text-center text-md-right mb-0">
-                    <h4 class="mb-0">SEASOLDIER FOUNDATION</h4>
+                    <h4>SEASOLDIER FOUNDATION</h4>
                     @if ($footer_data['footer_foundation']->content != '')
                         <p>{{ $footer_data['footer_foundation']->content }}</p>
                     @endif
@@ -39,7 +39,7 @@ $footer_data = footerData();
 
                 <div class="col-lg-12 col-md-12 footer-newsletter text-center text-md-right">
                     <h4>MORE INFORMATION</h4>
-                    <div class="social-links pt-3 pt-md-0">
+                    <div class="social-links pt-md-0">
                         <a href="{{ $footer_data['footer_social_instagram']->content ?? '' }}" target="_blank"
                             class="instagram">
                             <i class="bx bxl-instagram"></i>

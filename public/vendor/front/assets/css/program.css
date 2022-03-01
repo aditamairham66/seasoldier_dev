@@ -98,7 +98,7 @@
     font-family: 'Lemon/Milk', sans-serif;
     font-style: italic;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding-left: 20px;
     padding-right: 20px;
     color: #001521;
@@ -117,7 +117,7 @@
 .caption-program {
     max-width: 100%;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     text-align: center;
 }
 

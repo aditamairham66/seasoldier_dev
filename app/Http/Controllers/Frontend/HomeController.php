@@ -39,6 +39,8 @@ class HomeController extends Controller
                 ->withErrors($valid)
                 ->withInput();
         } else {
+            // return view('email.mail-main', ['email' => request('search_footer')]);
+
             $email = request('search_footer');
             $date = date('Y-m-d', strtotime(General::dateNow()));
 
@@ -54,10 +56,10 @@ class HomeController extends Controller
                     'id_cms_users' => [1, 2]
                 ]);
 
-                Mail::send('email/mail-subscribe', [
+                Mail::send('email.mail-main', [
                     'email' => $email
                 ], function ($message) use ($email) {
-                    $message->to('info@seasoldier.org')->subject('New Subscribe');
+                    $message->to($email)->subject('Thanks for Subscribe');
                     $message->from('info@seasoldier.org', 'SEASOLDIER');
                 });
 

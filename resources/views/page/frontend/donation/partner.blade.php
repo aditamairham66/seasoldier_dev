@@ -34,7 +34,8 @@
 
             <!-- Content -->
             <div class="row">
-                <div class="col-12 d-flex flex-row flex-wrap justify-content-center align-items-center">
+                <div
+                    class="col-12 col-lg-10 ms-auto me-auto d-flex flex-row flex-wrap justify-content-center align-items-center">
                     @foreach ($data as $x => $row)
                         <div class="image-item" data-aos="fade-up">
                             <img src="{{ $row->image }}" alt="partner : {{ $row->name }}">
@@ -42,7 +43,7 @@
                     @endforeach
                 </div>
 
-                <div class="col-12">
+                <div class="col-12 col-lg-10 ms-auto me-auto">
                     <div class="caption-program text-white" data-aos="fade-up">{!! nl2br($description) !!}</div>
                 </div>
             </div><!-- End Content -->

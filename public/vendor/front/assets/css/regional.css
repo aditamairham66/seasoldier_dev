@@ -74,7 +74,7 @@
     font-family: 'Lemon/Milk', sans-serif;
     font-style: italic;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 2rem;
     align-items: center;
     color: #FFFFFF;
     margin-bottom: 30px;
@@ -89,6 +89,7 @@
 }
 
 .caption-text a {
+    font-size: 1rem;
     color: #ffffff;
 }
 
@@ -147,14 +148,10 @@
 }
 
 .form-group input {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
-@media (max-width: 1024px) {
-    .form-group input {
-        font-size: 1rem;
-    }
-}
+@media (max-width: 1024px) {}
 
 @media (max-width: 768px) {
     #main {
