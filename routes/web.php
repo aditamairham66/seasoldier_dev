@@ -25,4 +25,5 @@ Route::middleware(['front_middleware'])->group(function () {
     routeController('/regions', 'Frontend\RegionsController');
     routeController('/support-us', 'Frontend\DonationController');
     routeController('/contact', 'Frontend\ContactController');
+    routeController('/blog', 'Frontend\BlogController');
 });

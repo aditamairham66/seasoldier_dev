@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+#main {
+    padding-top: 100px;
+    padding-bottom: 40px;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.title-big {
+    font-family: 'Lemon/Milk', sans-serif;
+    font-style: italic;
+    font-size: 3rem;
+}
+
+.menu-item {
+    width: 175px;
+    height: 175px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 150px;
+    transition: 0.4s all;
+    background-color: var(--dark_red);
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.menu-item:hover {
+    opacity: 0.5;
+    color: #FFFFFF;
+}
+
+.menu-item .image {
+    margin-bottom: 15px;
+}
+
+.form-contact {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.form-control {
+    margin-top: 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+}
+
+.btn-danger-mid {
+    margin-top: 20px;
+    background-color: var(--dark_red);
+}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {
+    #main {
+        padding-top: 30px;
+        min-height: 90vh;
+    }
+}
+
+
+.blog-wrapper {
+    background: rgba(0, 0, 0, 0.59);
+    border-radius: 23px;
+    padding: 25px;
+    display: block;
+}
+
+.blog-wrapper .blog-image {
+    height: 281px;
+    width: 100%;
+    background-size: cover;
+    border-radius: 17px;
+}
+
+.blog-wrapper .blog-title {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37px;
+    color: #fff;
+    margin-top: 14px;
+}
+
+.blog-wrapper .blog-desc {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #fff;
+}
+
+.blog-wrapper .readmore {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 27px;
+    color: #1886C3;
+}
+
+.custom-pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-pagination li {
+    margin-bottom: 14px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.custom-pagination a {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37px;
+    color: #A0110F !important;
+    border-radius: 100%;
+    background-color: #fff !important;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-pagination a.active {
+    background-color: #A0110F !important;
+    color: #fff !important;
+}
+
+.title-bc {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21.29px;
+    color: #fff;   
+}
+.title-bc span {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21.29px;
+    color: #fff;   
+}
+
+.blog-wrapper-detail {
+    background: rgba(0, 0, 0, 0.59);
+    border-radius: 23px;
+    padding: 36px 45px;
+    display: block;
+}
+
+
+.blog-wrapper-detail .blog-title-big {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 97px;
+    color: #fff;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.blog-wrapper-detail .content {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27.38px;
+    color: #fff;
+}
+
+.c-label {
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37px;
+    color: #FFF;
+}
+
+@media (max-width: 768px) {
+    .blog-wrapper-detail .blog-title-big {
+        font-family: 'Titillium Web', sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 47px;
+        color: #fff;
+        margin-top: 24px;
+    }
+}
+
+#list-comment {
+    overflow-y: auto;
+}
+
+.comment-wrapper h2 {
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37px;
+    color: #FFF;
+}
+
+.comment-wrapper p {
+    font-family: 'Titillium Web', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #FFFFFF;
+}
+
+.custom-line {
+    width: 100%;
+    height: 1px;
+    color: #FFF;
+    background-color: #FFF;
+}

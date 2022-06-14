@@ -22,6 +22,8 @@
                         href="{{ webPath('/regions') }}">REGIONAL</a></li>
                 <li><a class="nav-link scrollto @if (getMenuTag() == 'donation') active @endif"
                         href="{{ webPath('/support-us') }}">SUPPORT US</a></li>
+                <li><a class="nav-link scrollto @if (getMenuTag() == 'blog') active @endif"
+                    href="{{ webPath('/blog') }}">BLOG</a></li>
                 <li><a class="nav-link scrollto @if (getMenuTag() == 'contact') active @endif"
                         href="{{ webPath('/contact') }}">CONTACT</a></li>
             </ul>
