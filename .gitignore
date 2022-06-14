@@ -18,3 +18,4 @@ yarn-error.log
 /storage/.DS_Store
 note.txt
 database/sql/*
+**/.DS_Store
