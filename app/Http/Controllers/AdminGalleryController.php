@@ -49,7 +49,8 @@ class AdminGalleryController extends CBController
 
     public function hook_before_add(&$arr)
     {
-        $api = reqInstagram($arr['instagram_url']);
+        // $api = reqInstagram($arr['instagram_url']);
+        $api = reqInstagram2($arr['instagram_url']);
 
         // setup description
         $title = explode(" ", $api['title']);
@@ -66,8 +67,10 @@ class AdminGalleryController extends CBController
         }
 
         $arr['code'] = str_replace(['https://www.instagram.com/p/','/'],"",$arr['instagram_url']);
-        $arr['instagram_name'] = $api['author_name'];
-        $arr['instagram_image'] = $api['thumbnail_url'];
+        // $arr['instagram_name'] = $api['author_name'];
+        $arr['instagram_name'] = null;
+        // $arr['instagram_image'] = $api['thumbnail_url'];
+        $arr['instagram_image'] = $api;
         $arr['instagram_content'] = $description;
     }
 }

@@ -26,7 +26,8 @@
             <div class="row justify-content-center">
                 <template v-for="(item, index) in items">
                     <div class="col-md-4">
-                        <a :href="`{{ webPath('gallery/detail/') }}/${item.code}`" class="gallery-item" target="_blank"
+                        <!-- <a :href="`{{ webPath('gallery/detail/') }}/${item.code}`" class="gallery-item" target="_blank" -->
+                        <a :href="item.url" class="gallery-item" target="_blank"
                             data-aos="fade-up">
                             <img :src="`${item.image}`" class="gallery-img" alt="image gallery">
                         </a>

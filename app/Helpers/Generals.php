@@ -195,6 +195,16 @@ if (!function_exists('reqInstagram')) {
     }
 }
 
+if (!function_exists('reqInstagram2')) {
+    /**
+     * request instagram 2
+     */
+    function reqInstagram2($url)
+    {
+        return App\Helpers\General::reqInstagram2($url);
+    }
+}
+
 if (!function_exists('footerData')) {
     /**
      * @return array
