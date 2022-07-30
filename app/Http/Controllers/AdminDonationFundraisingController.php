@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use App\Repositories\DonationFundraising;
 use crocodicstudio\crudbooster\controllers\CBController;
@@ -41,7 +43,7 @@ class AdminDonationFundraisingController extends CBController
         # START FORM DO NOT REMOVE THIS LINE
         $this->form = [];
         $this->form[] = ['label' => 'Name', 'name' => 'name', 'type' => 'text', 'validation' => 'required|string|min:3', 'width' => 'col-sm-10', 'placeholder' => 'You can only enter the letter only'];
-        $this->form[] = ['label' => 'Image', 'name' => 'image', 'type' => 'upload', 'validation' => 'required|image|max:3000', 'width' => 'col-sm-10', 'help' => 'File types support : JPG, JPEG, PNG, GIF, BMP'];
+        $this->form[] = ['label' => 'Image', 'name' => 'image', 'type' => 'upload', 'validation' => 'required|max:3000', 'width' => 'col-sm-10', 'help' => 'File types support : JPG, JPEG, PNG, GIF, BMP'];
         $this->form[] = ['label' => 'Link', 'name' => 'link', 'type' => 'text', 'validation' => 'required|url', 'width' => 'col-sm-10', 'placeholder' => 'Example : https://google.com'];
         $this->form[] = ['label' => 'Description', 'name' => 'desc', 'type' => 'textarea', 'validation' => 'required|string|min:5|max:5000', 'width' => 'col-sm-10'];
         # END FORM DO NOT REMOVE THIS LINE

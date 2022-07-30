@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use crocodicstudio\crudbooster\helpers\CB;
-
-use Session;
-use Request;
-use DB;
-use CRUDBooster;
+use Illuminate\Support\Facades\Request;
 
 class AdminBlogController extends \crocodicstudio\crudbooster\controllers\CBController
 {
@@ -47,7 +43,7 @@ class AdminBlogController extends \crocodicstudio\crudbooster\controllers\CBCont
 
         # START FORM DO NOT REMOVE THIS LINE
         $this->form = [];
-        $this->form[] = ['label' => 'Image', 'name' => 'image', 'type' => 'upload', 'validation' => 'required|image|max:3000', 'width' => 'col-sm-10', 'help' => 'File types support : JPG, JPEG, PNG, GIF, BMP'];
+        $this->form[] = ['label' => 'Image', 'name' => 'image', 'type' => 'upload', 'validation' => 'required', 'width' => 'col-sm-10', 'help' => 'File types support : JPG, JPEG, PNG, GIF, BMP'];
         $this->form[] = ['label' => 'Title', 'name' => 'title', 'type' => 'text', 'validation' => 'required|string|min:3|max:70', 'width' => 'col-sm-10', 'placeholder' => 'You can only enter the letter only'];
         $this->form[] = ['label' => 'Content', 'name' => 'content', 'type' => 'wysiwyg', 'validation' => 'required|string|min:5|max:5000', 'width' => 'col-sm-10'];
         $this->form[] = ['label' => 'Publish', 'name' => 'publish', 'type' => 'select2', 'validation' => 'required', 'width' => 'col-sm-10', 'dataenum' => 'Publish;Draft'];

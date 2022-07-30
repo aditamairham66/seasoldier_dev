@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use App\Repositories\ProfileOrganizationBanner;
 use crocodicstudio\crudbooster\controllers\CBController;
@@ -37,7 +39,7 @@ class AdminProfileOrganizationBannerController extends CBController
 
         # START FORM DO NOT REMOVE THIS LINE
         $this->form = [];
-        $this->form[] = ["label" => "Image", "name" => "image", "type" => "upload", "required" => TRUE, "validation" => "required|image|max:3000", "help" => "File types support : JPG, JPEG, PNG, GIF, BMP"];
+        $this->form[] = ["label" => "Image", "name" => "image", "type" => "upload", "required" => TRUE, "validation" => "required", "help" => "File types support : JPG, JPEG, PNG, GIF, BMP"];
         # END FORM DO NOT REMOVE THIS LINE
 
         $this->addaction = array();

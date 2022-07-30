@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use App\Repositories\ProfileTeam;
 use crocodicstudio\crudbooster\controllers\CBController;
@@ -57,7 +59,7 @@ class AdminProfileTeamController extends CBController
 
         # START FORM DO NOT REMOVE THIS LINE
         $this->form = [];
-        $this->form[] = ['label' => 'Image', 'name' => 'image', 'type' => 'upload', 'validation' => 'required|image|max:3000', 'width' => 'col-sm-10', 'help' => 'File types support : JPG, JPEG, PNG, GIF, BMP'];
+        $this->form[] = ['label' => 'Image', 'name' => 'image', 'type' => 'upload', 'validation' => 'required', 'width' => 'col-sm-10', 'help' => 'File types support : JPG, JPEG, PNG, GIF, BMP'];
         $this->form[] = ['label' => 'Name', 'name' => 'name', 'type' => 'text', 'validation' => 'required|string|min:3|max:70', 'width' => 'col-sm-10', 'placeholder' => 'You can only enter the letter only'];
         $this->form[] = ['label' => 'Position', 'name' => 'position', 'type' => 'text', 'validation' => 'required|min:1|max:255', 'width' => 'col-sm-10'];
         $this->form[] = ['label' => 'Highlight', 'name' => 'highlight', 'type' => 'radio', 'validation' => 'required', 'width' => 'col-sm-10', 'dataenum' => 'Yes;No', 'value' => 'No'];
@@ -117,5 +119,4 @@ class AdminProfileTeamController extends CBController
 
         return true;
     }
-
 }

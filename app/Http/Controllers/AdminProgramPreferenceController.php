@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 use crocodicstudio\crudbooster\controllers\CBController;
 use Illuminate\Support\Facades\Cache;
@@ -52,7 +54,7 @@ class AdminProgramPreferenceController extends CBController
         $this->form = [];
         $this->form[] = ["label" => "Name", "name" => "label", "type" => "text", "disabled" => TRUE];
         if (in_array($data->label, $this->list_image)) {
-            $this->form[] = ["label" => "Content", "name" => "content", "type" => "upload", "required" => TRUE, "validation" => "required|image|max:3000", "help" => "File types support : JPG, JPEG, PNG"];
+            $this->form[] = ["label" => "Content", "name" => "content", "type" => "upload", "required" => TRUE, "validation" => "required", "help" => "File types support : JPG, JPEG, PNG"];
         } else {
             $this->form[] = ['label' => 'Content', 'name' => 'content', 'type' => 'textarea'];
         }
